@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "57a36a3c"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/poetry-128.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/poetry-64.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/poetry-32.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="PHP,基础," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="PHP 编译完成后，可以通过一个简单的函数 phpinfo() 查看关于 PHP 的所有信息。以下介绍的模块一览，皆全部来自于函数 phpinfo() 的输出信息。   SAPI Modules什么是 SAPI？SAPI 即 Server API, Server Application Programming Interface。">
+<meta name="keywords" content="PHP,基础">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP模块一览及简要说明">
+<meta property="og:url" content="https://rocinante-poet.github.io/2018-01-05/9b03.html">
+<meta property="og:site_name" content="Poet">
+<meta property="og:description" content="PHP 编译完成后，可以通过一个简单的函数 phpinfo() 查看关于 PHP 的所有信息。以下介绍的模块一览，皆全部来自于函数 phpinfo() 的输出信息。   SAPI Modules什么是 SAPI？SAPI 即 Server API, Server Application Programming Interface。">
+<meta property="og:locale" content="zh-hans">
+<meta property="og:updated_time" content="2018-05-25T15:57:22.315Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP模块一览及简要说明">
+<meta name="twitter:description" content="PHP 编译完成后，可以通过一个简单的函数 phpinfo() 查看关于 PHP 的所有信息。以下介绍的模块一览，皆全部来自于函数 phpinfo() 的输出信息。   SAPI Modules什么是 SAPI？SAPI 即 Server API, Server Application Programming Interface。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://rocinante-poet.github.io/2018-01-05/9b03.html"/>
+
+
+
+
+
+  <title>PHP模块一览及简要说明,Poet-蔚然成凨</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Poet</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">蔚然成凨</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于|留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://rocinante-poet.github.io/2018-01-05/9b03.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocinante-Poet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/poet.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">PHP模块一览及简要说明</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-05T18:21:05+08:00">
+                2018-01-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/PHP/" itemprop="url" rel="index">
+                    <span itemprop="name">PHP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>PHP 编译完成后，可以通过一个简单的函数 phpinfo() 查看关于 PHP 的所有信息。以下介绍的模块一览，皆全部来自于函数 phpinfo() 的输出信息。  </p>
+<h1 id="SAPI-Modules"><a href="#SAPI-Modules" class="headerlink" title="SAPI Modules"></a><font color="red">SAPI Modules</font></h1><p>什么是 SAPI？<br>SAPI 即 Server API, Server Application Programming Interface。<a id="more"></a></p>
+<h2 id="1、Apache-2-0-Handler-apache2handler"><a href="#1、Apache-2-0-Handler-apache2handler" class="headerlink" title="1、Apache 2.0 Handler(apache2handler) "></a>1、Apache 2.0 Handler(apache2handler) </h2><p>用于 Apache 2 的模块，当安装的是 PHP 5 的时候，编译出来的文件名是 libphp5.so；当安装的是 PHP 7 的时候，编译出来的文件名是 libphp7.so。<br>libphp5.so 或 libphp7.so 通常被安装在 Apache 的安装目录下的 modules 目录。<br>编译的时候需指定参数 −−with-apxs2=FILE，比如 −−with-apxs2=/usr/local/apache/bin/apxs</p>
+<h2 id="2、CGI-FastCGI"><a href="#2、CGI-FastCGI" class="headerlink" title="2、CGI / FastCGI "></a>2、CGI / FastCGI </h2><p>CGI，意为 Common Gateway Interface。<br>通常编译安装在 PHP 安装目录 bin 下，这个可执行文件名是 php-cgi。</p>
+<h2 id="3、CLI"><a href="#3、CLI" class="headerlink" title="3、CLI "></a>3、CLI </h2><p>CLI，意为 Command Line。命令行模式。<br>通常编译安装在 PHP 安装目录 bin 下，这个可执行文件名是 php。<br>输入 php -h 显示其用法。</p>
+<h2 id="4、Embed"><a href="#4、Embed" class="headerlink" title="4、Embed "></a>4、Embed </h2><p>默认不编译安装，除非指定编译参数 −−enable-embed<br>该模块允许在 C/C++ 语言中调用 PHP 提供的函数。</p>
+<h2 id="5、FastCGI-Process-Manager"><a href="#5、FastCGI-Process-Manager" class="headerlink" title="5、FastCGI Process Manager "></a>5、FastCGI Process Manager </h2><p>FastCGI Process Manager，也就是 FPM，PHP FastCGI 进程的管理器。</p>
+<h2 id="6、litespeed"><a href="#6、litespeed" class="headerlink" title="6、litespeed "></a>6、litespeed </h2><p>用于 LiteSpeed 的模块，默认不编译。<br>通过指定编译参数 −−with-litespeed 安装。 Build PHP as litespeed module</p>
+<h2 id="7、phpdbg"><a href="#7、phpdbg" class="headerlink" title="7、phpdbg "></a>7、phpdbg </h2><p>从 PHP 5.6 开始，引入了 phpdbg，交互式调试器，用于 Debug PHP 程序，可以在不用修改代码，不影响性能的情况下控制 PHP 的运行环境。<br>通常编译安装在 PHP 安装目录 bin 下，这个可执行文件名是 phpdbg。<br>PHP 5.4 和 5.5 也可以单独安装该模块。</p>
+<h1 id="PHP-Modules"><a href="#PHP-Modules" class="headerlink" title="PHP Modules"></a><font color="red">PHP Modules</font></h1><p>PHP 源码自带的扩展模块，根据 PHP 版本的不同略有差别，大致为以下这么 71 个模块。</p>
+<h2 id="1、BC-Math"><a href="#1、BC-Math" class="headerlink" title="1、BC Math"></a>1、BC Math</h2><p>通过指定编译参数 −−enable-bcmath 安装。 Enable bc style precision math functions</p>
+<h2 id="2、Bzip2"><a href="#2、Bzip2" class="headerlink" title="2、Bzip2"></a>2、Bzip2</h2><p>通过指定编译参数 −−with-bz2=DIR 安装。Include BZip2 support<br>Debian/Ubuntu 需安装 libbz2-dev 依赖包。<br>Redhat/CentOS 需安装 bzip2-devel 依赖包。</p>
+<h2 id="3、Calendar"><a href="#3、Calendar" class="headerlink" title="3、Calendar"></a>3、Calendar</h2><p>通过指定编译参数 −−enable-calendar 安装。 Enable support for calendar conversion</p>
+<h2 id="4、COM-and-Net"><a href="#4、COM-and-Net" class="headerlink" title="4、COM and .Net"></a>4、COM and .Net</h2><p>Windows 专用扩展。COM 是指 Component Object Model，组件对象模型，是多项微软技术与框架的基础，包括OLE、OLE自动化、ActiveX、COM+、DCOM、Windows shell、DirectX、Windows Runtime。</p>
+<h2 id="5、ctype"><a href="#5、ctype" class="headerlink" title="5、ctype"></a>5、ctype</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−disable-ctype</p>
+<h2 id="6、cURL"><a href="#6、cURL" class="headerlink" title="6、cURL"></a>6、cURL</h2><p>通过指定编译参数 −−with-curl=DIR 安装。 Include cURL support<br>Debian/Ubuntu 需安装 libcurl4-gnutls-dev 依赖包。<br>Redhat/CentOS 需安装 curl-devel 依赖包。  </p>
+<h2 id="7、Date-Time-Support-date"><a href="#7、Date-Time-Support-date" class="headerlink" title="7、Date/Time Support(date)"></a>7、Date/Time Support(date)</h2><p>日期和时间函数，默认编译安装，不可禁止。</p>
+<h2 id="8、DBA"><a href="#8、DBA" class="headerlink" title="8、DBA"></a>8、DBA</h2><p>通过指定编译参数 −−enable-dba 安装。 Build DBA with bundled modules<br>该参数会默认自带 3 个参数，−−with-cdb，−−enable-inifile，inifile-flatfile，若要禁止，则需通过参数−−without-cdb=DIR，−−disable-inifile，−−disable-flatfile 实现。</p>
+<h2 id="9、DB-LIB-MS-SQL-Sybase-pdo-dblib"><a href="#9、DB-LIB-MS-SQL-Sybase-pdo-dblib" class="headerlink" title="9、DB-LIB (MS SQL, Sybase)(pdo_dblib)"></a>9、DB-LIB (MS SQL, Sybase)(pdo_dblib)</h2><p>Windows 专用扩展。用于连接  SQL Server 和 Sybase 数据库的 PDO 驱动扩展。</p>
+<h2 id="10、DOM"><a href="#10、DOM" class="headerlink" title="10、DOM"></a>10、DOM</h2><p>此扩展默认为启用，Document Object Model。编译时可通过下列选项禁用：−−disable-dom</p>
+<h2 id="11、enchant"><a href="#11、enchant" class="headerlink" title="11、enchant"></a>11、enchant</h2><p>通过指定编译参数 −−with-enchant=DIR 安装。 Include enchant support. GNU Aspell version 1.1.3 or higher required.<br>一般需指定其目录，−−with-enchant=/usr<br>Debian/Ubuntu 需安装 libenchant-dev, libpspell-dev 依赖包。<br>Redhat/CentOS 需安装 enchant-devel, aspell-devel 依赖包。  </p>
+<h2 id="12、EXIF"><a href="#12、EXIF" class="headerlink" title="12、EXIF"></a>12、EXIF</h2><p>通过指定编译参数 −−enable-exif 安装。 Enable EXIF (metadata from images) support</p>
+<h2 id="13、fileinfo"><a href="#13、fileinfo" class="headerlink" title="13、fileinfo"></a>13、fileinfo</h2><p>此扩展默认为启用，fileinfo support。编译时可通过下列选项禁用：−−disable-fileinfo<br>注意：在内存比较小的机器上编译此扩展时可能会失败，因此内存加 SWAP 的容量小于 480MB 时就不要安装了。</p>
+<h2 id="14、Filter"><a href="#14、Filter" class="headerlink" title="14、Filter"></a>14、Filter</h2><p>此扩展默认为启用，input filter support。编译时可通过下列选项禁用：−−disable-filter<br>另如果要给此扩展指定 PCRE 安装目录的话，则还有以下的编译参数。<br>−−with-pcre-dir  FILTER: pcre install prefix</p>
+<h2 id="15、Firebird-driver-for-PDO-pdo-firebird"><a href="#15、Firebird-driver-for-PDO-pdo-firebird" class="headerlink" title="15、Firebird driver for PDO(pdo_firebird)"></a>15、Firebird driver for PDO(pdo_firebird)</h2><p>−−with-interbase=DIR Include Firebird support.  DIR is the Firebird base install directory<br>−−with-pdo-firebird=DIR PDO: Firebird support.  DIR is the Firebird base install directory</p>
+<h2 id="16、FTP"><a href="#16、FTP" class="headerlink" title="16、FTP"></a>16、FTP</h2><p>通过指定编译参数 −−enable-ftp 安装。Enable FTP support<br>安装该扩展还有个参数 −−with-openssl-dir=DIR  FTP: openssl install prefix，可不指定，则使用系统自带 openssl 库。</p>
+<h2 id="17、GD-imaging-gd"><a href="#17、GD-imaging-gd" class="headerlink" title="17、GD imaging(gd)"></a>17、GD imaging(gd)</h2><p>通过指定编译参数 −−with-gd=DIR 安装。Include GD support.  DIR is the GD library base install directory BUNDLED<br>这是一个打包式的依赖，需要依赖如下安装包。<br>−−with-webp-dir=DIR(PHP 7.0, 7.1 only)<br>−−with-jpeg-dir=DIR<br>−−with-png-dir=DIR<br>−−with-zlib-dir=DIR<br>−−with-xpm-dir=DIR<br>−−with-freetype-dir=DIR<br>−−enable-gd-native-ttf<br>−−enable-gd-jis-conv  </p>
+<p>PHP5.4、PHP5.5、PHP5.6 则还有个<br>−−with-vpx-dir=DIR<br>Debian/Ubuntu 需安装 libwebp-dev, libjpeg-dev, libpng-dev, libxpm-dev, libfreetype6-dev, libvpx-dev 依赖包。<br>Redhat/CentOS 需安装 libwebp-devel, libjpeg-devel, libpng-devel, libXpm-devel, freetype-devel, libvpx-devel 依赖包。</p>
+<h2 id="18、GetText"><a href="#18、GetText" class="headerlink" title="18、GetText"></a>18、GetText</h2><p>通过指定编译参数 −−with-gettext=DIR 安装。Include GNU gettext support<br>Debian/Ubuntu 需安装 gettext 依赖包。<br>Redhat/CentOS 需安装 gettext, gettext-devel 依赖包。  </p>
+<h2 id="19、GMP"><a href="#19、GMP" class="headerlink" title="19、GMP"></a>19、GMP</h2><p>通过指定编译参数 −−with-gmp=DIR 安装。Include GNU MP support<br>Debian/Ubuntu 需安装 libgmp-dev 依赖包。<br>Redhat/CentOS 需安装 gmp-devel 依赖包。  </p>
+<h2 id="20、Hash"><a href="#20、Hash" class="headerlink" title="20、Hash"></a>20、Hash</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−disable-hash  Disable hash support</p>
+<h2 id="21、iconv"><a href="#21、iconv" class="headerlink" title="21、iconv"></a>21、iconv</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−without-iconv=DIR  Exclude iconv support</p>
+<h2 id="22、IMAP"><a href="#22、IMAP" class="headerlink" title="22、IMAP"></a>22、IMAP</h2><p>通过指定以下编译参数。<br>−−with-imap=DIR         Include IMAP support. DIR is the c-client install prefix<br>−−with-kerberos=DIR     IMAP: Include Kerberos support. DIR is the Kerberos install prefix<br>−−with-imap-ssl=DIR     IMAP: Include SSL support. DIR is the OpenSSL install prefix<br>编译此选项时，PHP 需指定 libc-client.a 所在目录。</p>
+<h2 id="23、InterBase"><a href="#23、InterBase" class="headerlink" title="23、InterBase"></a>23、InterBase</h2><p>−−with-interbase=DIR Include Firebird support.  DIR is the Firebird base install directory</p>
+<h2 id="24、Internationalization-intl"><a href="#24、Internationalization-intl" class="headerlink" title="24、Internationalization(intl)"></a>24、Internationalization(intl)</h2><p>通过指定编译参数 −−enable-intl 安装。 Enable internationalization support</p>
+<h2 id="25、json"><a href="#25、json" class="headerlink" title="25、json"></a>25、json</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−disable-json  Disable JavaScript Object Serialization support</p>
+<h2 id="26、LDAP"><a href="#26、LDAP" class="headerlink" title="26、LDAP"></a>26、LDAP</h2><p>−−with-ldap=DIR         Include LDAP support<br>−−with-ldap-sasl=DIR    LDAP: Include Cyrus SASL support<br>Debian/Ubuntu 需安装 libldap-2.4-2, libldap2-dev 依赖包。<br>Redhat/CentOS 需安装 openldap, openldap-devel 依赖包。</p>
+<h2 id="27、libxml"><a href="#27、libxml" class="headerlink" title="27、libxml"></a>27、libxml</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−disable-libxml  Disable LIBXML support<br>−−with-libxml-dir=DIR   LIBXML: libxml2 install prefix<br>Debian/Ubuntu 需安装 libxml2, libxml2-dev 依赖包。<br>Redhat/CentOS 需安装 libxml2, libxml2-devel 依赖包。</p>
+<h2 id="28、Multibyte-String-Functions-mbstring"><a href="#28、Multibyte-String-Functions-mbstring" class="headerlink" title="28、Multibyte String Functions(mbstring)"></a>28、Multibyte String Functions(mbstring)</h2><p>通过指定编译参数 −−enable-mbstring 安装。 Enable multibyte string support<br>−−disable-mbregex  MBSTRING: Disable multibyte regex support<br>−−disable-mbregex-backtrack  MBSTRING: Disable multibyte regex backtrack check<br>−−with-libmbfl=DIR  MBSTRING: Use external libmbfl.  DIR is the libmbfl base install directory BUNDLED<br>−−with-onig=DIR  MBSTRING: Use external oniguruma. DIR is the oniguruma install prefix. If DIR is not set, the bundled oniguruma will be used<br>libmbfl 对 mbstring 是必要的。libmbfl 被捆绑到了 mbstring。<br>Debian/Ubuntu 需安装 libonig2, libonig-dev 依赖包。<br>Redhat/CentOS 需安装 oniguruma, oniguruma-devel 依赖包。</p>
+<h2 id="29、mcrypt"><a href="#29、mcrypt" class="headerlink" title="29、mcrypt"></a>29、mcrypt</h2><p>通过指定编译参数  −−with-mcrypt=DIR 安装。  Include mcrypt support<br>Debian/Ubuntu 需安装 libmcrypt-dev 依赖包。<br>Redhat/CentOS 需编译安装 libmcrypt 和 mcrypt 。如果安装了 EPEL 的话，则需安装 libmcrypt-devel 依赖包。</p>
+<h2 id="30、MySQL-driver-for-PDO-pdo-mysql"><a href="#30、MySQL-driver-for-PDO-pdo-mysql" class="headerlink" title="30、MySQL driver for PDO(pdo_mysql)"></a>30、MySQL driver for PDO(pdo_mysql)</h2><p>−−with-mysql-sock=SOCKPATH  MySQLi/PDO_MYSQL: Location of the MySQL unix socket pointer<br>指定系统里安装的 MYSQL 的 mysql.sock 路径。<br>−−with-pdo-mysql=DIR  PDO: MySQL support. DIR is the MySQL base directory<br>指定系统里安装的 MYSQL 的基本目录。若未指定，则默认安装 mysqlnd(MySQL native driver)</p>
+<h2 id="31、MySQLi"><a href="#31、MySQLi" class="headerlink" title="31、MySQLi"></a>31、MySQLi</h2><p>−−with-mysqli=FILE  Include MySQLi support. FILE is the path to mysql_config<br>指定系统里安装的 MYSQL 的目录下的 mysql_config 文件路径。</p>
+<h2 id="32、MySQLnd"><a href="#32、MySQLnd" class="headerlink" title="32、MySQLnd"></a>32、MySQLnd</h2><p>通过指定编译参数 −−enable-mysqlnd 安装。 Enable mysqlnd explicitly, will be done implicitly when required by other extensions<br>另如果要给此扩展指定 libz 目录的话，则还有以下的编译参数。<br>−−with-zlib-dir=DIR  mysqlnd: Set the path to libz install prefix</p>
+<h2 id="33、OCI8"><a href="#33、OCI8" class="headerlink" title="33、OCI8"></a>33、OCI8</h2><p>−−with-oci8=DIR  Include Oracle Database OCI8 support. DIR defaults to $ORACLE_HOME<br>系统里安装了 Oracle 数据库的话，则指定为 $ORACLE_HOME；否则需安装 Oracle Instant Client，指定为 /path/to/instant/client/lib</p>
+<h2 id="34、ODBC-driver-for-PDO-pdo-odbc"><a href="#34、ODBC-driver-for-PDO-pdo-odbc" class="headerlink" title="34、ODBC driver for PDO(pdo_odbc)"></a>34、ODBC driver for PDO(pdo_odbc)</h2><p>−−with-pdo-odbc=flavour,dir<br>PDO: Support for ‘flavour’ ODBC driver.<br>include and lib dirs are looked for under ‘dir’.<br>‘flavour’ can be one of:  ibm-db2, iODBC, unixODBC, generic<br>If ‘,dir’ part is omitted, default for the flavour<br>you have selected will be used. e.g.:<br>−−with-pdo-odbc=unixODBC<br>will check for unixODBC under /usr/local. You may attempt to use an otherwise unsupported driver using the “generic” flavour.<br>The syntax for generic ODBC support is:<br>−−with-pdo-odbc=generic,dir,libname,ldflags,cflags<br>When built as ‘shared’ the extension filename is always pdo_odbc.so</p>
+<h2 id="35、ODBC"><a href="#35、ODBC" class="headerlink" title="35、ODBC"></a>35、ODBC</h2><p>ODBC 有很多种，一般使用如下编译参数即可。<br>−−with-unixODBC=DIR  Include unixODBC support /usr/local<br>Debian/Ubuntu 需安装 unixodbc, unixodbc-dev 依赖包。<br>Redhat/CentOS 需安装 unixODBC, unixODBC-devel 依赖包。<br>注意：PHP 默认会去 /usr/local/include 下去找头文件 sqlext.h，所以还要做个软链接。<br>ln -s /usr/include/sqlext.h /usr/local/include/</p>
+<h2 id="36、OpenSSL"><a href="#36、OpenSSL" class="headerlink" title="36、OpenSSL"></a>36、OpenSSL</h2><p>−−with-openssl=DIR      Include OpenSSL support (requires OpenSSL &gt;= 1.0.1)<br>−−with-kerberos=DIR     OPENSSL: Include Kerberos support<br>−−with-system-ciphers   OPENSSL: Use system default cipher   list instead of hardcoded value<br>PHP 7.1 所需的 openssl 版本是 &gt;= 1.0.1<br>PHP 7.0 所需的 openssl 版本是 &gt;= 0.9.8<br>PHP 5.6 所需的 openssl 版本是 &gt;= 0.9.6<br>PHP 5.5 所需的 openssl 版本是 &gt;= 0.9.6<br>PHP 5.4 所需的 openssl 版本是 &gt;= 0.9.6<br>PHP 5.3 所需的 openssl 版本是 &gt;= 0.9.6  </p>
+<h2 id="37、Oracle-OCI-driver-for-PDO-pdo-oci"><a href="#37、Oracle-OCI-driver-for-PDO-pdo-oci" class="headerlink" title="37、Oracle (OCI) driver for PDO(pdo_oci)"></a>37、Oracle (OCI) driver for PDO(pdo_oci)</h2><p>−−with-pdo-oci=DIR  PDO: Oracle OCI support. DIR defaults to $ORACLE_HOME.<br>Use −−with-pdo-oci=instantclient,prefix,version for an Oracle Instant Client SDK.<br>For example on Linux with 11.2 RPMs use:<br>−−with-pdo-oci=instantclient,/usr,11.2</p>
+<h2 id="38、pcntl"><a href="#38、pcntl" class="headerlink" title="38、pcntl"></a>38、pcntl</h2><p>通过指定编译参数 −−enable-pcntl 安装。 Enable pcntl support (CLI/CGI only)</p>
+<h2 id="39、Perl-Compatible-Regular-Expressions-PCRE"><a href="#39、Perl-Compatible-Regular-Expressions-PCRE" class="headerlink" title="39、Perl Compatible Regular Expressions(PCRE)"></a>39、Perl Compatible Regular Expressions(PCRE)</h2><p>−−with-pcre-regex=DIR   Include Perl Compatible Regular Expressions support. DIR is the PCRE install prefix BUNDLED<br>−−with-pcre-jit  Enable PCRE JIT functionality</p>
+<h2 id="40、PHP-Archive-Phar"><a href="#40、PHP-Archive-Phar" class="headerlink" title="40、PHP Archive(Phar)"></a>40、PHP Archive(Phar)</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−disable-phar  Disable phar support</p>
+<h2 id="41、PHP-Data-Objects-PDO"><a href="#41、PHP-Data-Objects-PDO" class="headerlink" title="41、PHP Data Objects(PDO)"></a>41、PHP Data Objects(PDO)</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−disable-pdo  Disable PHP Data Objects support</p>
+<h2 id="42、Posix"><a href="#42、Posix" class="headerlink" title="42、Posix"></a>42、Posix</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−disable-posix  Disable POSIX-like functions</p>
+<h2 id="43、PostgreSQL-driver-for-PDO-pdo-pgsql"><a href="#43、PostgreSQL-driver-for-PDO-pdo-pgsql" class="headerlink" title="43、PostgreSQL driver for PDO(pdo_pgsql)"></a>43、PostgreSQL driver for PDO(pdo_pgsql)</h2><p>−−with-pdo-pgsql=DIR  PDO: PostgreSQL support.  DIR is the PostgreSQL base install directory or the path to pg_config</p>
+<h2 id="44、PostgreSQL"><a href="#44、PostgreSQL" class="headerlink" title="44、PostgreSQL"></a>44、PostgreSQL</h2><p>−−with-pgsql=DIR  Include PostgreSQL support.  DIR is the PostgreSQL base install directory or the path to pg_config</p>
+<h2 id="45、Pspell"><a href="#45、Pspell" class="headerlink" title="45、Pspell"></a>45、Pspell</h2><p>−−with-pspell=DIR  Include PSPELL support. GNU Aspell version 0.50.0 or higher required<br>一般需指定其目录，−−with-pspell=/usr<br>Debian/Ubuntu 需安装 libpspell-dev 依赖包。<br>Redhat/CentOS 需安装 aspell-devel 依赖包。</p>
+<h2 id="46、Readline"><a href="#46、Readline" class="headerlink" title="46、Readline"></a>46、Readline</h2><p>−−with-readline=DIR  Include readline support (CLI/CGI only)<br>Debian/Ubuntu 需安装 libreadline-dev 依赖包。<br>Redhat/CentOS 需安装 readline-devel 依赖包。</p>
+<h2 id="47、Recode"><a href="#47、Recode" class="headerlink" title="47、Recode"></a>47、Recode</h2><p>−−with-recode=DIR  nclude recode support<br>Debian/Ubuntu 需安装 librecode-dev 依赖包。<br>Redhat/CentOS 需安装 recode-devel 依赖包。</p>
+<h2 id="48、Reflection"><a href="#48、Reflection" class="headerlink" title="48、Reflection"></a>48、Reflection</h2><p>此扩展默认为启用。</p>
+<h2 id="49、Sessions"><a href="#49、Sessions" class="headerlink" title="49、Sessions"></a>49、Sessions</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−disable-session  Disable session support<br>另如果要给此扩展指定 mm 支持的话，则还有以下的编译参数。<br>−−with-mm=DIR  SESSION: Include mm support for session storage</p>
+<h2 id="50、Shared-Memory-Operations-shmop"><a href="#50、Shared-Memory-Operations-shmop" class="headerlink" title="50、Shared Memory Operations(shmop)"></a>50、Shared Memory Operations(shmop)</h2><p>通过指定编译参数 −−enable-shmop 安装。 Enable shmop support</p>
+<h2 id="51、SimpleXML"><a href="#51、SimpleXML" class="headerlink" title="51、SimpleXML"></a>51、SimpleXML</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−disable-simplexml  Disable SimpleXML support<br>另如果要给此扩展指定 libxml2 目录的话，则还有以下的编译参数。<br>−−with-libxml-dir=DIR  SimpleXML: libxml2 install prefix</p>
+<h2 id="52、SNMP"><a href="#52、SNMP" class="headerlink" title="52、SNMP"></a>52、SNMP</h2><p>通过指定编译参数 −−with-snmp=DIR 安装。 Include SNMP support<br>另如果要给此扩展指定 openssl 目录的话，则还有以下的编译参数。<br>−−with-openssl-dir=DIR  SNMP: openssl install prefix<br>Debian/Ubuntu 需安装 libsnmp-dev 依赖包。<br>Redhat/CentOS 需安装 net-snmp-devel 依赖包。</p>
+<h2 id="53、SOAP"><a href="#53、SOAP" class="headerlink" title="53、SOAP"></a>53、SOAP</h2><p>通过指定编译参数 −−enable-soap 安装。 Enable SOAP support<br>另如果要给此扩展指定 libxml2 目录的话，则还有以下的编译参数。<br>−−with-libxml-dir=DIR  SOAP: libxml2 install prefix</p>
+<h2 id="54、Sockets"><a href="#54、Sockets" class="headerlink" title="54、Sockets"></a>54、Sockets</h2><p>通过指定编译参数 −−enable-sockets 安装。 Enable sockets support</p>
+<h2 id="55、SPL"><a href="#55、SPL" class="headerlink" title="55、SPL"></a>55、SPL</h2><p>此扩展默认为启用。</p>
+<h2 id="56、SQLite3"><a href="#56、SQLite3" class="headerlink" title="56、SQLite3"></a>56、SQLite3</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−without-sqlite3=DIR  Do not include SQLite3 support. DIR is the prefix to SQLite3 installation directory</p>
+<h2 id="57、SQLite-3-x-driver-for-PDO-pdo-sqlite"><a href="#57、SQLite-3-x-driver-for-PDO-pdo-sqlite" class="headerlink" title="57、SQLite 3.x driver for PDO(pdo_sqlite)"></a>57、SQLite 3.x driver for PDO(pdo_sqlite)</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−without-pdo-sqlite=DIR  PDO: sqlite 3 support. DIR is the sqlite base install directory BUNDLED</p>
+<h2 id="58、System-V-Message-based-IPC"><a href="#58、System-V-Message-based-IPC" class="headerlink" title="58、System V Message based IPC"></a>58、System V Message based IPC</h2><p>通过指定编译参数 −−enable-sysvmsg 安装。 Enable sysvmsg support</p>
+<h2 id="59、System-V-Semaphores"><a href="#59、System-V-Semaphores" class="headerlink" title="59、System V Semaphores"></a>59、System V Semaphores</h2><p>通过指定编译参数 −−enable-sysvsem 安装。 Enable System V semaphore support</p>
+<h2 id="60、System-V-Shared-Memory"><a href="#60、System-V-Shared-Memory" class="headerlink" title="60、System V Shared Memory"></a>60、System V Shared Memory</h2><p>通过指定编译参数 −−enable-sysvshm 安装。 Enable the System V shared memory support</p>
+<h2 id="61、tidy"><a href="#61、tidy" class="headerlink" title="61、tidy"></a>61、tidy</h2><p>通过指定编译参数 −−with-tidy=DIR 安装。 Include TIDY support<br>一般需指定其目录，−−with-tidy=/usr<br>Debian/Ubuntu 需安装 libtidy-dev 依赖包。<br>Redhat/CentOS 需安装 libtidy-devel 依赖包。</p>
+<h2 id="62、tokenizer"><a href="#62、tokenizer" class="headerlink" title="62、tokenizer"></a>62、tokenizer</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−disable-tokenizer  Disable tokenizer support</p>
+<h2 id="63、WDDX"><a href="#63、WDDX" class="headerlink" title="63、WDDX"></a>63、WDDX</h2><p>通过指定编译参数 −−enable-wddx 安装。 Enable WDDX support<br>另如果要给此扩展指定 libxml2 目录的话，则还有以下的编译参数。<br>−−with-libxml-dir=DIR  WDDX: libxml2 install prefix</p>
+<h2 id="64、XMLReader"><a href="#64、XMLReader" class="headerlink" title="64、XMLReader"></a>64、XMLReader</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−disable-xmlreader  Disable XMLReader support<br>另如果要给此扩展指定 libxml2 目录的话，则还有以下的编译参数。<br>−−with-libxml-dir=DIR  XMLReader: libxml2 install prefix</p>
+<h2 id="65、xmlrpc"><a href="#65、xmlrpc" class="headerlink" title="65、xmlrpc"></a>65、xmlrpc</h2><p>通过指定编译参数 −−with-xmlrpc=DIR 安装。 Include XMLRPC-EPI support<br>另如果要给此扩展指定 libxml2 和 iconv 目录的话，则还有以下的编译参数。<br>−−with-libxml-dir=DIR  XMLRPC-EPI: libxml2 install prefix<br>−−with-iconv-dir=DIR  XMLRPC-EPI: iconv dir for XMLRPC-EPI</p>
+<h2 id="66、XML"><a href="#66、XML" class="headerlink" title="66、XML"></a>66、XML</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−disable-xml  Disable XML support</p>
+<h2 id="67、XMLWriter"><a href="#67、XMLWriter" class="headerlink" title="67、XMLWriter"></a>67、XMLWriter</h2><p>此扩展默认为启用，编译时可通过下列选项禁用：−−disable-xmlwriter  Disable XMLWriter support</p>
+<h2 id="68、XSL"><a href="#68、XSL" class="headerlink" title="68、XSL"></a>68、XSL</h2><p>通过指定编译参数 −−with-xsl=DIR 安装。 Include XSL support.    DIR is the libxslt base install directory (libxslt &gt;= 1.1.0 required)<br>Debian/Ubuntu 需安装 libxslt1-dev 依赖包。<br>Redhat/CentOS 需安装 libxslt-devel 依赖包。</p>
+<h2 id="69、Zip"><a href="#69、Zip" class="headerlink" title="69、Zip"></a>69、Zip</h2><p>通过指定编译参数 −−enable-zip 安装。 Include Zip read/write support<br>另如果要给此扩展指定 libz, PCRE 和 libzip 目录的话，则还有以下的编译参数。<br>−−with-zlib-dir=DIR  ZIP: Set the path to libz install prefix<br>−−with-pcre-dir=DIR  ZIP: pcre install prefix<br>−−with-libzip=DIR  ZIP: use libzip</p>
+<h2 id="70、Zlib"><a href="#70、Zlib" class="headerlink" title="70、Zlib"></a>70、Zlib</h2><p>通过指定编译参数 −−with-zlib=DIR 安装。 Include ZLIB support (requires zlib &gt;= 1.0.9)<br>Debian/Ubuntu 需安装 zlib1g-dev 依赖包。<br>Redhat/CentOS 需安装 zlib-devel 依赖包。</p>
+<h2 id="71、Zend-OPcache"><a href="#71、Zend-OPcache" class="headerlink" title="71、Zend OPcache"></a>71、Zend OPcache</h2><p>PHP 5.5 之后的版本，此扩展默认为启用，编译时可通过下列选项禁用：−−disable-opcache  Disable Zend OPcache support<br>注意：默认编译安装不代表默认启用，还需配置到 ini 文件里才行。</p>
+<h2 id="PHP-还有诸多的第三方扩展，框架，CMS，包管理工具等。举几个例子。"><a href="#PHP-还有诸多的第三方扩展，框架，CMS，包管理工具等。举几个例子。" class="headerlink" title="PHP 还有诸多的第三方扩展，框架，CMS，包管理工具等。举几个例子。"></a>PHP 还有诸多的第三方扩展，框架，CMS，包管理工具等。举几个例子。</h2><p>扩展：ZendGuardLoader, ionCube Loader, XCache, Imagemagick, GraphicsMagick, Memcached, Redis, Mongodb, Swoole<br>框架：Laravel, Symfony, Nette, Yii, Zend Framework, Silex, Slim, CakePHP, ThinkPHP<br>CMS：Wordpress, Drupal, Joomla, Typecho, Phpcms,<br>包管理工具：Composer</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/PHP/" rel="tag"><i class="fa fa-tag"></i> PHP</a>
+          
+            <a href="/tags/基础/" rel="tag"><i class="fa fa-tag"></i> 基础</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017-12-28/8598.html" rel="next" title="业余无线电（二）">
+                <i class="fa fa-chevron-left"></i> 业余无线电（二）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018-02-20/e910.html" rel="prev" title="使用 GPG 加密 Github Commits">
+                使用 GPG 加密 Github Commits <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTk4NS8xMjUyMQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/poet.jpg"
+                alt="Rocinante-Poet" />
+            
+              <p class="site-author-name" itemprop="name">Rocinante-Poet</p>
+              <p class="site-description motion-element" itemprop="description">诗人和祂的驽骍难得</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/3017932712?is_all=1" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://telegram.me/Poet_IIII" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:Poet515@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#SAPI-Modules"><span class="nav-number">1.</span> <span class="nav-text">SAPI Modules</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、Apache-2-0-Handler-apache2handler"><span class="nav-number">1.1.</span> <span class="nav-text">1、Apache 2.0 Handler(apache2handler) </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、CGI-FastCGI"><span class="nav-number">1.2.</span> <span class="nav-text">2、CGI / FastCGI </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、CLI"><span class="nav-number">1.3.</span> <span class="nav-text">3、CLI </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、Embed"><span class="nav-number">1.4.</span> <span class="nav-text">4、Embed </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、FastCGI-Process-Manager"><span class="nav-number">1.5.</span> <span class="nav-text">5、FastCGI Process Manager </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、litespeed"><span class="nav-number">1.6.</span> <span class="nav-text">6、litespeed </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、phpdbg"><span class="nav-number">1.7.</span> <span class="nav-text">7、phpdbg </span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP-Modules"><span class="nav-number">2.</span> <span class="nav-text">PHP Modules</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1、BC-Math"><span class="nav-number">2.1.</span> <span class="nav-text">1、BC Math</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2、Bzip2"><span class="nav-number">2.2.</span> <span class="nav-text">2、Bzip2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3、Calendar"><span class="nav-number">2.3.</span> <span class="nav-text">3、Calendar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4、COM-and-Net"><span class="nav-number">2.4.</span> <span class="nav-text">4、COM and .Net</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5、ctype"><span class="nav-number">2.5.</span> <span class="nav-text">5、ctype</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6、cURL"><span class="nav-number">2.6.</span> <span class="nav-text">6、cURL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7、Date-Time-Support-date"><span class="nav-number">2.7.</span> <span class="nav-text">7、Date/Time Support(date)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8、DBA"><span class="nav-number">2.8.</span> <span class="nav-text">8、DBA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9、DB-LIB-MS-SQL-Sybase-pdo-dblib"><span class="nav-number">2.9.</span> <span class="nav-text">9、DB-LIB (MS SQL, Sybase)(pdo_dblib)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10、DOM"><span class="nav-number">2.10.</span> <span class="nav-text">10、DOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11、enchant"><span class="nav-number">2.11.</span> <span class="nav-text">11、enchant</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12、EXIF"><span class="nav-number">2.12.</span> <span class="nav-text">12、EXIF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#13、fileinfo"><span class="nav-number">2.13.</span> <span class="nav-text">13、fileinfo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14、Filter"><span class="nav-number">2.14.</span> <span class="nav-text">14、Filter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15、Firebird-driver-for-PDO-pdo-firebird"><span class="nav-number">2.15.</span> <span class="nav-text">15、Firebird driver for PDO(pdo_firebird)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16、FTP"><span class="nav-number">2.16.</span> <span class="nav-text">16、FTP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17、GD-imaging-gd"><span class="nav-number">2.17.</span> <span class="nav-text">17、GD imaging(gd)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18、GetText"><span class="nav-number">2.18.</span> <span class="nav-text">18、GetText</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19、GMP"><span class="nav-number">2.19.</span> <span class="nav-text">19、GMP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20、Hash"><span class="nav-number">2.20.</span> <span class="nav-text">20、Hash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21、iconv"><span class="nav-number">2.21.</span> <span class="nav-text">21、iconv</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#22、IMAP"><span class="nav-number">2.22.</span> <span class="nav-text">22、IMAP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#23、InterBase"><span class="nav-number">2.23.</span> <span class="nav-text">23、InterBase</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#24、Internationalization-intl"><span class="nav-number">2.24.</span> <span class="nav-text">24、Internationalization(intl)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#25、json"><span class="nav-number">2.25.</span> <span class="nav-text">25、json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#26、LDAP"><span class="nav-number">2.26.</span> <span class="nav-text">26、LDAP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#27、libxml"><span class="nav-number">2.27.</span> <span class="nav-text">27、libxml</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#28、Multibyte-String-Functions-mbstring"><span class="nav-number">2.28.</span> <span class="nav-text">28、Multibyte String Functions(mbstring)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#29、mcrypt"><span class="nav-number">2.29.</span> <span class="nav-text">29、mcrypt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#30、MySQL-driver-for-PDO-pdo-mysql"><span class="nav-number">2.30.</span> <span class="nav-text">30、MySQL driver for PDO(pdo_mysql)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#31、MySQLi"><span class="nav-number">2.31.</span> <span class="nav-text">31、MySQLi</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#32、MySQLnd"><span class="nav-number">2.32.</span> <span class="nav-text">32、MySQLnd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#33、OCI8"><span class="nav-number">2.33.</span> <span class="nav-text">33、OCI8</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#34、ODBC-driver-for-PDO-pdo-odbc"><span class="nav-number">2.34.</span> <span class="nav-text">34、ODBC driver for PDO(pdo_odbc)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#35、ODBC"><span class="nav-number">2.35.</span> <span class="nav-text">35、ODBC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#36、OpenSSL"><span class="nav-number">2.36.</span> <span class="nav-text">36、OpenSSL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#37、Oracle-OCI-driver-for-PDO-pdo-oci"><span class="nav-number">2.37.</span> <span class="nav-text">37、Oracle (OCI) driver for PDO(pdo_oci)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#38、pcntl"><span class="nav-number">2.38.</span> <span class="nav-text">38、pcntl</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#39、Perl-Compatible-Regular-Expressions-PCRE"><span class="nav-number">2.39.</span> <span class="nav-text">39、Perl Compatible Regular Expressions(PCRE)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#40、PHP-Archive-Phar"><span class="nav-number">2.40.</span> <span class="nav-text">40、PHP Archive(Phar)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#41、PHP-Data-Objects-PDO"><span class="nav-number">2.41.</span> <span class="nav-text">41、PHP Data Objects(PDO)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#42、Posix"><span class="nav-number">2.42.</span> <span class="nav-text">42、Posix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#43、PostgreSQL-driver-for-PDO-pdo-pgsql"><span class="nav-number">2.43.</span> <span class="nav-text">43、PostgreSQL driver for PDO(pdo_pgsql)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#44、PostgreSQL"><span class="nav-number">2.44.</span> <span class="nav-text">44、PostgreSQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#45、Pspell"><span class="nav-number">2.45.</span> <span class="nav-text">45、Pspell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#46、Readline"><span class="nav-number">2.46.</span> <span class="nav-text">46、Readline</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#47、Recode"><span class="nav-number">2.47.</span> <span class="nav-text">47、Recode</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#48、Reflection"><span class="nav-number">2.48.</span> <span class="nav-text">48、Reflection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#49、Sessions"><span class="nav-number">2.49.</span> <span class="nav-text">49、Sessions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#50、Shared-Memory-Operations-shmop"><span class="nav-number">2.50.</span> <span class="nav-text">50、Shared Memory Operations(shmop)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#51、SimpleXML"><span class="nav-number">2.51.</span> <span class="nav-text">51、SimpleXML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#52、SNMP"><span class="nav-number">2.52.</span> <span class="nav-text">52、SNMP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#53、SOAP"><span class="nav-number">2.53.</span> <span class="nav-text">53、SOAP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#54、Sockets"><span class="nav-number">2.54.</span> <span class="nav-text">54、Sockets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#55、SPL"><span class="nav-number">2.55.</span> <span class="nav-text">55、SPL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#56、SQLite3"><span class="nav-number">2.56.</span> <span class="nav-text">56、SQLite3</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#57、SQLite-3-x-driver-for-PDO-pdo-sqlite"><span class="nav-number">2.57.</span> <span class="nav-text">57、SQLite 3.x driver for PDO(pdo_sqlite)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#58、System-V-Message-based-IPC"><span class="nav-number">2.58.</span> <span class="nav-text">58、System V Message based IPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#59、System-V-Semaphores"><span class="nav-number">2.59.</span> <span class="nav-text">59、System V Semaphores</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#60、System-V-Shared-Memory"><span class="nav-number">2.60.</span> <span class="nav-text">60、System V Shared Memory</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#61、tidy"><span class="nav-number">2.61.</span> <span class="nav-text">61、tidy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#62、tokenizer"><span class="nav-number">2.62.</span> <span class="nav-text">62、tokenizer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#63、WDDX"><span class="nav-number">2.63.</span> <span class="nav-text">63、WDDX</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#64、XMLReader"><span class="nav-number">2.64.</span> <span class="nav-text">64、XMLReader</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#65、xmlrpc"><span class="nav-number">2.65.</span> <span class="nav-text">65、xmlrpc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#66、XML"><span class="nav-number">2.66.</span> <span class="nav-text">66、XML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#67、XMLWriter"><span class="nav-number">2.67.</span> <span class="nav-text">67、XMLWriter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#68、XSL"><span class="nav-number">2.68.</span> <span class="nav-text">68、XSL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#69、Zip"><span class="nav-number">2.69.</span> <span class="nav-text">69、Zip</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#70、Zlib"><span class="nav-number">2.70.</span> <span class="nav-text">70、Zlib</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#71、Zend-OPcache"><span class="nav-number">2.71.</span> <span class="nav-text">71、Zend OPcache</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PHP-还有诸多的第三方扩展，框架，CMS，包管理工具等。举几个例子。"><span class="nav-number">2.72.</span> <span class="nav-text">PHP 还有诸多的第三方扩展，框架，CMS，包管理工具等。举几个例子。</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rocinante-Poet</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">博客全站字数&#58;</span>
+    
+    <span title="博客全站字数">43.9k</span>
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>

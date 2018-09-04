@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "57a36a3c"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/poetry-128.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/poetry-64.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/poetry-32.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HAM,无线电," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="怎样进行HF通联？7.1 语音字母表UHF/VHF波段通常用于本地通联，许多时候语音清晰，背景安静，而HF波段通常用于远程通联，许多时候语音模糊，背景嘈杂，因此与UHF/VHF通联相比，HF通联的最大特点就是频繁使用语音字母表（又称字母解释法）。以BA5RW这个呼号为例，为了让通联对方听清楚，可以用英语单词bravo代替字母B，用alpha代替A，用five代替5，用romeo代替R，用whisk">
+<meta name="keywords" content="HAM,无线电">
+<meta property="og:type" content="article">
+<meta property="og:title" content="业余无线电（二）">
+<meta property="og:url" content="https://rocinante-poet.github.io/2017-12-28/8598.html">
+<meta property="og:site_name" content="Poet">
+<meta property="og:description" content="怎样进行HF通联？7.1 语音字母表UHF/VHF波段通常用于本地通联，许多时候语音清晰，背景安静，而HF波段通常用于远程通联，许多时候语音模糊，背景嘈杂，因此与UHF/VHF通联相比，HF通联的最大特点就是频繁使用语音字母表（又称字母解释法）。以BA5RW这个呼号为例，为了让通联对方听清楚，可以用英语单词bravo代替字母B，用alpha代替A，用five代替5，用romeo代替R，用whisk">
+<meta property="og:locale" content="zh-hans">
+<meta property="og:image" content="https://i.imgur.com/MpwgmTF.jpg">
+<meta property="og:image" content="https://i.imgur.com/3Dcehpz.gif">
+<meta property="og:image" content="https://i.imgur.com/ThRjZGf.jpg">
+<meta property="og:image" content="https://i.imgur.com/HNml3Zh.jpg">
+<meta property="og:image" content="https://i.imgur.com/IL8lUG8.jpg">
+<meta property="og:updated_time" content="2018-05-25T15:56:44.957Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="业余无线电（二）">
+<meta name="twitter:description" content="怎样进行HF通联？7.1 语音字母表UHF/VHF波段通常用于本地通联，许多时候语音清晰，背景安静，而HF波段通常用于远程通联，许多时候语音模糊，背景嘈杂，因此与UHF/VHF通联相比，HF通联的最大特点就是频繁使用语音字母表（又称字母解释法）。以BA5RW这个呼号为例，为了让通联对方听清楚，可以用英语单词bravo代替字母B，用alpha代替A，用five代替5，用romeo代替R，用whisk">
+<meta name="twitter:image" content="https://i.imgur.com/MpwgmTF.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://rocinante-poet.github.io/2017-12-28/8598.html"/>
+
+
+
+
+
+  <title>业余无线电（二）,Poet-蔚然成凨</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Poet</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">蔚然成凨</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于|留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://rocinante-poet.github.io/2017-12-28/8598.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocinante-Poet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/poet.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">业余无线电（二）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-28T21:41:18+08:00">
+                2017-12-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HAM/" itemprop="url" rel="index">
+                    <span itemprop="name">HAM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="怎样进行HF通联？"><a href="#怎样进行HF通联？" class="headerlink" title="怎样进行HF通联？"></a>怎样进行HF通联？</h1><h2 id="7-1-语音字母表"><a href="#7-1-语音字母表" class="headerlink" title="7.1 语音字母表"></a>7.1 语音字母表</h2><p>UHF/VHF波段通常用于本地通联，许多时候语音清晰，背景安静，而HF波段通常用于远程通联，许多时候语音模糊，背景嘈杂，因此与UHF/VHF通联相比，HF通联的最大特点就是频繁使用语音字母表（又称字母解释法）。以BA5RW这个呼号为例，为了让通联对方听清楚，可以用英语单词bravo代替字母B，用alpha代替A，用five代替5，用romeo代替R，用whiskey代替W，因此BA5RW这个呼号在HF通联中经常被读作：bravo alpha five romeo whiskey。</p>
+<p>下面是英语的语音字母表，每一个火腿都应当牢记，否则在HF通联中，无法报出自己的呼号，也无法抄收对方的呼号。</p>
+<p>a＝alpha　b＝bravo　c＝charlie　d＝delta　e＝echo　f＝foxtrot　g＝golf　h＝hotel　i＝india　j＝juliet　k＝kilo　l＝lima　m＝mike　n＝november　o＝oscar　p＝papa　q＝quebec　r＝romeo　s＝sierra　t＝tango　u＝uniform　v＝victor　w＝whiskey　x＝xray　y＝yankee　z＝zulu</p>
+<p>1＝one　2＝two　3＝three　4＝four　5＝five　6＝six　7＝seven　8＝eight　9＝nine　0＝zero</p>
+<p>在HF通联中，一些国家的火腿可能使用非标准的语音字母表，例如f不读作foxtrot，而读作florida，g不读作golf，而读作germany，需要引起新火腿的注意。</p>
+<h2 id="7-2-RST报告"><a href="#7-2-RST报告" class="headerlink" title="7.2 RST报告"></a>7.2 RST报告</h2><p>在进行HF通联时，由于传播极不稳定，因此通联双方都想知道自己的信号到达对方时是怎样的，例如信号是强是弱？强到什么程度？弱到什么程度？为此，通联双方应当将对方信号的质量，以RST报告的形式告诉对方。</p>
+<p>①RST的第一个字母R代表信号的可辨性（Readability），用五个数值来描述，1表示完全不可辨，2至4逐渐可辩，5表示完全可辩。</p>
+<p>②第二个字母S代表信号的强度（Strength），用九个数值来描述，1表示强度最小，2至8逐渐增大，9表示强度最大。</p>
+<p>③第三个字母T代表信号的音调（Tone），也用九个数值来描述，1表示音调最差，2至8逐渐改善，9表示音调最好。</p>
+<p>语音通联只使用RS报告，稍后介绍的CW通联和数字通联则使用RST报告。假设在语音通联中，一方告诉另外一方，他的RS报告是59，那就表示另外一方的信号完全可辩（R5），强度最大（S9），是质量最好的信号，比这个信号稍差一点的，可能是58、57或者48、47等。</p>
+<p>RST是三个不精确的指标，并没有客观标准，比如S8与S9，用人的耳朵几乎察觉不出有什么明显区别。有些电台的控制面板上有RST数值的显示，如果没有，也可以凭经验，给出近似值。</p>
+<h2 id="7-3-一个HF通联的范例"><a href="#7-3-一个HF通联的范例" class="headerlink" title="7.3 一个HF通联的范例"></a>7.3 一个HF通联的范例</h2><p>假设加拿大火腿VE3XD和巴西火腿PY1NF使用短波电台，正在某个HF频点上守听，下面介绍两个人应当如何通联。</p>
+<ol>
+<li>VE3XD不知道此时此刻波段上是否有其他火腿，他应当这样呼叫：</li>
+</ol>
+<p>[英语] cq cq cq. this is victor-echo-three-xray-delta, VE3XD calling cq and waiting for a call.<br>[汉语] cq cq cq。这里是victor-echo-three-xray-delta，VE3XD呼叫cq，等待应答。</p>
+<ol start="2">
+<li>PY1NF听到VE3XD的呼叫，应当这样应答：</li>
+</ol>
+<p>[英语] victor-echo-three-xray-delta, this is papa-yankee-one-november-foxtrot, PY1NF calling.<br>[汉语] victor-echo-three-xray-delta，这里是papa-yankee-one-november-foxtrot，PY1NF呼叫。</p>
+<ol start="3">
+<li>双方互相报出对方的RST报告、自己的名字与位置。</li>
+</ol>
+<p>[英语] PY1NF, this is VE3XD. your signal is 59. my name is bob and my location is ontario canada. over.<br>[汉语] PY1NF，这里是VE3XD。您的信号是59。我的名字是鲍伯，我的位置是加拿大的安大略。over。</p>
+<p>[英语] VE3XD, this is PY1NF. your signal is 57. my name is joao and my location is sao paulo, brazil. over.<br>[汉语] VE3XD，这里是PY1NF。您的信号是57。我的名字是若昂，我的位置是巴西的圣保罗。over。</p>
+<ol start="4">
+<li><p>完成上面第③步之后，一次有效的通联就算完成了，可以进入下面第⑤步。但如果双方有兴趣交谈，也可以继续交谈。在交谈过程中，不要忘记上一章介绍的两个好习惯。</p>
+</li>
+<li><p>通联结束之前，双方应当这样告别：</p>
+</li>
+</ol>
+<p>[英语] thank you for the contact. 73 and goodbye. PY1NF, this is VE3XD signing off.<br>[汉语] 谢谢您与我通联。73，再见。PY1NF，这里是VE3XD，结束通联。</p>
+<h2 id="7-4-通联日志"><a href="#7-4-通联日志" class="headerlink" title="7.4 通联日志"></a>7.4 通联日志</h2><p>通联日志实际上就是一个笔记本，用来记录每次通联的相关信息。对新火腿来说，每次通联时，只要记录下列七项信息即可，请看一个例子。</p>
+<p>①对方呼号：PY1NF<br>②通联日期：07-05-2005<br>③通联时间：11:07 UTC<br>④通联频率：21.350 MHz<br>⑤通联方式：SSB<br>⑥RST报告：59<br>⑦备注：交换通联卡片</p>
+<p>其中第②项通联日期，应当按照“日-月-年”的格式填写，为了避免混乱，月份可以填写英语单词，例07-MAY-2005。第③项通联时间，是指通联开始时间，不要填写本地时间，而应当填写协调世界时（UTC）。UTC比北京时间晚8个小时，假设北京时间现在是晚上19:07，那么UTC就是上午11:07。第⑤项通联方式，如果是UHF/VHF通联则填写FM（调频），如果是HF语音通联则填写SSB（单边带），如果是CW通联则填写CW，如果是数字通联则填写RTTY或SSTV或Packet等。</p>
+<p>世界许多国家的无线电法规都要求火腿认真填写通联日志，并且长期保存。更重要的是，填写通联日志是将来填写通联卡片的唯一依据。</p>
+<h2 id="7-5-中英对照常用术语："><a href="#7-5-中英对照常用术语：" class="headerlink" title="7.5 中英对照常用术语："></a>7.5 中英对照常用术语：</h2><p>语音字母表 – phonetic alphabet<br>信号 – signal<br>RST报告 – RST report<br>可辨性 – readability<br>强度 – strength<br>音调 – tone<br>通联日志 – log<br>通联方式 – mode<br>协调世界时 – coordinated universal time 或 UTC<br>调频 – frequency modulation 或 FM<br>单边带 – single side band 或 SSB</p>
+<h1 id="怎样进行CW通联？"><a href="#怎样进行CW通联？" class="headerlink" title="怎样进行CW通联？"></a>怎样进行CW通联？</h1><h2 id="8-1-莫尔斯电码"><a href="#8-1-莫尔斯电码" class="headerlink" title="8.1 莫尔斯电码"></a>8.1 莫尔斯电码</h2><p>所谓CW通联，就是利用电键，拍发、抄收滴滴答答的莫尔斯电码，与其他火腿通联。CW通联是业余无线电的各种通联方式中效率最高的一种，因为它只需要很少几个缩写词，即可表达复杂的意思。在许多国家，初级火腿不需要掌握莫尔斯电码，但中级和高级火腿必须掌握。以加拿大为例，中级火腿每分钟应当抄收5组代码（30个字符），高级火腿每分钟还应当拍发同样数量的代码。这个速度并不算快，如果每天练习一段时间，通常一个月之内可以达到。</p>
+<p>下面是26个英语字母、10个阿拉伯数字以及4个常用标点符号的莫尔斯电码。对于那些打算升级的初级火腿，我们建议他们尽快掌握。</p>
+<blockquote>
+<p>[A] .- [B] -… [C] -.-. [D] -.. [E] . [F] ..-. [G] –. [H] …. [ I] .. [J] .— [K] -.- [L] .-.. [M] – [N] -. [O] — [P] .–. [Q] –.- [R] .-. [S] … [T] - [U] ..- [V] …- [W] .– [X] -..- [Y] -.– [Z] –..</p>
+</blockquote>
+<blockquote>
+<p>[1] .—- [2] ..— [3] …– [4] ….- [5] ….. [6] -…. [7] –… [8] —.. [9] —-. [0] —–</p>
+</blockquote>
+<blockquote>
+<p>[,] –..– [.] .-.-.- [?] ..–.. [/] -..-.</p>
+</blockquote>
+<h2 id="8-2-Q代码"><a href="#8-2-Q代码" class="headerlink" title="8.2 Q代码"></a>8.2 Q代码</h2><p>在语音通联时，我们可以说任何想说的话，例如what is your geological location?（你的地理位置是哪里？），但在CW通联时，拍发这样多的字符是相当麻烦的，为此人们发明了一些以字母Q开头的三字母代码，用来代替CW通联中的一些常用对话，这些代码就叫作Q代码（又称Q简语），例如上面这句话的Q代码是QTH。根据实际情况，Q代码可以用来询问，也可以用来回答，以QTH为例，它的意思可以是“你的地理位置是哪里？”，也可以是“我的地理位置是…”。Q代码约有一百个，下面是CW通联中最常用的一组Q代码。</p>
+<p>QRA：①你台的名称是什么？②我台的名称是…。<br>QRL：①你忙吗？②我很忙。<br>QRM：①你受到他台干扰吗？②我受到他台干扰，强度为…（1最小，5最大）。<br>QRN：①你受到天电干扰吗？②我受到天电干扰，强度为…（1最小，5最大）。<br>QRP：①我需要降低发射功率吗？②请降低发射功率。<br>QRT：①我需要停止拍发吗？②请停止拍发。<br>QRV：①你准备好了吗？②我准备好了。<br>QRZ：①谁在呼叫我？②…在呼叫你。<br>QSB：①我的信号有衰落吗？②你的信号有衰落。<br>QSL：①你能确认与我交换通联卡片吗？②我能确认与你交换通联卡片。<br>QSO：①你能与…直接通联吗？②我能与…直接通联。<br>QSY：①我需要改变频率吗？②你需要改变频率。<br>QTH：①你的地理位置是哪里？②我的地理位置是…</p>
+<h2 id="8-3-缩略语"><a href="#8-3-缩略语" class="headerlink" title="8.3 缩略语"></a>8.3 缩略语</h2><p>在CW通联中，除了一些常用对话用Q代码代替之外，一些常用单词也用缩略语代替，例如your（你的）缩略为UR，name（名字）缩略为NM，thanks（谢谢）缩略为TNX，等等。下面是CW通联中最常用的一组缩略语。</p>
+<p>ADR＝ADDRESS（地址）<br>AGN＝AGAIN（再次）<br>ANT＝ANTENNA（天线）<br>BK＝BREAK（插入）<br>BURO＝BUREAU（卡片管理局）<br>CFM＝CONFIRM（证实）<br>CUAGN＝SEE YOU AGAIN（再次见到你）<br>DE＝FROM（从）<br>ES＝AND（和）<br>FER＝FOR（为了）<br>GB＝GOODBYE（再见）<br>GD＝GOOD（好）<br>HW＝HOW（怎样）<br>K＝GO AHEAD（请回答）<br>KN＝GO AHEAD（请回答）<br>OP＝OPERATOR（操作员）<br>PSE＝PLEASE（请）<br>R＝ROGER（收到）<br>RIG＝EQUIPMENT（设备）<br>RPT＝REPORT（报告）<br>RX＝RECEIVER（收信机）<br>SK＝CLEAR（结束通联）<br>TNX＝THANKS（谢谢）<br>TU＝THANK YOU（谢谢你）<br>TX＝TRANSMITTER（发信机）<br>U＝YOU（你）<br>UR＝YOUR（你的）<br>VY＝VERY（很）</p>
+<h2 id="8-4-一个CW通联的范例"><a href="#8-4-一个CW通联的范例" class="headerlink" title="8.4 一个CW通联的范例"></a>8.4 一个CW通联的范例</h2><p>假设加拿大火腿VE3XD和巴西火腿PY1NF使用短波电台和电键，正在HF的某个频点上守听，下面介绍两个人应当如何通联。</p>
+<p>①VE3XD不知道此时此刻波段上是否有其他火腿，他应当这样呼叫：</p>
+<p>[电文] CQ CQ CQ DE VE3XD VE3XD VE3XD K<br>[含义] CQ CQ CQ，这里是VE3XD（重复三遍），请回答。</p>
+<p>②PY1NF听到VE3XD的呼叫，应当这样应答：</p>
+<p>[电文] VE3XD DE PY1NF PY1NF PY1NF K<br>[含义] VE3XD，这里是PY1NF（重复三遍），请回答。</p>
+<p>③双方互相报出对方的RST报告、自己的名字与位置。</p>
+<p>[电文] PY1NF DE VE3XD UR RPT IS 599 599 MY NM IS BOB ES QTH IS ONTARIO CANADA PY1NF DE VE3XD KN<br>[含义] PY1NF，这里是VE3XD。您的RST报告是599（重复两遍），我的名字是鲍伯，位置是加拿大的安大略。PY1NF，这里是VE3XD，请回答。</p>
+<p>[电文] VE3XD DE PY1NF UR RPT IS 599 599 MY NM IS JOAO ES QTH IS SAO PAULO BRAZIL VE3XD DE PY1NF KN<br>[含义] VE3XD，这里是PY1NF。您的RST报告是599（重复两遍），我的名字是若昂，位置是巴西的圣保罗。VE3XD，这里是PY1NF，请回答。</p>
+<p>④完成上面第③步之后，一次有效的通联就算完成了，可以进入下面第⑤步。但如果双方有兴趣交谈，也可以继续交谈。</p>
+<p>⑤通联结束之前，双方应当这样告别：</p>
+<p>[电文] TNX FER THE QSO 73 ES GB PY1NF DE VE3XD SK<br>[含义] 谢谢您与我通联。73，再见。PY1NF，这里是VE3XD，结束通联。</p>
+<h2 id="8-5-中英对照常用术语："><a href="#8-5-中英对照常用术语：" class="headerlink" title="8.5 中英对照常用术语："></a>8.5 中英对照常用术语：</h2><p>电键 – key 或 straight key<br>每分钟字数 – words per minute 或 WPM<br>Q代码 – Q code<br>缩略语 – abbreviation</p>
+<h1 id="怎样进行数字通联？"><a href="#怎样进行数字通联？" class="headerlink" title="怎样进行数字通联？"></a>怎样进行数字通联？</h1><p>一些火腿说：“我希望与外国火腿通联，但我的英语很糟糕，我说的话，对方听不懂，对方说的话，我也听不懂，怎么办呢？”对于这些火腿来说，数字通联是他们的最好选择，因为数字通联完全不需要说话，只要会在计算机键盘上输入字母与数字即可。</p>
+<h2 id="9-1-数字通联所需的硬件和软件"><a href="#9-1-数字通联所需的硬件和软件" class="headerlink" title="9.1 数字通联所需的硬件和软件"></a>9.1 数字通联所需的硬件和软件</h2><p>数字通联需要一个硬件和一个软件。硬件叫作控制器，通常是一个四方形的小盒子，用来将电台与计算机连接起来。<br>软件有多种，多数是免费的，少数是收费的。常用的RTTY免费软件是MMTTY，常用的PSK31免费软件是DigiPan。</p>
+<h2 id="9-2-全景窗口与瀑布"><a href="#9-2-全景窗口与瀑布" class="headerlink" title="9.2 全景窗口与瀑布"></a>9.2 全景窗口与瀑布</h2><p>在数字通联软件的用户界面上，有一个类似宽银幕的全景窗口，里面有一根或多根类似瀑布的闪亮粗线条。每一个瀑布表示一个此时此刻正在进行数字通联的火腿，用鼠标点击某一个瀑布，即可在显示窗口中看到这个火腿刚刚输入并发送的文字（请看下图），例如：</p>
+<p>[英文] TNX FER CALL = UR RST IS 599 599<br>[含义] 谢谢你呼叫我。你的RST报告是599。</p>
+<h3 id="9-3-数字通联的步骤"><a href="#9-3-数字通联的步骤" class="headerlink" title="9.3 数字通联的步骤"></a>9.3 数字通联的步骤</h3><p>事实上，数字通联的步骤与第8章介绍的CW通联非常相似，这里不再举例，只提醒一点，那就是大气层中的各种干扰会改变数字通联的文字，例如将BG1FPX这个呼号变成不可识别的乱码#~?%3!@，因此在进行数字通联时，凡是重要的文字（例如自己的呼号），一定要重复多遍，例如：</p>
+<p>CQ CQ CQ DE BG1FPX BG1FPX BG1FPX PSE K（常用的呼叫电文）</p>
+<h2 id="9-4-定义宏"><a href="#9-4-定义宏" class="headerlink" title="9.4 定义宏"></a>9.4 定义宏</h2><p>在进行数字通联时，需要频繁发送上面的呼叫电文。为了节省时间，提高效率，可以将这段电文事先存储起来，需要发送时，只要按一个按钮，即可将这段电文自动发送出去，这段电文就称作宏。每种数字通联软件都允许用户定义一批常用的宏。</p>
+<h2 id="9-5-中英对照常用术语："><a href="#9-5-中英对照常用术语：" class="headerlink" title="9.5 中英对照常用术语："></a>9.5 中英对照常用术语：</h2><p>控制器 – controller<br>全景窗口 – panoramic display<br>瀑布 – waterfall<br>干扰 – interference<br>乱码 – unreadable character 或 garbage character<br>宏 – macro</p>
+<p><img src="https://i.imgur.com/MpwgmTF.jpg" alt="9.5"></p>
+<h1 id="通联卡片"><a href="#通联卡片" class="headerlink" title="通联卡片"></a>通联卡片</h1><p>除了通联之外，业余无线电的另外一个乐趣是收集各种各样的通联卡片（以下简称卡片），也就是曾经通联过的两个火腿，互相给对方邮寄一张类似明信片大小的卡片，用来确认双方的通联。为什么说收集卡片是一个乐趣呢？第一，在卡片上，除了有一些技术数据之外，通常还有对方及其设备、工作室的照片，或者对方所在地的自然、人文景观的图片，这有助于我们了解世界各地的风土人情。第二，装卡片的信封上，通常会有世界各地的邮票，因此许多火腿同时也是集邮爱好者。第三，也是最重要的一点，卡片的数量是火腿申请各种竞赛奖状的依据。以著名的DXCC奖状为例，火腿必须有至少100个国家或地区的通联卡片，才有资格提出申请。</p>
+<h2 id="10-1-如何获得空白卡片？"><a href="#10-1-如何获得空白卡片？" class="headerlink" title="10.1 如何获得空白卡片？"></a>10.1 如何获得空白卡片？</h2><p>一般来说，有三种方法可以获得空白卡片。第一种方法是购买。在许多国家，业余无线电俱乐部（ARC）都出售空白卡片，需要少量卡片的火腿可以在这里购买。不过这种卡片有一个缺点，那就是卡片的式样与图片都是统一的，不能反映每个火腿的个性。第二种方法是定作，也就是火腿自己设计式样与图片，然后委托当地的印刷厂印制。这种卡片的优点是能够反映每个火腿的个性，缺点是一批卡片（几百张甚至几千张）全部是一种式样、一张图片，无法更改。第三种方法是自制，也就是从文具店买来空白的卡片纸，用黑白或彩色打印机打印卡片。每次打印之前，火腿都可以临时设计一种新式样或者指定一张新图片，因此这种卡片是完全个性化的卡片。</p>
+<p>在中国，按照惯例，火腿在定作、自制卡片时，应当包含下列三项内容。</p>
+<p>①CRAC的会徽：是否包含CRAC会徽，纯属自愿，不过据我观察，大部分火腿已经包含了CRAC会徽。另外，少数老火腿出于对CRSA的深厚感情，可能会将CRSA的会徽也包含进去。这两个会徽的图案在本帖最下面。</p>
+<p>②火腿所在的CQ分区和ITU分区，这两项内容都是用来指示火腿所在的地理位置。北京的CQ分区是24，其它省份有可能是23，北京的ITU分区是44，其它省份有可能是42或43，具体分区请向当地老火腿咨询。以北京火腿为例，在定作、自制卡片时，应当包含下列两行内容。</p>
+<p>CQ Zone 24<br>ITU Zone 44</p>
+<p>③“中国业余无线电台”的英文译文，即：Amateur Radio Station in China</p>
+<h2 id="10-2-卡片上的栏目"><a href="#10-2-卡片上的栏目" class="headerlink" title="10.2 卡片上的栏目"></a>10.2 卡片上的栏目</h2><p>对新火腿来说，卡片上应当包括下列栏目。</p>
+<p>①自己的呼号<br>②自己的姓名<br>③自己的地址<br>④对方的呼号<br>⑤通联日期<br>⑥通联时间<br>⑦通联频率<br>⑧通联方式<br>⑨RST报告<br>⑩请求（或者感谢）对方给自己回卡的提示</p>
+<p>此外，卡片上还可以有下列栏目，没有也可以。</p>
+<p>①电台型号<br>②发射功率<br>③天线类型<br>④天气<br>⑤温度<br>⑥留言<br>⑦签名<br>⑧其它信息</p>
+<h2 id="10-3-如何填写通联卡片？"><a href="#10-3-如何填写通联卡片？" class="headerlink" title="10.3 如何填写通联卡片？"></a>10.3 如何填写通联卡片？</h2><p>火腿应当按照通联日志的内容，填写通联卡片。一般来说，只要将通联日志上某个栏目的内容，无须修改，直接填写到通联卡片的对应栏目中即可。请看一个范例（参看本帖最下面的插图）。</p>
+<p>[Station] VR2UNA（对方呼号）<br>[Date] 21-05-2005（通联日期）<br>[Time] 11:47 UTC（通联时间）<br>[Frequency] 21.400 MHz（通联频率）<br>[Mode] SSB（通联方式）<br>[RST] 59（RST报告）<br>[Rig] ICOM IC-718（电台型号）<br>[Power] 25 Watts（发射功率）<br>[Antenna] GP（天线类型）<br>[QSL] [V]PSE [ ]TNX（请求对方给自己回卡）</p>
+<p>关于栏目内容，另外补充几点。第一，自己的呼号，应当用大号字体，填写或印制在卡片的醒目位置上。第二，自己的姓名与地址，可以填写在卡片下方的空白区域中。第三，最后一项[QSL]，如果是请求对方给自己回卡，在PSE前面划一个钩，如果是感谢对方给自己回卡，在TNX前面划一个钩。第四，在填写数字0时，为避免与字母O混淆，应当在数字0上面划一条斜线。第五，为减少填写卡片的工作量，可以在定作、自制卡片时，将自己的呼号、姓名、地址、电台型号、发射功率、天线类型等固定内容事先印制好（插图中的黑体字），这样一来，只需要填写少量的非固定内容即可（插图中的红体字）。</p>
+<h2 id="10-4-火腿的通信地址"><a href="#10-4-火腿的通信地址" class="headerlink" title="10.4 火腿的通信地址"></a>10.4 火腿的通信地址</h2><p>把卡片装入信封之后，下一步就是在信封上书写对方的通信地址。能否找到某个火腿的通信地址，可以分为三种情况。第一种情况是这个火腿愿意公布自己的通信地址，并且把自己的通信地址提交给qrz.com等网站，我们只要访问这些网站，输入他的呼号，即可找到他的通信地址，这种情况是最理想的。下面是可以查询世界各国火腿通信地址的最著名网站。<br><a href="www.qrz.com">qrz.com</a>   </p>
+<p>第二种情况是这个火腿不愿意公布自己的通信地址，但他所在国家的业余无线电协会有卡片管理局（Buro，其实只有一、两个人，但翻译成“局”），我们可以先将卡片邮寄给他所在国的卡片管理局，由后者负责转交。世界各国卡片管理局的通信地址可以在下列网站找到。<br><a href="www.iaru.org/iaruqsl.html">iaru.org</a>   </p>
+<p>第三种情况最麻烦，那就是这个火腿既不愿意公布自己的通信地址，所在国也没有卡片管理局。遇到这种情况时，有些人是在网上论坛上询问，或者通过其他火腿打听，但不一定能够找到。正是考虑到可能出现这种情况，一些有经验的老火腿在当初通联时，就特意询问对方的通信地址是否可以在qrz.com找到，所在国是否有卡片管理局，如果两者都是“否”，应当怎样交换卡片。</p>
+<p>中国火腿的通信地址可以在下列网站找到。另外该网站以前每隔几年出版一本中国火腿的通信地址簿，但最近几年一直没有出版，原因不详。<br><a href="www.qrz.cn">qrz.cn</a>  </p>
+<h2 id="10-5-通联卡片的邮寄与转交"><a href="#10-5-通联卡片的邮寄与转交" class="headerlink" title="10.5 通联卡片的邮寄与转交"></a>10.5 通联卡片的邮寄与转交</h2><p>将通联卡片送到对方手中，通常有两种方式，一种是通过邮局，以信函方式邮寄，另外一种是先把卡片（通常是一批卡片）邮寄给本国的卡片管理局，由后者负责转交。信函方式的优点是比较快捷，缺点是价格昂贵。以中国为例，国内信函的邮资是1.20元，港澳台地区信函的邮资是1.50元，这两种邮资尚可以承受，但国外信函的平均邮资为6元，假设我们一个月通联100个外国火腿（很低的标准），那么仅邮资一项就需要600元，明显超出了中国普通工薪阶层的承受能力，因此许多火腿更愿意采用卡片管理局转交的方式。转交方式的优点是价格便宜，以中国为例，转交每张卡片只需要0.50元，缺点是速度慢，有些火腿甚至在几年之后才收到对方的卡片。</p>
+<p>目前中国实际上有两个卡片管理局，一个是CRSA的，地址如下，另一个是qrz.cn的。我因为是车腿，没有转交过卡片，所以不知道哪家更好。您可以向本地老火腿打听一下。【除了上面提到的两个单位之外，我发现在<a href="www.hellocq.net">hellocq.net</a>，有一、两个网友也提供类似的服务，但我忘记他们的呼号了，您可以留意一下网友的签名档，那里有说明。】</p>
+<p>QSL Bureau<br>Chinese Radio Sports Association (CRSA)<br>PO Box 6106<br>Beijing 100061 China</p>
+<h2 id="10-6-卡片管理人"><a href="#10-6-卡片管理人" class="headerlink" title="10.6 卡片管理人"></a>10.6 卡片管理人</h2><p>一些经常通联的老火腿都有自己的卡片管理人，由卡片管理人负责处理自己的卡片收发工作。一个火腿有自己的卡片管理人之后，卡片管理人负责接收他的所有来卡，也负责邮寄他的所有回卡，他本人不再经手任何卡片。按照业余无线电的惯例，给一个火腿的卡片管理人邮寄卡片的其他火腿，应当在信封中夹带一个写好回邮地址的信封，以及1至2美元的现金邮资（或者一枚国际回信券），以补偿卡片管理人处理卡片的费用。</p>
+<p>上面提到的国际回信券相当于世界通用邮票，在中国，国际回信券每枚好像是12元，但只能在比较大的邮局买到，并且有使用期限（过期不能使用）。另外，一个火腿如果有自己的卡片管理人，应当在通联时明确告诉对方，以免对方将卡片邮寄给自己，以CW通联为例，应当拍发QSL VIA xxxxx（卡片管理人的呼号）。</p>
+<h2 id="10-7-与通联卡片有关的软件与网站"><a href="#10-7-与通联卡片有关的软件与网站" class="headerlink" title="10.7 与通联卡片有关的软件与网站"></a>10.7 与通联卡片有关的软件与网站</h2><p>随着技术的进步，现在许多火腿都可以在使用电台通联的同时，使用计算机和互联网。前面介绍的手工填写通联日志、手工填写通联卡片的方法，只适合那些偶尔通联的火腿，对于那些经常通联的火腿，我们建议他们使用一些专门的日志软件，例如DX4Win、EasyLog、DXBase等。使用这些软件之后，火腿可以一边在电台上通联，一边在计算机上录入日志，通联结束后，软件可以根据火腿指定的规格、式样、图片等，打印出高质量的卡片，从而大大提高了处理卡片的效率。这些软件在许多火腿网站上都可以找到，需要的火腿可以下载。</p>
+<p>由于互联网的普及，一些火腿开始通过网络交换卡片，这就是所谓的eQSL（网络卡片）。最著名的eQSL网站是<a href="www.eqsl.cc">eqsl.cc</a>，火腿只要在这里注册一个帐户，即可交换卡片。eQSL的最大优点是完全免费，不需要花费一分钱，最大缺点是这种卡片不被各种通联竞赛所承认，因此无法用它们来申请奖状。对于那些喜欢通联，但经济状况不好的火腿，eQSL是一个很好的选择。</p>
+<h2 id="10-8-中英对照常用术语："><a href="#10-8-中英对照常用术语：" class="headerlink" title="10.8 中英对照常用术语："></a>10.8 中英对照常用术语：</h2><p>通联卡片 – QSL card<br>火腿的工作室 – shack<br>远程通联世纪俱乐部 – DX Century Club 或 DXCC<br>地网天线  – ground plane antenna 或 GP antenna<br>地址 – address<br>卡片管理局 – QSL bureau 或 Buro<br>邮局 – post office<br>信函 – letter<br>邮资 – postage<br>发往国外的卡片（去卡）– outgoing card<br>发往国内的卡片（来卡）– incoming card<br>卡片管理人 – QSL manager<br>写好回邮地址的信封 – self-addressed envelope<br>国际回信券 – international reply coupon 或 IRC<br>日志软件 – log software<br>网络卡片 – eQSL card</p>
+<p><img src="https://i.imgur.com/3Dcehpz.gif" alt="10.81"></p>
+<p><img src="https://i.imgur.com/ThRjZGf.jpg" alt="10.82"><br><img src="https://i.imgur.com/HNml3Zh.jpg" alt="10.83"></p>
+<h1 id="传播"><a href="#传播" class="headerlink" title="传播"></a>传播</h1><p>我们曾经介绍过，UHF/VHF电波是沿着地面传播的，又称作地波，而HF电波是经过电离层的多次折射而传播的，又称作天波。影响UHF/VHF通联的主要障碍是地面物体，例如建筑物或丘陵，我们无法控制这些物体，不过我们可以在这些物体上架设中继设备，帮助我们进行稳定的UHF/VHF通联。但我们不可能在电离层上架设中继设备，我们无法控制电离层，因此HF通联基本上是“靠天吃饭”的。</p>
+<p>不过，电离层往往随着太阳黑子、季节、昼夜的变化而变化，这种变化有一定的规律，了解这些规律，有助于我们掌握较好的传播时机，避免HF通联的盲目性。下面是与传播有关的三条规律。</p>
+<p>①太阳黑子对传播的影响。一般来说，太阳黑子的高峰年传播好，低峰年传播不好。上一个高峰年是2011年，下一个高峰年是2022年，今年（2015年）正好是低峰年，因此总的传播形势并不好。</p>
+<p>②季节对传播的影响。一般来说，10MHz以上波段，夏季传播好，冬季传播不好，10MHz以下波段正好相反，夏季传播不好，冬季传播好。另外，季节交替的时候，例如春夏交替或秋冬交替，往往是传播比较好的时候，可以通联到许多遥远的电台。</p>
+<p>③昼夜对传播的影响。一般来说，10MHz以上波段，白天传播好，夜间传播不好，10MHz以下波段正好相反，白天传播不好，夜间传播好。</p>
+<p>不过需要特别指出，这三条规律并不严谨，经常会出现各种各样不符合这些规律的意外情况，因此只能作为参考。</p>
+<p>中英对照常用术语：</p>
+<p>地波 – ground wave<br>天波 – sky wave</p>
+<h1 id="如何选购你的第一部电台？"><a href="#如何选购你的第一部电台？" class="headerlink" title="如何选购你的第一部电台？"></a>如何选购你的第一部电台？</h1><p>每个新火腿都应当选购一部电台，例如一部手持电台（俗称手台），或者一部车载电台（俗称车台），或者一部短波电台，少数有钱的火腿甚至同时购买了这三种电台。在选购第一部电台时，你必须问自己两个问题。第一个问题是：我选购电台的目的是什么？如果你是登山爱好者，你需要在登山过程中时刻与队友保持联络，那么你应当选购便于随身携带的手台，而不是选购车台或短波电台。如果你是狂热的短波通信爱好者，你希望在成为A类火腿之后，通过考试，升级为B类或C类，进行短波通信，那么毫无疑问你应当选购短波电台。总之一定要知道自己选购第一部电台的目的是什么。</p>
+<p>第二个问题是：我有多少钱？如果你是富人，你的钱很多，你可以同时选购上面提到的三种电台，想玩哪个就玩哪个，这当然很惬意。不过遗憾的是，大部分火腿并不是富人，他们的预算是有限的。据我观察，许多无收入的火腿（例如在校学生），或者低收入的火腿（例如蓝领工人），他们选购的第一部电台通常是价格较低的手台，包括一手的新手台或二手的旧手台。几年之后，当他们有收入或者收入增加时，再选购价格较高的其他设备。总之在选购第一部电台时，一定要根据自己的经济能力，量力而行。</p>
+<h2 id="12-1-手台"><a href="#12-1-手台" class="headerlink" title="12.1 手台"></a>12.1 手台</h2><p>手台的主要优点是便于携带。早期的手台，体积和重量都比较大，而最近十几年，由于技术和工艺的进步，手台越来越小，越来越轻，具有极好的便携性。手台的主要缺点是通信距离短，例如几公里。由于收发功率较小，手台适合社区通信、楼房通信、郊游通信、车队通信等短距离通信，不适合长距离通信。</p>
+<h2 id="12-2-车台"><a href="#12-2-车台" class="headerlink" title="12.2 车台"></a>12.2 车台</h2><p>车台的主要优点是通信距离长，例如十几公里甚至几十公里。以笔者的车台为例，在北京南三环行驶时，可以很轻松地与北三环行驶的火腿通话，而手台是做不到的。车台的主要缺点是安装、调试复杂。与手台不同的是，车台需要外接电源和天线，其中电源就是汽车的蓄电池，天线需要单独购买，整个安装、调试过程对新火腿来说是比较复杂的。</p>
+<h2 id="12-3-短波电台"><a href="#12-3-短波电台" class="headerlink" title="12.3 短波电台"></a>12.3 短波电台</h2><p>短波电台的主要优点是具有全球通信能力，只要有合适的传播、合适的天线、合适的功率，你可以与世界上任何一个地方的任何一个火腿通信。短波电台的主要缺点也是安装、调试复杂，尤其是安装、调试比较复杂的天线系统时，如果没有老火腿协助，新火腿自己是很难独立完成的。</p>
+<h2 id="12-4-多波段与多模式"><a href="#12-4-多波段与多模式" class="headerlink" title="12.4 多波段与多模式"></a>12.4 多波段与多模式</h2><p>有些电台只能在一个波段上、以一种模式通信，例如只能在VHF波段上、以FM模式通信，这种电台的价格较低。有些电台能够在多个波段上、以多种模式通信，例如在VHF/UHF/HF波段上、以FM/SSB/CW模式通信，这种电台的价格较高。你必须根据前面两个问题的答案，决定选购哪种电台。</p>
+<h2 id="12-5-天线、馈线与其他设备"><a href="#12-5-天线、馈线与其他设备" class="headerlink" title="12.5 天线、馈线与其他设备"></a>12.5 天线、馈线与其他设备</h2><p>老火腿都知道，如果没有一副良好的天线，你的电台再好也没用。目前许多火腿居住在城市社区的高层楼房中，物业公司不允许他们在楼顶架设天线，他们只能在阳台上架设鱼竿天线，或者在两楼之间拉一条长线天线。这两种简易天线通常都是自己制作的，成本很低，通联效果一般，并且需要与天线调谐器（天调）一起使用。有些火腿居住在农村，有宽敞的场地，他们可以架设大型天线。除了天线之外，电台与天线之间还需要高质量的馈线以及各种辅助设备，例如驻波表、天调、电键、电台与电脑的控制器等，这些都需要单独购买。</p>
+<h2 id="12-6-软件定义无线电（SDR）"><a href="#12-6-软件定义无线电（SDR）" class="headerlink" title="12.6 软件定义无线电（SDR）"></a>12.6 软件定义无线电（SDR）</h2><p>传统的电台，所有的功能都是用硬件（hardware）来实现的。从经济的角度看，这种电台有一个缺点，那就是如果人们开发出新功能（例如新模式、新算法等），现有电台无法实现，我们只能等很长时间，然后花钱购买下一代产品。软件定义无线电（software defined radio，SDR）则克服了这个缺点。在SDR电台中，除了少量基本功能必须用硬件来实现之外，绝大部分功能都是用软件（software）来实现的。如果人们开发出新功能，我们只要下载软件，进行升级，即可让现有的SDR电台实现新功能，而不必更换设备。目前市场上SDR电台较少，价格较高，并未普及，但发展前景很好。</p>
+<h2 id="12-7-中国火腿可能遇到的一个特殊问题"><a href="#12-7-中国火腿可能遇到的一个特殊问题" class="headerlink" title="12.7 中国火腿可能遇到的一个特殊问题"></a>12.7 中国火腿可能遇到的一个特殊问题</h2><p>在中国，厂商在市场上出售某种型号的电台之前，需要经过工信部无线电管理部门的检测，检测合格之后，获得一个核准代码，才能出售。目前市场上出售的电台，有些有核准代码，有些没有。如果没有核准代码，当地无线电管理部门可能给你验机，也可能不给你验机（各地情况不一样，看人品）。如果不给你验机，你将无法获得电台执照，这将是一个很大的麻烦。因此新火腿在选购电台时，一定要向当地的协会或老火腿咨询，尽可能购买能够顺利验机的电台。</p>
+<p>中英对照常用术语：</p>
+<p>多波段 – multiband<br>多模式 – multimode<br>八木天线 – Yagi antenna<br>驻波表 – SWR meter<br>天线调谐器（天调）– antenna tuner<br>电缆 – cable<br>核准代码 – approval code<br>软件定义无线电 – software defined radio，SDR</p>
+<p><img src="https://i.imgur.com/IL8lUG8.jpg" alt="12.7"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HAM/" rel="tag"><i class="fa fa-tag"></i> HAM</a>
+          
+            <a href="/tags/无线电/" rel="tag"><i class="fa fa-tag"></i> 无线电</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017-12-25/d9b3.html" rel="next" title="业余无线电（一）">
+                <i class="fa fa-chevron-left"></i> 业余无线电（一）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018-01-05/9b03.html" rel="prev" title="PHP模块一览及简要说明">
+                PHP模块一览及简要说明 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTk4NS8xMjUyMQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/poet.jpg"
+                alt="Rocinante-Poet" />
+            
+              <p class="site-author-name" itemprop="name">Rocinante-Poet</p>
+              <p class="site-description motion-element" itemprop="description">诗人和祂的驽骍难得</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/3017932712?is_all=1" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://telegram.me/Poet_IIII" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:Poet515@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#怎样进行HF通联？"><span class="nav-number">1.</span> <span class="nav-text">怎样进行HF通联？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-1-语音字母表"><span class="nav-number">1.1.</span> <span class="nav-text">7.1 语音字母表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-2-RST报告"><span class="nav-number">1.2.</span> <span class="nav-text">7.2 RST报告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-3-一个HF通联的范例"><span class="nav-number">1.3.</span> <span class="nav-text">7.3 一个HF通联的范例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-4-通联日志"><span class="nav-number">1.4.</span> <span class="nav-text">7.4 通联日志</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-5-中英对照常用术语："><span class="nav-number">1.5.</span> <span class="nav-text">7.5 中英对照常用术语：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎样进行CW通联？"><span class="nav-number">2.</span> <span class="nav-text">怎样进行CW通联？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-1-莫尔斯电码"><span class="nav-number">2.1.</span> <span class="nav-text">8.1 莫尔斯电码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-2-Q代码"><span class="nav-number">2.2.</span> <span class="nav-text">8.2 Q代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-3-缩略语"><span class="nav-number">2.3.</span> <span class="nav-text">8.3 缩略语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-4-一个CW通联的范例"><span class="nav-number">2.4.</span> <span class="nav-text">8.4 一个CW通联的范例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-5-中英对照常用术语："><span class="nav-number">2.5.</span> <span class="nav-text">8.5 中英对照常用术语：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎样进行数字通联？"><span class="nav-number">3.</span> <span class="nav-text">怎样进行数字通联？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-1-数字通联所需的硬件和软件"><span class="nav-number">3.1.</span> <span class="nav-text">9.1 数字通联所需的硬件和软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-2-全景窗口与瀑布"><span class="nav-number">3.2.</span> <span class="nav-text">9.2 全景窗口与瀑布</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#9-3-数字通联的步骤"><span class="nav-number">3.2.1.</span> <span class="nav-text">9.3 数字通联的步骤</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-4-定义宏"><span class="nav-number">3.3.</span> <span class="nav-text">9.4 定义宏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-5-中英对照常用术语："><span class="nav-number">3.4.</span> <span class="nav-text">9.5 中英对照常用术语：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通联卡片"><span class="nav-number">4.</span> <span class="nav-text">通联卡片</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#10-1-如何获得空白卡片？"><span class="nav-number">4.1.</span> <span class="nav-text">10.1 如何获得空白卡片？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-2-卡片上的栏目"><span class="nav-number">4.2.</span> <span class="nav-text">10.2 卡片上的栏目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-3-如何填写通联卡片？"><span class="nav-number">4.3.</span> <span class="nav-text">10.3 如何填写通联卡片？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-4-火腿的通信地址"><span class="nav-number">4.4.</span> <span class="nav-text">10.4 火腿的通信地址</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-5-通联卡片的邮寄与转交"><span class="nav-number">4.5.</span> <span class="nav-text">10.5 通联卡片的邮寄与转交</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-6-卡片管理人"><span class="nav-number">4.6.</span> <span class="nav-text">10.6 卡片管理人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-7-与通联卡片有关的软件与网站"><span class="nav-number">4.7.</span> <span class="nav-text">10.7 与通联卡片有关的软件与网站</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-8-中英对照常用术语："><span class="nav-number">4.8.</span> <span class="nav-text">10.8 中英对照常用术语：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#传播"><span class="nav-number">5.</span> <span class="nav-text">传播</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何选购你的第一部电台？"><span class="nav-number">6.</span> <span class="nav-text">如何选购你的第一部电台？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#12-1-手台"><span class="nav-number">6.1.</span> <span class="nav-text">12.1 手台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-2-车台"><span class="nav-number">6.2.</span> <span class="nav-text">12.2 车台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-3-短波电台"><span class="nav-number">6.3.</span> <span class="nav-text">12.3 短波电台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-4-多波段与多模式"><span class="nav-number">6.4.</span> <span class="nav-text">12.4 多波段与多模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-5-天线、馈线与其他设备"><span class="nav-number">6.5.</span> <span class="nav-text">12.5 天线、馈线与其他设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-6-软件定义无线电（SDR）"><span class="nav-number">6.6.</span> <span class="nav-text">12.6 软件定义无线电（SDR）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-7-中国火腿可能遇到的一个特殊问题"><span class="nav-number">6.7.</span> <span class="nav-text">12.7 中国火腿可能遇到的一个特殊问题</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rocinante-Poet</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">博客全站字数&#58;</span>
+    
+    <span title="博客全站字数">43.9k</span>
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>

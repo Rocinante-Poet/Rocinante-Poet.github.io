@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "57a36a3c"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/poetry-128.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/poetry-64.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/poetry-32.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="GitHub,GPG,安全,加密," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="GnuPG（简称 GPG），它是目前最流行、最好用的开源加密工具之一。GPG 有许多用途，比如对文件，邮件的加密。而本文要说的是，如何使用 GPG 来加密 Github Commits。">
+<meta name="keywords" content="GitHub,GPG,安全,加密">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 GPG 加密 Github Commits">
+<meta property="og:url" content="https://rocinante-poet.github.io/2018-02-20/e910.html">
+<meta property="og:site_name" content="Poet">
+<meta property="og:description" content="GnuPG（简称 GPG），它是目前最流行、最好用的开源加密工具之一。GPG 有许多用途，比如对文件，邮件的加密。而本文要说的是，如何使用 GPG 来加密 Github Commits。">
+<meta property="og:locale" content="zh-hans">
+<meta property="og:image" content="https://i.imgur.com/8U9w9WM.png">
+<meta property="og:image" content="https://i.imgur.com/WzZUI0q.png">
+<meta property="og:image" content="https://i.imgur.com/xq2z2tT.png">
+<meta property="og:updated_time" content="2018-06-13T09:25:36.460Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用 GPG 加密 Github Commits">
+<meta name="twitter:description" content="GnuPG（简称 GPG），它是目前最流行、最好用的开源加密工具之一。GPG 有许多用途，比如对文件，邮件的加密。而本文要说的是，如何使用 GPG 来加密 Github Commits。">
+<meta name="twitter:image" content="https://i.imgur.com/8U9w9WM.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://rocinante-poet.github.io/2018-02-20/e910.html"/>
+
+
+
+
+
+  <title>使用 GPG 加密 Github Commits,Poet-蔚然成凨</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Poet</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">蔚然成凨</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于|留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://rocinante-poet.github.io/2018-02-20/e910.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocinante-Poet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/poet.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用 GPG 加密 Github Commits</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-20T22:47:22+08:00">
+                2018-02-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/安全/" itemprop="url" rel="index">
+                    <span itemprop="name">安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://i.imgur.com/8U9w9WM.png" alt=""></p>
+<p>GnuPG（简称 GPG），它是目前最流行、最好用的开源加密工具之一。<br>GPG 有许多用途，比如对文件，邮件的加密。而本文要说的是，如何使用 GPG 来加密 Github Commits。   <a id="more"></a></p>
+<p>在 Github 上查看一些项目的 Commits 时，偶尔会发现「This commit was signed with a verified signature.」字样，就是下图示例那样。</p>
+<p><img src="https://i.imgur.com/WzZUI0q.png" alt=""></p>
+<h2 id="一、安装-Git-和-TortoiseGit"><a href="#一、安装-Git-和-TortoiseGit" class="headerlink" title="一、安装 Git 和 TortoiseGit"></a>一、安装 Git 和 TortoiseGit</h2><p>官方网站：<br><a href="https://git-scm.com" target="_blank" rel="noopener">https://git-scm.com</a><br><a href="https://tortoisegit.org" target="_blank" rel="noopener">https://tortoisegit.org</a></p>
+<h2 id="二、生成密钥"><a href="#二、生成密钥" class="headerlink" title="二、生成密钥"></a>二、生成密钥</h2><p>在安装完 Git 之后，开始菜单项里会有个 Git Bash，打开，如下图所示：<br><br></p>
+<p><img src="https://i.imgur.com/xq2z2tT.png" alt=""></p>
+<p>Git 自带了 gpg 命令，因此可以直接在 Git Bash 里生成密钥。命令如下：  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	</span><br><span class="line">gpg --gen-key</span><br></pre></td></tr></table></figure>
+<p>回车，提示信息如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">gpg (GnuPG) 1.4.21; Copyright (C) 2015 Free Software Foundation, Inc.</span><br><span class="line">This is free software: you are free to change and redistribute it.</span><br><span class="line">There is NO WARRANTY, to the extent permitted by law. </span><br><span class="line">Please select what kind of key you want:</span><br><span class="line">	(1) RSA and RSA (default)</span><br><span class="line">	(2) DSA and Elgamal</span><br><span class="line">	(3) DSA (sign only)</span><br><span class="line">	(4) RSA (sign only)</span><br><span class="line">Your selection?</span><br></pre></td></tr></table></figure>
+<p>选择加密算法，默认选择第一个选项即可，表示加密和签名都使用 RSA 算法。<br>选 1，回车。</p>
+<p>选择密钥长度，默认为 2048，建议输入 4096。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RSA keys may be between 1024 and 4096 bits long.</span><br><span class="line">What keysize do you want? (2048)</span><br></pre></td></tr></table></figure>
+<p>输入 4096，回车。</p>
+<p>设定密钥的有效期。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Please specify how long the key should be valid.</span><br><span class="line">        0 = key does not expire</span><br><span class="line">     &lt;n&gt;  = key expires in n days</span><br><span class="line">     &lt;n&gt;w = key expires in n weeks</span><br><span class="line">     &lt;n&gt;m = key expires in n months</span><br><span class="line">     &lt;n&gt;y = key expires in n years</span><br><span class="line">Key is valid for? (0)</span><br></pre></td></tr></table></figure>
+<p>密钥只是个人使用的话，建议选择第一个选项，即永不过期。<br>输入 0，回车。</p>
+<p>系统会问你上述设置是否正确。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Is this correct? (y/n)</span><br></pre></td></tr></table></figure>
+<p>输入 y，回车。</p>
+<p>系统会要求你输入个人信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">You need a user ID to identify your key; the software constructs the user ID</span><br><span class="line">from the Real Name, Comment and Email Address in this form:</span><br><span class="line">    &quot;Heinrich Heine (Der Dichter) &lt;heinrichh@duesseldorf.de&gt;&quot;</span><br><span class="line"></span><br><span class="line">Real name:</span><br></pre></td></tr></table></figure>
+<p>「Real name」填入你的名字，需是英文。回车。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Email address:</span><br></pre></td></tr></table></figure>
+<p>「Email address」填入你的邮箱地址。回车。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Comment:</span><br></pre></td></tr></table></figure>
+<p>「Comment」可以空着不填。回车。<br>系统会再次让你确认填入的信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">You selected this USER-ID:</span><br><span class="line">    &quot;Poet &lt;YangkunJuly@gmail.com&gt;&quot;</span><br><span class="line"></span><br><span class="line">Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?</span><br></pre></td></tr></table></figure><br>输入 O，回车。<br>系统会让你设定一个私钥的密码。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">You need a Passphrase to protect your secret key.</span><br><span class="line">Enter passphrase:</span><br><span class="line">Repeat passphrase:</span><br></pre></td></tr></table></figure><br>注意这里要留空不填，直接回车即可。这是因为 TortoiseGit 不支持 1.4.x 含有私钥密码。<br>系统这时开始生成密钥，这时会要求你做一些随机的举动，以生成一个随机数。你拿起鼠标随便晃晃，直到完成密钥生成。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">We need to generate a lot of random bytes. It is a good idea to perform  </span><br><span class="line">some other action (type on the keyboard, move the mouse, utilize the  </span><br><span class="line">disks) during the prime generation; this gives the random number</span><br><span class="line">generator a better chance to gain enough entropy.</span><br></pre></td></tr></table></figure><br>最后，提示生成完毕。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gpg: key 5BD6E20E marked as ultimately trusted</span><br><span class="line">public and secret key created and signed.</span><br></pre></td></tr></table></figure></p>
+<h2 id="三、列出密钥"><a href="#三、列出密钥" class="headerlink" title="三、列出密钥"></a>三、列出密钥</h2><p>命令如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg --list-keys</span><br></pre></td></tr></table></figure><br>输出结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gpg: checking the trustdb</span><br><span class="line">gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model</span><br><span class="line">gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u</span><br><span class="line">/c/Users/YangK/.gnupg/pubring.gpg</span><br><span class="line">------------------------------------</span><br><span class="line">pub   4096R/5BD6E20E 2017-02-22</span><br><span class="line">uid                  Poet &lt;YangkunJuly@gmail.com&gt;</span><br><span class="line">sub   4096R/5BB7BB4E 2017-02-22</span><br></pre></td></tr></table></figure><br>第一行显示公钥文件名（pubring.gpg）<br>第二行显示公钥特征（4096 位，Hash 字符串和生成时间）<br>第三行显示用户信息<br>第四行显示私钥特征</p>
+<h2 id="四、输出密钥"><a href="#四、输出密钥" class="headerlink" title="四、输出密钥"></a>四、输出密钥</h2><p>公钥文件（.gnupg/pubring.gpg）以二进制形式储存，armor 参数可以将其转换为 ASCII 码显示。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg --armor --output public-key.txt --export [密钥ID]</span><br></pre></td></tr></table></figure><br>[密钥ID]指定用户的公钥，如 5BD6E20E，output 参数指定输出文件名，如 public-key.txt</p>
+<p>同时，export-secret-keys 参数可以转换私钥。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gpg --armor --output private-key.txt --export-secret-keys</span><br></pre></td></tr></table></figure><br>public-key.txt 和 private-key.txt 默认会导出至用户目录 C:\Users\&lt;用户名&gt;\ 下。</p>
+<h2 id="五、上传公钥至-Github-帐号"><a href="#五、上传公钥至-Github-帐号" class="headerlink" title="五、上传公钥至 Github 帐号"></a>五、上传公钥至 Github 帐号</h2><p>点击用户头像，打开 Settings，左侧菜单点击 SSH and GPG keys，在 GPG keys 那里，点击 New GPG key。<br>在输入框里填入刚刚导出的 public-key.txt 内容。<br>点击 Add GPG key，完成上传。</p>
+<h2 id="六、设置-Git"><a href="#六、设置-Git" class="headerlink" title="六、设置 Git"></a>六、设置 Git</h2><p>回到 Git Bash 窗口，根据刚才 gpg –list-keys 显示的结果，此时已经知道密钥 ID 为 5BD6E20E。<br>设置 Git 使用该密钥 ID 加密：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.signingkey 5BD6E20E</span><br></pre></td></tr></table></figure><br>设置 Git 全局使用该密钥加密：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global commit.gpgsign true</span><br></pre></td></tr></table></figure><br>最后，再输入以下命令查看 Git 配置情况：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config -l</span><br></pre></td></tr></table></figure><br>包含以下信息。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">user.signingkey=5BD6E20E</span><br><span class="line">commit.gpgsign=true</span><br></pre></td></tr></table></figure><br>至此，使用 GPG 加密 Github Commits 就正式完成了。<br>以后再 Git Commit，同步到 Github 上之后，就会发现该 Commit 已显示 Verified。</p>
+<h2 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h2><ul>
+<li><a href="https://help.github.com/articles/generating-a-new-gpg-key/" target="_blank" rel="noopener">https://help.github.com/articles/generating-a-new-gpg-key/</a></li>
+<li><a href="https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/" target="_blank" rel="noopener">https://help.github.com/articles/adding-a-new-gpg-key-to-your-github-account/</a></li>
+<li><a href="https://help.github.com/articles/signing-commits-using-gpg/" target="_blank" rel="noopener">https://help.github.com/articles/signing-commits-using-gpg/</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2013/07/gpg.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2013/07/gpg.html</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/GitHub/" rel="tag"><i class="fa fa-tag"></i> GitHub</a>
+          
+            <a href="/tags/GPG/" rel="tag"><i class="fa fa-tag"></i> GPG</a>
+          
+            <a href="/tags/安全/" rel="tag"><i class="fa fa-tag"></i> 安全</a>
+          
+            <a href="/tags/加密/" rel="tag"><i class="fa fa-tag"></i> 加密</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018-01-05/9b03.html" rel="next" title="PHP模块一览及简要说明">
+                <i class="fa fa-chevron-left"></i> PHP模块一览及简要说明
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018-06-13/2de9.html" rel="prev" title="SSL那些事儿">
+                SSL那些事儿 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTk4NS8xMjUyMQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/poet.jpg"
+                alt="Rocinante-Poet" />
+            
+              <p class="site-author-name" itemprop="name">Rocinante-Poet</p>
+              <p class="site-description motion-element" itemprop="description">诗人和祂的驽骍难得</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/3017932712?is_all=1" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://telegram.me/Poet_IIII" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:Poet515@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、安装-Git-和-TortoiseGit"><span class="nav-number">1.</span> <span class="nav-text">一、安装 Git 和 TortoiseGit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、生成密钥"><span class="nav-number">2.</span> <span class="nav-text">二、生成密钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、列出密钥"><span class="nav-number">3.</span> <span class="nav-text">三、列出密钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、输出密钥"><span class="nav-number">4.</span> <span class="nav-text">四、输出密钥</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、上传公钥至-Github-帐号"><span class="nav-number">5.</span> <span class="nav-text">五、上传公钥至 Github 帐号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、设置-Git"><span class="nav-number">6.</span> <span class="nav-text">六、设置 Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接："><span class="nav-number">7.</span> <span class="nav-text">参考链接：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rocinante-Poet</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">博客全站字数&#58;</span>
+    
+    <span title="博客全站字数">43.9k</span>
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>

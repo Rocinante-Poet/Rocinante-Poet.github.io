@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "57a36a3c"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/poetry-128.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/poetry-64.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/poetry-32.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Rocinante, Poet" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="浏览器开发商如 Mozilla, Google 准备采取下一步措施：将所有 HTTP 网站标记为不安全。随着 HTTPS 的普及，给网站加个 SSL 证书已经是大势所趋而且很有必要了。目前已经存在不少免费好用的 SSL 证书，因此，我们就来聊一聊关于免费的 SSL 证书。">
+<meta name="keywords" content="蔚然成凨">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SSL那些事儿">
+<meta property="og:url" content="https://rocinante-poet.github.io/2018-06-13/2de9.html">
+<meta property="og:site_name" content="Poet">
+<meta property="og:description" content="浏览器开发商如 Mozilla, Google 准备采取下一步措施：将所有 HTTP 网站标记为不安全。随着 HTTPS 的普及，给网站加个 SSL 证书已经是大势所趋而且很有必要了。目前已经存在不少免费好用的 SSL 证书，因此，我们就来聊一聊关于免费的 SSL 证书。">
+<meta property="og:locale" content="zh-hans">
+<meta property="og:image" content="https://rocinante-poet.github.io/images/SSL那些事儿/https.jpg">
+<meta property="og:updated_time" content="2018-06-13T11:38:12.536Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SSL那些事儿">
+<meta name="twitter:description" content="浏览器开发商如 Mozilla, Google 准备采取下一步措施：将所有 HTTP 网站标记为不安全。随着 HTTPS 的普及，给网站加个 SSL 证书已经是大势所趋而且很有必要了。目前已经存在不少免费好用的 SSL 证书，因此，我们就来聊一聊关于免费的 SSL 证书。">
+<meta name="twitter:image" content="https://rocinante-poet.github.io/images/SSL那些事儿/https.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://rocinante-poet.github.io/2018-06-13/2de9.html"/>
+
+
+
+
+
+  <title>SSL那些事儿,Poet-蔚然成凨</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Poet</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">蔚然成凨</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于|留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://rocinante-poet.github.io/2018-06-13/2de9.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocinante-Poet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/poet.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">SSL那些事儿</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-13T18:37:11+08:00">
+                2018-06-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/安全/" itemprop="url" rel="index">
+                    <span itemprop="name">安全</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/images/SSL那些事儿/https.jpg" width="400"></p>
+<p><font color="#005566"><br>浏览器开发商如 Mozilla, Google 准备采取下一步措施：将所有 HTTP 网站标记为不安全。随着 HTTPS 的普及，给网站加个 SSL 证书已经是大势所趋而且很有必要了。<br>目前已经存在不少免费好用的 SSL 证书，因此，我们就来聊一聊关于免费的 SSL 证书。</font></p>
+<h2 id=""><a href="#" class="headerlink" title="  "></a>  </h2><a id="more"></a>
+<h2 id="一、Let’s-Encrypt"><a href="#一、Let’s-Encrypt" class="headerlink" title="一、Let’s Encrypt"></a>一、Let’s Encrypt</h2><p>官方网站：<a href="https://letsencrypt.org/" target="_blank" rel="noopener">https://letsencrypt.org/</a><br>点评：毫无疑问，Let’s Encrypt 是目前使用范围最为广泛的免费 SSL 证书，而且官方博客宣布，自 2018 年开始提供通配符 SSL 证书，也就是 wildcard certificates。这对于广大个人站长来说，无疑是个不错的利好消息。唯一的缺憾就是，Let’s Encrypt 发行的证书有效期只有 3 个月，虽然可以通过定时任务来自动续期。<br>如何申请？可以通过安装 LAMP 后，使用 lamp add 命令来自动创建 SSL 证书。也可以通过以下在线申请网站，手动申请证书。<br>在线申请网址1（中文）：<a href="https://freessl.org/" target="_blank" rel="noopener">https://freessl.org/</a><br>在线申请网址2（英文）：<a href="https://www.sslforfree.com/" target="_blank" rel="noopener">https://www.sslforfree.com/</a><br>在线申请网址3（英文）：<a href="https://gethttpsforfree.com/" target="_blank" rel="noopener">https://gethttpsforfree.com/</a></p>
+<p>2018 年 03 月 15 日更新：<br>Let’s Encrypt 已经正式支持发行免费的通配符证书（Wildcard SSL），需使用 certbot 或 acme.sh 手动发行。</p>
+<h2 id="二、TrustAsia"><a href="#二、TrustAsia" class="headerlink" title="二、TrustAsia"></a>二、TrustAsia</h2><p>官方网站：<a href="https://www.trustasia.com/" target="_blank" rel="noopener">https://www.trustasia.com/</a><br>点评：TrustAsia 是国内一家新兴的 SSL 证书提供商，赛门铁克(Symantec)亚太区的白金合作伙伴。随着 Symantec 的 CA 业务被 DigiCert 收购完成，其证书链也从 Symantec 变为 DigiCert。现在也开始提供免费 1 年期的 DV SSL 证书。<br>在线申请网址：<a href="https://freessl.org/" target="_blank" rel="noopener">https://freessl.org/</a></p>
+<h2 id="三、AlwaysOnSSL"><a href="#三、AlwaysOnSSL" class="headerlink" title="三、AlwaysOnSSL"></a>三、AlwaysOnSSL</h2><p>官方网站：<a href="https://alwaysonssl.com/" target="_blank" rel="noopener">https://alwaysonssl.com/</a><br>点评：AlwaysOnSSL 是一个新的免费和自动认证机构。它由 CertCenter 和 Digicert 运行，免费提供 6 个月的 DV SSL 证书。<br>在线申请网址：<a href="https://alwaysonssl.com/" target="_blank" rel="noopener">https://alwaysonssl.com/</a></p>
+<h2 id="四、Comodo"><a href="#四、Comodo" class="headerlink" title="四、Comodo"></a>四、Comodo</h2><p>官方网站：<a href="https://www.comodo.com/" target="_blank" rel="noopener">https://www.comodo.com/</a><br>点评：在 Let’s Encrypt 没有问世之前，Comodo 的市场占有率是第一位。随着 Let’s Encrypt 的盛行，Comodo 在 DV SSL 市场占有率逐渐下降，但依然是 SSL 的龙头企业。目前 Comodo 也提供免费 90 天的免费 DV SSL 证书。<br>在线申请网址1：<a href="https://secure.instantssl.com/products/SSLIdASignup1a" target="_blank" rel="noopener">https://secure.instantssl.com/products/SSLIdASignup1a</a><br>在线申请网址2：<a href="https://www.100tb.com/" target="_blank" rel="noopener">https://www.100tb.com/</a><br>备注：100TB 免费提供 1 年期的 Comodo 证书，前提是需要注册为会员后才能在后台申请。100TB 的规定是，发行的证书只能在他们家的产品上使用，否则会有被吊销的风险。申请时，请自备 CSR(Certificate Signing Request)，这里有 CSR 在线生成工具。参考网址：<a href="https://www.csr.sh/" target="_blank" rel="noopener">https://www.csr.sh/</a></p>
+<h2 id="五、Cloudflare"><a href="#五、Cloudflare" class="headerlink" title="五、Cloudflare"></a>五、Cloudflare</h2><p>官方网站：<a href="https://www.cloudflare.com/" target="_blank" rel="noopener">https://www.cloudflare.com/</a><br>点评：Cloudflare 很早就开始提供免费 SSL 证书，前提是你的域名要放在 Cloudflare 解析，注册为 Free Plan 就可以。<br>备注：只要域名加入 Cloudflare Free Plan，解析 A 记录的时候，点击 Traffic to this hostname will go through Cloudflare，就可以了。一般情况下，这个免费的 Universal SSL 里会包含一大堆别人的域名（该证书也是 Comodo 发行的）。当然，如果你比较介意这个的话，可以付费购买其 Dedicated SSL Certificate ($5/month) 或 Dedicated SSL Certificate with Custom Hostnames ($10/month)。</p>
+<h2 id="六、AlphaSSL"><a href="#六、AlphaSSL" class="headerlink" title="六、AlphaSSL"></a>六、AlphaSSL</h2><p>官方网站：<a href="https://www.alphassl.com/" target="_blank" rel="noopener">https://www.alphassl.com/</a><br>点评：其实 AlphaSSL 并不免费提供 SSL 证书，而且价格不菲。但是 AlphaSSL 跟 SingleHop 有合作关系，免费给 SingleHop 的客户发行证书，甚至包括通配符 SSL 证书。有人根据这个规则，开发了个自动发行证书的工具。详见：<a href="https://github.com/Vittfarne/ASSL" target="_blank" rel="noopener">https://github.com/Vittfarne/ASSL</a><br>也就是说，只要你有了 SingleHop 的服务，就可以使用你的帐号密码以及该工具去当个活雷锋了。但是，不可避免地，这样的活雷锋是当不了多久的。一般其下场会因为滥用被 SingleHop 给关闭账户。<br>值得注意的是，如果你申请了这个 SSL 证书，就要有 SSL 证书随时可能被吊销的觉悟。<br>详情始末的参考网址：<a href="https://www.lowendtalk.com/discussion/comment/2306096/#Comment_2306096" target="_blank" rel="noopener">https://www.lowendtalk.com/discussion/comment/2306096/#Comment_2306096</a><br>在线申请网址：<a href="https://en.assl.space/" target="_blank" rel="noopener">https://en.assl.space/</a></p>
+<h2 id="尾声："><a href="#尾声：" class="headerlink" title="尾声："></a>尾声：</h2><p>自从 Let’s encrypt 开始提供免费DV SSL后，SSL 证书市场就已经开始洗牌了。<br>值得一提的是 StarCom 原本是一家以色列的证书商，提供免费和收费的 SSL 证书，后被国内公司 360 收购。曾在 CA 市场也有一席之地，StartCom 的问题在于被发现允许对证书的签发日期进行倒填，从而达到规避 SHA1 证书在 2016 年 1 月 1 日之后被浏览器警告的目的。最终于 2017 年 11 月 16 日，StartCom 宣布终止业务，自 2018 年 1 月 1 日起停止颁发新证书，并于 2020 年停止 OCSP 和 CRL 服务。<br>沃通（Wosign）也属于类似情况，被 Mozilla 认为 WoSign 最严重的问题是伪造（或者说人为设置）了证书签发日期，相继被 Mozilla 和 Chrome 不信任，最终导致出局。</p>
+<p>最后，随着 https 的广泛被适用，我们也乐于看到越来越多的 CA 开始提供免费的 DV SSL 证书。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018-02-20/e910.html" rel="next" title="使用 GPG 加密 Github Commits">
+                <i class="fa fa-chevron-left"></i> 使用 GPG 加密 Github Commits
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018-06-19/3b4b.html" rel="prev" title="Nullable<T>类型转换">
+                Nullable<T>类型转换 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTk4NS8xMjUyMQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/poet.jpg"
+                alt="Rocinante-Poet" />
+            
+              <p class="site-author-name" itemprop="name">Rocinante-Poet</p>
+              <p class="site-description motion-element" itemprop="description">诗人和祂的驽骍难得</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/3017932712?is_all=1" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://telegram.me/Poet_IIII" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:Poet515@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number">1.</span> <span class="nav-text">  </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、Let’s-Encrypt"><span class="nav-number">2.</span> <span class="nav-text">一、Let’s Encrypt</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、TrustAsia"><span class="nav-number">3.</span> <span class="nav-text">二、TrustAsia</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、AlwaysOnSSL"><span class="nav-number">4.</span> <span class="nav-text">三、AlwaysOnSSL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、Comodo"><span class="nav-number">5.</span> <span class="nav-text">四、Comodo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、Cloudflare"><span class="nav-number">6.</span> <span class="nav-text">五、Cloudflare</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、AlphaSSL"><span class="nav-number">7.</span> <span class="nav-text">六、AlphaSSL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#尾声："><span class="nav-number">8.</span> <span class="nav-text">尾声：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rocinante-Poet</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">博客全站字数&#58;</span>
+    
+    <span title="博客全站字数">43.9k</span>
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>

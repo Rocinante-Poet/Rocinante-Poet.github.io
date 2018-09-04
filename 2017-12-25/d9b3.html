@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "57a36a3c"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/poetry-128.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/poetry-64.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/poetry-32.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HAM,无线电," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="什么是业余无线电？如果你问10个火腿（业余无线电爱好者的简称），什么是业余无线电，你可能得到10个不同的答案。业余无线电是一种以无线电通联为方式、以无线电研究为目的的个人业余爱好，但对于不同的火腿，业余无线电有不同的吸引力。例如，有些火腿喜欢使用手持电台或车载电台，与本地火腿通联；有些火腿喜欢使用短波电台，与外地或外国的火腿通联；有些火腿喜欢将电台与计算机连接起来，利用无线电-数字技术，与其他火腿">
+<meta name="keywords" content="HAM,无线电">
+<meta property="og:type" content="article">
+<meta property="og:title" content="业余无线电（一）">
+<meta property="og:url" content="https://rocinante-poet.github.io/2017-12-25/d9b3.html">
+<meta property="og:site_name" content="Poet">
+<meta property="og:description" content="什么是业余无线电？如果你问10个火腿（业余无线电爱好者的简称），什么是业余无线电，你可能得到10个不同的答案。业余无线电是一种以无线电通联为方式、以无线电研究为目的的个人业余爱好，但对于不同的火腿，业余无线电有不同的吸引力。例如，有些火腿喜欢使用手持电台或车载电台，与本地火腿通联；有些火腿喜欢使用短波电台，与外地或外国的火腿通联；有些火腿喜欢将电台与计算机连接起来，利用无线电-数字技术，与其他火腿">
+<meta property="og:locale" content="zh-hans">
+<meta property="og:updated_time" content="2018-05-25T15:56:09.237Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="业余无线电（一）">
+<meta name="twitter:description" content="什么是业余无线电？如果你问10个火腿（业余无线电爱好者的简称），什么是业余无线电，你可能得到10个不同的答案。业余无线电是一种以无线电通联为方式、以无线电研究为目的的个人业余爱好，但对于不同的火腿，业余无线电有不同的吸引力。例如，有些火腿喜欢使用手持电台或车载电台，与本地火腿通联；有些火腿喜欢使用短波电台，与外地或外国的火腿通联；有些火腿喜欢将电台与计算机连接起来，利用无线电-数字技术，与其他火腿">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://rocinante-poet.github.io/2017-12-25/d9b3.html"/>
+
+
+
+
+
+  <title>业余无线电（一）,Poet-蔚然成凨</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Poet</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">蔚然成凨</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于|留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://rocinante-poet.github.io/2017-12-25/d9b3.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocinante-Poet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/poet.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">业余无线电（一）</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-25T16:24:07+08:00">
+                2017-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HAM/" itemprop="url" rel="index">
+                    <span itemprop="name">HAM</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="什么是业余无线电？"><a href="#什么是业余无线电？" class="headerlink" title="什么是业余无线电？"></a>什么是业余无线电？</h1><p>如果你问10个火腿（业余无线电爱好者的简称），什么是业余无线电，你可能得到10个不同的答案。业余无线电是一种以无线电通联为方式、以无线电研究为目的的个人业余爱好，但对于不同的火腿，业余无线电有不同的吸引力。例如，有些火腿喜欢使用手持电台或车载电台，与本地火腿通联；有些火腿喜欢使用短波电台，与外地或外国的火腿通联；有些火腿喜欢将电台与计算机连接起来，利用无线电-数字技术，与其他火腿交换信息；有些火腿喜欢参加国内外的各种通联竞赛，以获得奖状为最大乐趣；当然，也有许多火腿喜欢上面提到的所有通联方式。</p>
+<h2 id="1-1-解释两个名词"><a href="#1-1-解释两个名词" class="headerlink" title="1.1 解释两个名词"></a>1.1 解释两个名词</h2><p>业余无线电爱好者与火腿，实际上是同一类人的两个不同名称，前者是法律上的正式名称，后者是圈子内的非正式名称。没有人知道火腿一词的准确起源，它已经约定俗成，从1900年代业余无线电出现到今天的一个多世纪里，一直是业余无线电爱好者的同义词。业余无线电爱好者中的“业余”两字，并不表示这些人缺少专业知识与技能，只表示业余无线电不能用于商业目的。每个火腿都应当保持业余无线电的非商业性质。</p>
+<h2 id="1-2-5种常见的通联方式"><a href="#1-2-5种常见的通联方式" class="headerlink" title="1.2 5种常见的通联方式"></a>1.2 5种常见的通联方式</h2><p>火腿之间是使用电台进行通联的。一部电台，通常既是发射机（发射信号），又是接收机（接收信号），当然也有功能单一的发射机和接收机。火腿可以使用电台，以多种方式通联，就好象游泳者能够以蛙泳、仰泳、蝶泳等多种方式游泳一样。常见的通联方式有5种，它们是：语音方式、莫尔斯电码方式、无线电传方式、电视方式和数字方式。根据最近的一项调查，全球火腿使用最多的是语音方式，其次是莫尔斯电码方式。</p>
+<h2 id="1-3-电台执照"><a href="#1-3-电台执照" class="headerlink" title="1.3 电台执照"></a>1.3 电台执照</h2><p>与世界上绝大多数个人业余爱好不同的是，业余无线电爱好者必须申请一张电台执照，才能使用电台进行通联。不同的国家，对电台执照的申请手续有不同的规定，我们稍后介绍在中国如何申请电台执照。电台执照通常分为不同的等级，每个等级有不同的权利，等级越高，权利越多。例如，持低等级电台执照的火腿，只能在较窄的频率范围内，以较小的功率通联；持高等级电台执照的火腿，可以在较宽的频率范围内，以较大的功率通联。在中国，电台执照分为3类（3个等级），其中C类和B类可以使用全部频谱，而A类只能使用部分频谱。</p>
+<h2 id="1-4-中英对照常用术语"><a href="#1-4-中英对照常用术语" class="headerlink" title="1.4 中英对照常用术语"></a>1.4 中英对照常用术语</h2><p>火腿 – ham<br>业余无线电爱好者 – radio amateur<br>业务无线电 – amateur radio<br>通联 – communication 或 operation<br>电台 – radio station 或 transceiver<br>非商业的 – non-commercial<br>发射机 – transmitter<br>接收机 – receiver<br>方式 – mode<br>语音 – phone<br>莫尔斯电码 – Morse code 或 CW<br>无线电传 – radioteletype 或 RTTY<br>电视 – television 或 SSTV<br>数字的 – digital<br>执照 – license<br>等级 – class</p>
+<h1 id="火腿能够做什么？"><a href="#火腿能够做什么？" class="headerlink" title="火腿能够做什么？"></a>火腿能够做什么？</h1><p>火腿可以使用不同类型的电台，在不同的地点进行通联。例如，使用固定电台在家里通联，使用移动电台在野外通联，使用手持电台在行进中通联，使用车载电台在行驶中通联，等等。如果我们不考虑具体的电台类型与通联地点，那么火腿通常能够做下面一些事情。</p>
+<h2 id="2-1-本地通联"><a href="#2-1-本地通联" class="headerlink" title="2.1 本地通联"></a>2.1 本地通联</h2><p>使用手持电台或车载电台，与本地火腿通联。这里所说的本地，有时是指火腿所在的城市，例如北京市，有时是指火腿所在的区县，例如丰台区。本地通联一般使用UHF（超高频）或VHF（甚高频），在火腿术语中，UHF也称作70厘米（波长），VHF也称作2米（波长）。本地通联的距离通常可以达到50英里（约80公里），如果在本地架设一台中继器，距离还可以更远。</p>
+<h2 id="2-2-远程通联"><a href="#2-2-远程通联" class="headerlink" title="2.2 远程通联"></a>2.2 远程通联</h2><p>使用短波电台，与外地或外国的火腿通联。短波通常泛指HF（高频），也就是10米至100米的波长范围。与我们远程通联的火腿，可能在本国（例如新疆），可能在邻国（例如日本），可能在地球的另一面（例如智利），也可能在地图上查找不到的某个岛屿上（例如瑙鲁），因此远程通联比本地通联更有乐趣与挑战性。远程通联的数量与难度，是衡量火腿专业水平高低的主要依据，也是火腿申请各种竞赛奖状的主要依据。</p>
+<h2 id="2-3-数字通联"><a href="#2-3-数字通联" class="headerlink" title="2.3 数字通联"></a>2.3 数字通联</h2><p>将电台与计算机连接起来，通过专门软件进行通联。数字通联既利用传统的无线电技术，又利用当代的计算机技术，极大丰富了业余无线电的内涵。例如以前火腿通联时，只能听到对方的声音，看不到对方的影象，而现在利用慢扫描电视，可以传输低分辨率图象，增加了通联的乐趣。在中国，最常见的数字通联方式有三种，即RTTY（无线电传）、PSK31（类似无线电传）和SSTV（慢扫描电视），均需要专门软件的支持，不过这些软件都是免费的。</p>
+<h2 id="2-4-网上通联"><a href="#2-4-网上通联" class="headerlink" title="2.4 网上通联"></a>2.4 网上通联</h2><p>将业余无线电技术、计算机技术、网络技术三者结合起来，实现基于互联网的远程通联。许多国家的火腿都设计出自己的网上通联系统，但由于资金等原因，并没有实际应用。目前最常用的网上通联系统是EchoLink，通过这个系统，地球这一侧的中国火腿可以使用普通的手持电台，轻松地与地球另一侧的巴西火腿通联。对EchoLink感兴趣的读者可以访问<a href="www.echolink.org">www.echolink.org</a>了解详情。</p>
+<h2 id="2-5-外空通联"><a href="#2-5-外空通联" class="headerlink" title="2.5 外空通联"></a>2.5 外空通联</h2><p>与宇宙空间站上的宇航员通联，或者将卫星作为中继器，进行省际、国际、洲际的远程通联。在美、俄两国的宇宙空间站上，安装了业余无线电设备，有些宇航员本身就是有电台执照的火腿，他们会在工作闲暇时间，与地球上的火腿通联。另外，卫星可以看作是安装在外层空间的中继器，一个地方的火腿可以将无线电信号传送给卫星，由卫星转发给另外一个地方的火腿，进行省际、国际、洲际的远程通联。</p>
+<h2 id="2-6-野外通联"><a href="#2-6-野外通联" class="headerlink" title="2.6 野外通联"></a>2.6 野外通联</h2><p>野外通联是指一组火腿，携带各种设备（电台、天线、发电机、帐篷、食品、饮用水等），乘车或乘船前往某个偏远地方（例如荒山或荒岛），进行通联。野外通联能够真正检验火腿的综合能力，包括野外安装设备的能力、处理复杂天气与气候的能力、协调沟通的能力、随机应变的能力等。距离较远、时间较长的野外通联又称通联远征。在中国，最著名的通联远征是先后四次的黄岩岛（斯卡博罗礁）远征。</p>
+<h2 id="2-7-通联竞赛"><a href="#2-7-通联竞赛" class="headerlink" title="2.7 通联竞赛"></a>2.7 通联竞赛</h2><p>看看谁能够在规定时间内，通联到尽可能多的电台。通联竞赛有各种各样的形式，例如，世界各国火腿都可以参加的全球性通联竞赛，某国火腿组织的某国国内通联竞赛，莫尔斯电码的通联竞赛，14兆赫的通联竞赛，等等。这些通联竞赛的消息会提前刊登在各个火腿网站上，为便于火腿参加，通联竞赛一般安排在周末进行。在世界各国，许多火腿都以参加通联竞赛并获得奖状为自豪。在中国，只有一个没有时间要求的通联竞赛：凡是能够与中国十个地区的电台全部通联的火腿，即可获得中国无线电运动协会（CRSA）颁发的一张奖状</p>
+<h2 id="2-8-自制设备"><a href="#2-8-自制设备" class="headerlink" title="2.8 自制设备"></a>2.8 自制设备</h2><p>自己动手，研制各种业余无线电设备。火腿的构成非常复杂，几乎囊括了社会生活的所有行业，从教师到医生，从科学家到退休者，凡是你能想到的职业，都有火腿。对许多火腿来说，除了通联之外，另外一个乐趣是自己动手，研制各种业余无线电设备。有些设备比较简单，例如电台与计算机的接口电路，有些设备比较复杂，例如定向天线，有些设备甚至达到专业水平，例如短波电台。火腿的探索精神有力推动了业余无线电技术的向前发展。</p>
+<h2 id="2-9-应急通讯"><a href="#2-9-应急通讯" class="headerlink" title="2.9 应急通讯"></a>2.9 应急通讯</h2><p>在发生紧急情况或自然灾害，常规通讯服务中断时，火腿有义务利用自己的业余无线电设备，为政府和公众提供应急通讯服务。美国有两个著名的火腿应急通讯组织，它们是业余无线电应急通讯服务（ARES）和全国交通系统（NTS），这两个组织定期开展与应急通讯有关的培训与演习。火腿参加应急通讯的著名例子是2008年汶川地震，当时有一批四川火腿临时组建了一个应急通讯网，在救援过程中发挥了重要作用。</p>
+<h2 id="2-10-眼球通联"><a href="#2-10-眼球通联" class="headerlink" title="2.10 眼球通联"></a>2.10 眼球通联</h2><p>眼球通联是火腿聚会、聚餐的幽默说法。以北京为例，目前北京有十几个火腿俱乐部，逢年过节，这些俱乐部的成员都会聚 集在一起，交流经验，交换信息，增长见闻，凝聚感情。外地或外国火腿来到某个地方，与当地火腿聚会、聚餐，也称作眼球通联。</p>
+<h2 id="2-11-中英对照常用术语"><a href="#2-11-中英对照常用术语" class="headerlink" title="2.11 中英对照常用术语"></a>2.11 中英对照常用术语</h2><p>手持电台 – handheld transceiver 或 HT<br>车载电台 – vehicular transceiver 或 VT<br>本地的 – local<br>远程的 – distant<br>超高频 – ultrahigh frequency 或 UHF<br>甚高频 – very high frequency 或 VHF<br>频率 – frequency<br>波长 – wavelength<br>中继器 – repeater<br>远程通联 – distance communication 或 DX 或 DXing<br>远程通联者 – DXer<br>高频 – high frequency 或 HF<br>慢扫描电视 – slow scan television 或 SSTV<br>宇宙空间站 – space station<br>宇航员 – astronaut<br>野外通联 – field day 或 field operation<br>通联远征 – DXpedition（DX＋expedition）<br>竞赛 – contest<br>奖状 – award<br>自制 – homebrew<br>自己动手做 – do it yourself 或 DIY<br>紧急情况 – emergency<br>自然灾害 – natural disaster<br>应急通讯 – emergency communication<br>眼球通联 – eyeball QSO</p>
+<h1 id="如何成为一名火腿？"><a href="#如何成为一名火腿？" class="headerlink" title="如何成为一名火腿？"></a>如何成为一名火腿？</h1><p>无论哪个国家的公民，要想成为火腿，都要大致经过三个步骤：一、提出书面申请，二、参加资格考试，三、获得电台执照。以加拿大为例，希望成为火腿的人，可以向加拿大工业部提出书面申请，然后参加资格考试。资格考试分为初级、中级、高级3种，申请人可以根据自己的实际水平，选择一种。资格考试的内容包括无线电理论、无线电法规、常用通联操作和莫尔斯电码4个部分。资格考试合格者，即可获取相应的电台执照（初级、中级、高级3种），正式成为火腿。</p>
+<h2 id="3-1-中国公民成为火腿的老办法"><a href="#3-1-中国公民成为火腿的老办法" class="headerlink" title="3.1 中国公民成为火腿的老办法"></a>3.1 中国公民成为火腿的老办法</h2><p>2013年1月1日之前，隶属于国家体育总局航空无线电模型运动管理中心的“中国无线电运动协会”（CRSA）负责管理业余无线电工作。CRSA有一套加入协会、参加考试、获取执照的具体办法，目前已经作废，因此不再介绍。</p>
+<h2 id="3-2-中国公民成为火腿的新办法"><a href="#3-2-中国公民成为火腿的新办法" class="headerlink" title="3.2 中国公民成为火腿的新办法"></a>3.2 中国公民成为火腿的新办法</h2><p>2013年1月1日之后，隶属于工业和信息化部无线电管理局的“中国无线电协会业余无线电工作委员会”（CRAC）接管了业余无线电工作。CRAC只负责宏观管理，并不负责具体事务。在CRAC的指导下，各省纷纷筹建业余无线电协会。希望成为火腿的中国公民，请与本省的业余无线电协会联系，了解具体办法。</p>
+<h2 id="3-3-资格考试的方式"><a href="#3-3-资格考试的方式" class="headerlink" title="3.3 资格考试的方式"></a>3.3 资格考试的方式</h2><p>在CRSA时代，资格考试采用“当场培训、当场考试”的方式。进入CRAC时代之后，资格考试采用“题库”方式，也就是从现有题库中随机挑选一组考题，假设挑选100道题，你能答对70或80道题，就算合格。</p>
+<h2 id="3-4-是否必须加入协会？"><a href="#3-4-是否必须加入协会？" class="headerlink" title="3.4 是否必须加入协会？"></a>3.4 是否必须加入协会？</h2><p>2013年1月1日之前，申请者必须加入协会（CRSA），成为会员，才能成为火腿。2013年1月1日之后，根据工信部颁布的《业余无线电台管理办法》，是否加入当地协会，完全自愿。</p>
+<h2 id="3-5-中国火腿的3个类别"><a href="#3-5-中国火腿的3个类别" class="headerlink" title="3.5 中国火腿的3个类别"></a>3.5 中国火腿的3个类别</h2><p>在CRSA时代，中国火腿分为5个等级，1级最高，5级最低。进入CRAC时代之后，5级减少为3类，其中C类最高，B类较低，A类最低。3个类别的主要区别有两个：一是通联频率不同，例如C类和B类火腿允许使用所有业余频率，而A类火腿只能使用少数频率；二是电台的最大发射功率不同，例如C类火腿是1000瓦，B类火腿是100瓦，A类火腿是25瓦。</p>
+<p>A类火腿获得A类操作证书半年之后，通过考试，可以升级到B类；B类火腿获得B类操作证书两年之后，通过考试，可以升级到C类。顺便说一句：根据CRAC的最新规定，C类和B类使用完全相同的频率，目前两者的唯一区别是电台的最大发射功率不同。</p>
+<h2 id="3-6-给准火腿的一个忠告"><a href="#3-6-给准火腿的一个忠告" class="headerlink" title="3.6 给准火腿的一个忠告"></a>3.6 给准火腿的一个忠告</h2><p>在许多国家的许多地方，都有业余无线电俱乐部（ARC），这些火腿组织少则有几十人，多则有几百人。我们强烈建议那些希望成为火腿的准火腿，在提出申请之前，与本地的一个ARC取得联系，如果条件允许的话，还可以亲自去一趟。这样做有两个好处：一是能够从老火腿那里，了解申请过程中的一些注意事项，避免走弯路；二是能够结识一些老火腿，一旦获得电台执照，可以通联时，他们就是你最好、最近的通联对象。最近十年，在中国一些大、中城市中也出现了类似ARC的组织（通常叫做“某某集体业余电台”，例如：江苏省江阴市民防志愿者协会集体业余电台），此外网上还有许多车友会（每个车友会中都有几个火腿），我们强烈建议中国的准火腿也这样做。</p>
+<h2 id="3-7-中英对照常用术语"><a href="#3-7-中英对照常用术语" class="headerlink" title="3.7 中英对照常用术语"></a>3.7 中英对照常用术语</h2><p>无线电理论 – radio theory<br>无线电法规 – radio regulati0ns<br>操作 – operate<br>操作者 – operator<br>中国无线电运动协会 – Chinese Radio Sports Association 或 CRSA<br>中国无线电协会业余无线电工作委员会 – China Radio Amateurs Club 或 CRAC<br>验机 – test<br>最大的 – maximal<br>最小的 – minimal<br>功率 – power<br>业余无线电俱乐部 – amateur radio club 或 ARC</p>
+<h1 id="呼号"><a href="#呼号" class="headerlink" title="呼号"></a>呼号</h1><p>每一部电台都有一个呼号。例如笔者的两部电台，呼号均为BG1FPX。呼号具有两个特点：一是唯一性，每个呼号都是全球唯一的，世界上绝不会有两个相同的呼号；二是地域性，也就是根据呼号，能够知道电台所在的国家或地区，例如以W6开头的呼号表示电台在美国的加利福尼亚州，以VE3开头的呼号表示电台在加拿大的安大略省。许多新火腿误以为呼号是授予个人的，这是不对的，呼号是授予电台的，而不是授予个人的。</p>
+<h2 id="4-1-呼号的前缀与后缀"><a href="#4-1-呼号的前缀与后缀" class="headerlink" title="4.1 呼号的前缀与后缀"></a>4.1 呼号的前缀与后缀</h2><p>一个呼号可以分为两个部分：前缀和后缀。以VE3XD这个呼号为例，VE3是前缀，XD是后缀。大部分前缀由一个或两个字母与一个数字组成，例如W6（美国）和VE3（加拿大），小部分前缀由一个数字与一个字母组成，例如3X（几内亚）和9K（科威特）。由于各种原因，一些国家有几个、十几个甚至几十个前缀，例如W1至W9都是美国的前缀，VE1至VE7都是加拿大的前缀，而另外一些国家则只有一个前缀，例如几内亚和科威特。</p>
+<p>如果说前缀是用来区别国家的，那么后缀就是用来区别电台的。后缀最少一个字母，最多三个字母，按照英语字母的顺序生成，依次分配给验机通过的每部电台，例如VE3XA – VE3XB – VE3XC – VE3XD等。除了上面介绍的标准呼号之外，还有两种特殊呼号：一种是纪念呼号，用来纪念某个特别事件，例如7S2000M是瑞典火腿为纪念公元2000年的到来而特别设立的临时呼号；另外一种是荣誉呼号，也就是火腿可以申请用自己的姓名或姓名缩写作为电台的呼号，例如Bob（鲍伯）可以申请KA5BOB，Willian Henry Harrison（威廉•亨利•哈里森）可以申请KA5WHH。</p>
+<h2 id="4-2-中国呼号的含义"><a href="#4-2-中国呼号的含义" class="headerlink" title="4.2 中国呼号的含义"></a>4.2 中国呼号的含义</h2><p>中国呼号有大约40个前缀，但实际使用的只有10个，最常见的只有5个。下面我们以BG5VIP这个呼号为例，介绍一下中国呼号中各个部分的含义。我们首先将BG5VIP分成三个部分，即BG-5-VIP。</p>
+<p>①第一部分是前缀。在CRSA时代，BA表示一级电台，BD表示二级电台，BG/BH/BI表示三级或四级电台，BY表示集体电台，因此BG5VIP是三级或四级电台。 但进入CRAC时代之后，前缀不再表示等级，换句话说，BG5VIP可能是C类电台，可能是B类电台，也可能是A类电台。</p>
+<p>②第二部分也是前缀，用来表示电台所在的地区。中国的业余无线电台被划分为10个区，其中北京是第1区，福建、江西、浙江三省是第5区，因此BG5VIP这部电台在这三省中的某一省。下面是10个区的具体划分。</p>
+<p>第1区：北京<br>第2区：黑龙江 吉林 辽宁<br>第3区：河北 内蒙古 山西 天津<br>第4区：江苏 山东 上海<br>第5区：福建 江西 浙江<br>第6区：安徽 河南 湖北<br>第7区：广东 广西 海南 湖南<br>第8区：贵州 四川 重庆 云南<br>第9区：甘肃 宁夏 青海 陕西<br>第0区：西藏 新疆</p>
+<p>③第三部分是后缀，用来区别不同的电台。</p>
+<p>在中国大陆之外，台湾呼号的最常见前缀是BV，例如BV2AC，香港呼号的前缀是VR2，例如VR2UNA，澳门呼号的前缀是XX9，例如XX9AU。</p>
+<h2 id="4-3-异地通联与移动通联时的呼号"><a href="#4-3-异地通联与移动通联时的呼号" class="headerlink" title="4.3 异地通联与移动通联时的呼号"></a>4.3 异地通联与移动通联时的呼号</h2><p>在加拿大，VE3是安大略省的前缀，VE6是阿尔伯塔省的前缀。如果一部安大略省电台VE3XD在阿尔伯塔省通联，它的呼号应当变成VE3XD/VE6，读作VE3XD portable VE6。反之，如果一部阿尔伯塔省电台VE6KJ在安大略省通联，它的呼号应当变成VE6KJ/VE3，读作VE6KJ portable VE3。在中国，遇到这种情况时，做法正好相反，也就是将通联地的前缀放在呼号的前面，例如B7/BA4IA（4区火腿在7区通联）。</p>
+<p>如果加拿大电台VE3XD在美国加利福尼亚州（前缀是W6）通联，它的呼号应当变成VE3XD/W6或者W6/VE3XD。</p>
+<p>如果VE3XD在汽车、火车、轮船、飞机等正在移动的交通工具上通联，它的呼号应当变成VE3XD/M，读作VE3XD mobile（请注意：不要读作VE3XD portable mobile）。</p>
+<h2 id="4-4-中英对照常用术语"><a href="#4-4-中英对照常用术语" class="headerlink" title="4.4 中英对照常用术语"></a>4.4 中英对照常用术语</h2><p>呼号 – callsign<br>前缀 – prefix<br>后缀 – suffix<br>字母 – letter<br>数字 – number<br>纪念呼号 – commemorative callsign<br>荣誉呼号 – vanity callsign<br>区 – zone<br>分区 – zoning<br>可携带的 – portable<br>移动的 – mobile</p>
+<h1 id="波段"><a href="#波段" class="headerlink" title="波段"></a>波段</h1><p>在加拿大，火腿可以在18.068MHz－18.168MHz之间通联。如果用英语念这组数字与字母，那是非常罗嗦的，为此，我们可以根据频率，将它简称为18兆，或者根据波长，将它简称为17米，这里的18兆就是频段（频率段），17米就是波段（波长段）。今后如果我们说在18兆或17米通联，那就表示我们要在18.068MHz－18.168MHz之间的某个频点上通联。下面是世界各国火腿最常用的6个频段与波段的名称，其中①至④统称HF，⑤又称VHF，⑥又称UHF。</p>
+<p>①7兆 – 40米（HF）<br>②14兆 – 20米（HF）<br>③21兆 – 15米（HF）<br>④28兆 – 10米（HF）<br>⑤144兆 – 2米（VHF）<br>⑥430兆 – 70厘米（UHF）</p>
+<h2 id="5-1-为什么新火腿应当了解波段？"><a href="#5-1-为什么新火腿应当了解波段？" class="headerlink" title="5.1 为什么新火腿应当了解波段？"></a>5.1 为什么新火腿应当了解波段？</h2><p>每一个新火腿都应当了解波段，主要原因有两个。第一，不同级别的火腿，允许使用的波段是不同的，级别越高，波段越多，级别越低，波段越少。许多国家都规定，初级火腿只能使用UHF和VHF通联，中级火腿可以使用HF的部分波段通联，高级火腿可以使用HF的所有波段通联。在中国，最低的A类火腿只能使用UHF、VHF以及不常用的50MHz这三个波段，B类和C类火腿可以使用所有波段。</p>
+<p>第二个原因与购买电台有关。市场上出售的电台，大致分为三种：UHF/VHF电台、HF电台和UHF/VHF/HF电台。适合新火腿购买的手持电台或车载电台，大部分是UHF/VHF电台（价格相对较低），小部分是UHF/VHF/HF电台（价格相对较高）。另外，UHF/VHF电台又分为两种：只有UHF或者只有VHF的单波段电台（价格相对较低），以及同时包括UHF和VHF的双波段电台（价格相对较高）。新火腿应当根据自己的等级与支付能力，购买适当波段的电台。</p>
+<h2 id="5-2-波段规划"><a href="#5-2-波段规划" class="headerlink" title="5.2 波段规划"></a>5.2 波段规划</h2><p>我们平常所说的通联，一般是指语音通联，也就是两个火腿用英语、汉语或其它语言交谈。在一个波段中，有许多连续的频点，例如21.111MHz、211.112MHz、21.113MHz等，但不是每个频点都用于语音通联。根据无线电法规，某些频点只用于其它形式的通联，语音通联应当选择在这些频点之外的其它频点进行。以美国的28兆（10米）波段为例：</p>
+<p>①28.000MHz－28.070MHz用于CW通联<br>②28.070MHz－28.150MHz用于RTTY通联<br>③28.150MHz－28.190MHz用于Packet通联<br>④28.680MHz用于SSTV通联</p>
+<p>因此美国火腿不能在28.680MHz进行语音通联，因为这个频点是用于SSTV通联的。类似上面这种对一个波段的各个频点进行规划，在无线电技术上就叫作波段规划。各个国家的波段规划相互之间有细微的差别，中国的波段规划在CRAC编写的《业余无线电考试题库》中。下面是中国6个主要波段中最适合语音通联的频率。</p>
+<p>①7兆（40米）：7.030MHz－7.200MHz<br>②14兆（20米）：14.100MHz－14.350MHz<br>③21兆（15米）：21.125MHz－21.450MHz<br>④28兆（10米）：29.510MHz－29.700MHz<br>⑤144兆（2米）：144.035MHz－145.800MHz<br>⑥430兆（70厘米）：438.000MHz－439.000MHz</p>
+<h2 id="5-3-短波波段的传播"><a href="#5-3-短波波段的传播" class="headerlink" title="5.3 短波波段的传播"></a>5.3 短波波段的传播</h2><p>短波波段是一些极不稳定的波段，受到季节、气候、时间等的影响。例如某些波段，夏季传播好，冬季传播不好，晴天传播好，阴天传播不好，上午传播好，下午传播不好，甚至一分钟之前传播好，一分钟之后传播不好，等等。不过对短波波段影响最大的，还是太阳黑子与电离层。</p>
+<p>短波通讯的基本原理是：一个电台，通过它的天线，将电波发射到天空，电波经过电离层的多次折射，最后到达另外一个电台的天线。太阳黑子的活动决定了电离层的密度，而电离层的密度又决定了传播的质量。一般来说，太阳黑子活动剧烈时，电离层密度大，频率较高的波段（例如28兆）传播较好；相反，太阳黑子活动不剧烈时，电离层密度小，频率较低的波段（例如7兆）传播较好。</p>
+<p>太阳黑子的活动每11年达到一次高峰期，随后的5年处于低峰期。最近一次高峰期是2011年，因此今年（2015年）属于低峰期，频率较低波段（例如7兆）的传播一般要好于频率较高波段（例如28兆）的传播，但这并不是绝对的，经常会发生各种意外情况。</p>
+<p>最后补充一点：上面介绍的内容，只适用于短波波段，不适用于UHF和VHF，这两个波段基本上不受外界影响，因为它们的电波是沿着地面传播的，不经过电离层折射。</p>
+<h2 id="5-4-中英对照常用术语："><a href="#5-4-中英对照常用术语：" class="headerlink" title="5.4 中英对照常用术语："></a>5.4 中英对照常用术语：</h2><p>千赫 – kilohertz 或 KHz<br>兆赫 – megahertz 或 MHz<br>米 – metre 或 m<br>厘米 – centimetre 或 cm<br>频段 – band 或 frequency band<br>波段 – band 或 wave band<br>单波段 – single-band<br>双波段 – dual-band<br>三波段 – triple-band<br>多波段 – multi-band<br>波段规划 – band plan<br>传播 – propagation<br>太阳黑子 – sunspot<br>电离层 – ionosphere<br>高峰期 – high cycle<br>低峰期 – low cycle</p>
+<h1 id="怎样进行UHF-VHF通联？"><a href="#怎样进行UHF-VHF通联？" class="headerlink" title="怎样进行UHF/VHF通联？"></a>怎样进行UHF/VHF通联？</h1><p>刚刚获得电台执照的新火腿，往往抑制不住激动的心情，立即开始通联。我们原则上不赞成这样做，我们建议这些新火腿在开始通联之前，至少用一天的时间，守听老火腿的通联，看看他们是怎样通联的，包括怎样开始、怎样交谈、怎样结束，以便对通联过程有一个感性认识。新火腿不守听就立即开始通联，往往会养成一些不正确、不规范的坏习惯，有这些坏习惯的新火腿往往会遭到老火腿的蔑视。</p>
+<h2 id="6-1-一个UHF-VHF通联的范例"><a href="#6-1-一个UHF-VHF通联的范例" class="headerlink" title="6.1 一个UHF/VHF通联的范例"></a>6.1 一个UHF/VHF通联的范例</h2><p>假设在加拿大的安大略省，有两个火腿VE3AK和VE3XD，使用手持电台或车载电台，正在UHF或VHF的某个频点上守听，下面介绍两个人应当如何通联。</p>
+<p>①VE3AK不知道此时此刻波段上是否有其他火腿，他应当这样呼叫：</p>
+<p>[英语] cq cq cq. this is VE3AK listening for a call.<br>[汉语] cq cq cq。这里是VE3AK，正在守听，等待应答。</p>
+<p>在英语中，cq的发音正好是seek you（寻找你），在业余无线电上，它的意思就是呼叫。呼叫不特定的任何火腿时，cq必须重复三遍。上面这句呼叫如果没有应答，应当每隔几秒钟，继续呼叫一次。</p>
+<p>②VE3XD听到VE3AK的呼叫，应当这样应答：</p>
+<p>[英语] VE3AK, this is VE3XD.<br>[汉语] VE3AK，这里是VE3XD。</p>
+<p>也就是先报出对方的呼号，后报出自己的呼号。</p>
+<p>③双方互相报出呼号后，即可开始交谈，交谈的内容没有限制，但不应当违反所在国家的法律、法规、道德、伦理等。在交谈过程中，应当注意养成两个好习惯。一个好习惯是每隔几句话，就报出双方的呼号，以便让波段上的其他火腿知道是谁与谁正在通联。例如：</p>
+<p>[英语] VE3XD, this is VE3AK.<br>[汉语] VE3XD，这里是VE3AK。</p>
+<p>第二个好习惯是每次说完话，再说一个over，表示自己说话结束，请对方说话。例如：</p>
+<p>[英语] my name is bob. what’s your name? over.<br>[汉语] 我的名字是鲍伯。您的名字是什么？over。</p>
+<p>④通联结束之前，双方应当这样告别：</p>
+<p>[英语] 73 and goodbye. VE3XD, this is VE3AK, clear and listening.<br>[汉语] 73，再见。VE3XD，这里是VE3AK，结束通联，继续守听。</p>
+<h2 id="6-2-与UHF-VHF通联有关的两个问题"><a href="#6-2-与UHF-VHF通联有关的两个问题" class="headerlink" title="6.2 与UHF/VHF通联有关的两个问题"></a>6.2 与UHF/VHF通联有关的两个问题</h2><p>上面介绍的UHF/VHF通联对话，是加拿大、美国火腿最常用的表达方式，在实际通联中，可能会听到一些不同的其它表达方式，例如有的火腿不喜欢说listening（守听），而喜欢说monitoring（守听的另外一种说法），有的火腿不喜欢说over（结束），而喜欢说back to you（该你说了），等等，但UHF/VHF通联的基本规则是不能改变的。事实上，世界各国的UHF/VHF通联，没有两个地方的表达方式是一模一样的，只要符合基本规则即可，没有必要把加拿大、美国的表达方式照搬到自己的国家。</p>
+<p>在一些国家，进行UHF/VHF通联的火腿通常都是本地人，彼此熟悉，一般不用交换通联卡片（稍后介绍通联卡片）。但在CRSA时代，新入门的四级火腿如果与十位本地火腿交换十张通联卡片，可以不经过升级考试，直接晋升为三级火腿。但进入CRAC时代之后，这种做法被废止了。</p>
+<h2 id="6-3-中英对照常用术语："><a href="#6-3-中英对照常用术语：" class="headerlink" title="6.3 中英对照常用术语："></a>6.3 中英对照常用术语：</h2><p>呼叫 – cq（seek you）<br>呼叫 – calling<br>守听 – listening 或 monitoring<br>结束 – over<br>致敬 – best regards 或 73（读作seventy three）</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HAM/" rel="tag"><i class="fa fa-tag"></i> HAM</a>
+          
+            <a href="/tags/无线电/" rel="tag"><i class="fa fa-tag"></i> 无线电</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017-12-09/4958.html" rel="next" title="MBR和GPT硬盘分区表和UEFI BIOS">
+                <i class="fa fa-chevron-left"></i> MBR和GPT硬盘分区表和UEFI BIOS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017-12-28/8598.html" rel="prev" title="业余无线电（二）">
+                业余无线电（二） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTk4NS8xMjUyMQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/poet.jpg"
+                alt="Rocinante-Poet" />
+            
+              <p class="site-author-name" itemprop="name">Rocinante-Poet</p>
+              <p class="site-description motion-element" itemprop="description">诗人和祂的驽骍难得</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/u/3017932712?is_all=1" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://telegram.me/Poet_IIII" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:Poet515@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是业余无线电？"><span class="nav-number">1.</span> <span class="nav-text">什么是业余无线电？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-1-解释两个名词"><span class="nav-number">1.1.</span> <span class="nav-text">1.1 解释两个名词</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-2-5种常见的通联方式"><span class="nav-number">1.2.</span> <span class="nav-text">1.2 5种常见的通联方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-3-电台执照"><span class="nav-number">1.3.</span> <span class="nav-text">1.3 电台执照</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#1-4-中英对照常用术语"><span class="nav-number">1.4.</span> <span class="nav-text">1.4 中英对照常用术语</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#火腿能够做什么？"><span class="nav-number">2.</span> <span class="nav-text">火腿能够做什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-本地通联"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 本地通联</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-远程通联"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 远程通联</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-数字通联"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 数字通联</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-网上通联"><span class="nav-number">2.4.</span> <span class="nav-text">2.4 网上通联</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-外空通联"><span class="nav-number">2.5.</span> <span class="nav-text">2.5 外空通联</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-6-野外通联"><span class="nav-number">2.6.</span> <span class="nav-text">2.6 野外通联</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-7-通联竞赛"><span class="nav-number">2.7.</span> <span class="nav-text">2.7 通联竞赛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-8-自制设备"><span class="nav-number">2.8.</span> <span class="nav-text">2.8 自制设备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-9-应急通讯"><span class="nav-number">2.9.</span> <span class="nav-text">2.9 应急通讯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-10-眼球通联"><span class="nav-number">2.10.</span> <span class="nav-text">2.10 眼球通联</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-11-中英对照常用术语"><span class="nav-number">2.11.</span> <span class="nav-text">2.11 中英对照常用术语</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何成为一名火腿？"><span class="nav-number">3.</span> <span class="nav-text">如何成为一名火腿？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-中国公民成为火腿的老办法"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 中国公民成为火腿的老办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-中国公民成为火腿的新办法"><span class="nav-number">3.2.</span> <span class="nav-text">3.2 中国公民成为火腿的新办法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-3-资格考试的方式"><span class="nav-number">3.3.</span> <span class="nav-text">3.3 资格考试的方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-4-是否必须加入协会？"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 是否必须加入协会？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-5-中国火腿的3个类别"><span class="nav-number">3.5.</span> <span class="nav-text">3.5 中国火腿的3个类别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-6-给准火腿的一个忠告"><span class="nav-number">3.6.</span> <span class="nav-text">3.6 给准火腿的一个忠告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-7-中英对照常用术语"><span class="nav-number">3.7.</span> <span class="nav-text">3.7 中英对照常用术语</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#呼号"><span class="nav-number">4.</span> <span class="nav-text">呼号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-呼号的前缀与后缀"><span class="nav-number">4.1.</span> <span class="nav-text">4.1 呼号的前缀与后缀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-中国呼号的含义"><span class="nav-number">4.2.</span> <span class="nav-text">4.2 中国呼号的含义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-异地通联与移动通联时的呼号"><span class="nav-number">4.3.</span> <span class="nav-text">4.3 异地通联与移动通联时的呼号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-4-中英对照常用术语"><span class="nav-number">4.4.</span> <span class="nav-text">4.4 中英对照常用术语</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#波段"><span class="nav-number">5.</span> <span class="nav-text">波段</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1-为什么新火腿应当了解波段？"><span class="nav-number">5.1.</span> <span class="nav-text">5.1 为什么新火腿应当了解波段？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-波段规划"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 波段规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-3-短波波段的传播"><span class="nav-number">5.3.</span> <span class="nav-text">5.3 短波波段的传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-4-中英对照常用术语："><span class="nav-number">5.4.</span> <span class="nav-text">5.4 中英对照常用术语：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎样进行UHF-VHF通联？"><span class="nav-number">6.</span> <span class="nav-text">怎样进行UHF/VHF通联？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#6-1-一个UHF-VHF通联的范例"><span class="nav-number">6.1.</span> <span class="nav-text">6.1 一个UHF/VHF通联的范例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-2-与UHF-VHF通联有关的两个问题"><span class="nav-number">6.2.</span> <span class="nav-text">6.2 与UHF/VHF通联有关的两个问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-3-中英对照常用术语："><span class="nav-number">6.3.</span> <span class="nav-text">6.3 中英对照常用术语：</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rocinante-Poet</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">博客全站字数&#58;</span>
+    
+    <span title="博客全站字数">43.9k</span>
+  
+</div>
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>
