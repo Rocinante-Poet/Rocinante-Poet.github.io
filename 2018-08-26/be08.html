@@ -110,7 +110,7 @@
 <meta name="description" content="基本概念 进程（Process）是Windows系统中的一个基本概念，它包含着一个运行程序所需要的资源。一个正在运行的应用程序在操作系统中被视为一个进程，进程可以包括一个或多个线程。线程是操作系统分配处理器时间的基本单元，在进程中可以有多个线程同时执行代码。进程之间是相对独立的，一个进程无法访问另一个进程的数据（除非利用分布式计算方式），一个进程运行的失败也不会影响其他进程的运行，Windows系">
 <meta name="keywords" content="C#,线程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C#多线程">
+<meta property="og:title" content="Thread 线程">
 <meta property="og:url" content="https://rocinante-poet.github.io/2018-08-26/be08.html">
 <meta property="og:site_name" content="Poet">
 <meta property="og:description" content="基本概念 进程（Process）是Windows系统中的一个基本概念，它包含着一个运行程序所需要的资源。一个正在运行的应用程序在操作系统中被视为一个进程，进程可以包括一个或多个线程。线程是操作系统分配处理器时间的基本单元，在进程中可以有多个线程同时执行代码。进程之间是相对独立的，一个进程无法访问另一个进程的数据（除非利用分布式计算方式），一个进程运行的失败也不会影响其他进程的运行，Windows系">
@@ -131,9 +131,9 @@
 <meta property="og:image" content="https://rocinante-poet.github.io/2018-08-26/be08/43.JPG">
 <meta property="og:image" content="https://rocinante-poet.github.io/2018-08-26/be08/44.JPG">
 <meta property="og:image" content="https://rocinante-poet.github.io/2018-08-26/be08/45.JPG">
-<meta property="og:updated_time" content="2018-09-04T03:39:50.844Z">
+<meta property="og:updated_time" content="2018-09-05T04:48:34.394Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C#多线程">
+<meta name="twitter:title" content="Thread 线程">
 <meta name="twitter:description" content="基本概念 进程（Process）是Windows系统中的一个基本概念，它包含着一个运行程序所需要的资源。一个正在运行的应用程序在操作系统中被视为一个进程，进程可以包括一个或多个线程。线程是操作系统分配处理器时间的基本单元，在进程中可以有多个线程同时执行代码。进程之间是相对独立的，一个进程无法访问另一个进程的数据（除非利用分布式计算方式），一个进程运行的失败也不会影响其他进程的运行，Windows系">
 <meta name="twitter:image" content="https://rocinante-poet.github.io/2018-08-26/be08/1-1.PNG">
 
@@ -171,7 +171,7 @@
 
 
 
-  <title>C#多线程,Poet-蔚然成凨</title>
+  <title>Thread 线程,Poet-蔚然成凨</title>
   
 
 
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C#多线程</h1>
+          <h1 class="post-title" itemprop="name headline">Thread 线程</h1>
         
 
         <div class="post-meta">
@@ -408,8 +408,8 @@
 
       
         <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p><br></p>
-<p><font color="#EE7600">进程（Process）是Windows系统中的一个基本概念，它包含着一个运行程序所需要的资源。一个正在运行的应用程序在操作系统中被视为一个进程，进程可以包括一个或多个线程。线程是操作系统分配处理器时间的基本单元，在进程中可以有多个线程同时执行代码。进程之间是相对独立的，一个进程无法访问另一个进程的数据（除非利用分布式计算方式），一个进程运行的失败也不会影响其他进程的运行，Windows系统就是利用进程把工作划分为多个独立的区域的。进程可以理解为一个程序的基本边界。是应用程序的一个运行例程，是应用程序的一次动态执行过程。</font>   <br></p>
-<p><font color="#008B8B">线程（Thread）是进程中的基本执行单元，是操作系统分配CPU时间的基本单位，一个进程可以包含若干个线程，在进程入口执行的第一个线程被视为这个进程的主线程。在.NET应用程序中，都是以Main()方法作为入口的，当调用此方法时系统就会自动创建一个主线程。线程主要是由CPU寄存器、调用栈和线程本地存储器（Thread Local Storage，TLS）组成的。CPU寄存器主要记录当前所执行线程的状态，调用栈主要用于维护线程所调用到的内存与数据，TLS主要用于存放线程的状态信息。</font><br><a id="more"></a></p>
+<p><font color="#FA8072"><strong>进程（Process）是Windows系统中的一个基本概念，它包含着一个运行程序所需要的资源。一个正在运行的应用程序在操作系统中被视为一个进程，进程可以包括一个或多个线程。线程是操作系统分配处理器时间的基本单元，在进程中可以有多个线程同时执行代码。进程之间是相对独立的，一个进程无法访问另一个进程的数据（除非利用分布式计算方式），一个进程运行的失败也不会影响其他进程的运行，Windows系统就是利用进程把工作划分为多个独立的区域的。进程可以理解为一个程序的基本边界。是应用程序的一个运行例程，是应用程序的一次动态执行过程。</strong></font>   <br></p>
+<p><font color="#00CED1"><strong>线程（Thread）是进程中的基本执行单元，是操作系统分配CPU时间的基本单位，一个进程可以包含若干个线程，在进程入口执行的第一个线程被视为这个进程的主线程。在.NET应用程序中，都是以Main()方法作为入口的，当调用此方法时系统就会自动创建一个主线程。线程主要是由CPU寄存器、调用栈和线程本地存储器（Thread Local Storage，TLS）组成的。CPU寄存器主要记录当前所执行线程的状态，调用栈主要用于维护线程所调用到的内存与数据，TLS主要用于存放线程的状态信息。</strong></font><br><a id="more"></a></p>
 <p><strong>进程：</strong></p>
 <img src="/2018-08-26/be08/1-1.PNG" title="任务管理器中的进程">
 <p><strong>线程：</strong></p>
@@ -764,6 +764,10 @@ thread.Start(3);                                            //启动线程
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2018-09-02/64ac.html" rel="prev" title="Git与SSH">
+                Git与SSH <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -848,7 +852,7 @@ thread.Start(3);                                            //启动线程
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -870,7 +874,7 @@ thread.Start(3);                                            //启动线程
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -965,7 +969,7 @@ thread.Start(3);                                            //启动线程
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">43.9k</span>
+    <span title="博客全站字数">45.3k</span>
   
 </div>
 
