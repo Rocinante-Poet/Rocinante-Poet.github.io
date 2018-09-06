@@ -27,7 +27,3 @@ Sitemap: https://rocinante.top/sitemap.xml
 Sitemap: https://rocinante.top/baidusitemap.xml
 
 
-Sitemap: https://rocinante-poet.github.io/sitemap.xml
-
-Sitemap: https://rocinante-poet.github.io/baidusitemap.xml
-
