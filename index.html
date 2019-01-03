@@ -115,7 +115,7 @@
 <meta name="keywords" content="蔚然成凨">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Poet">
-<meta property="og:url" content="https://rocinante.top/index.html">
+<meta property="og:url" content="https://windcloud.xyz/index.html">
 <meta property="og:site_name" content="Poet">
 <meta property="og:description" content="诗人和祂的驽骍难得">
 <meta property="og:locale" content="zh-Hans">
@@ -151,7 +151,7 @@
 
 
 
-  <link rel="canonical" href="https://rocinante.top/"/>
+  <link rel="canonical" href="https://windcloud.xyz/"/>
 
 
 
@@ -305,7 +305,355 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://rocinante.top/2018-10-06/f5ee.html">
+    <link itemprop="mainEntityOfPage" href="https://windcloud.xyz/2019-01-03/bc6a.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocinante-Poet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/poet.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019-01-03/bc6a.html" itemprop="url">MySQL修改编码配置解决中文乱码</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T22:33:20+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019-01-03/bc6a.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019-01-03/bc6a.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019-01-03/bc6a.html" class="leancloud_visitors" data-flag-title="MySQL修改编码配置解决中文乱码">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="MySQL修改编码配置解决中文乱码"><a href="#MySQL修改编码配置解决中文乱码" class="headerlink" title="MySQL修改编码配置解决中文乱码"></a><font color="#FF3030" face="微软雅黑">MySQL修改编码配置解决中文乱码</font></h1><p>MySQL安装目录下将my-default.ini（改为my.ini）然后在my.ini添加节点如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">character-set-server=utf8 </span><br><span class="line">collation-server=utf8_general_ci</span><br></pre></td></tr></table></figure>
+<p>然后重启mysql即可<br>命令行以管理员身份运行cmd.exe<br>关闭服务 net stop mysql<br>开启服务 net start mysql</p>
+<p>查看编码格式</p>
+<ol>
+<li>输入 mysql -u root -p         进入mysql数据库</li>
+<li>键入密码</li>
+<li>show variables like ‘char%’;  显示编码格式</li>
+</ol>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019-01-03/bc6a.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://windcloud.xyz/2019-01-03/7c73.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocinante-Poet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/poet.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019-01-03/7c73.html" itemprop="url">WPF查找子控件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-03T19:43:17+08:00">
+                2019-01-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C#</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019-01-03/7c73.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019-01-03/7c73.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019-01-03/7c73.html" class="leancloud_visitors" data-flag-title="WPF查找子控件">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="查找某种类型的子控件，并返回一个List集合"><a href="#查找某种类型的子控件，并返回一个List集合" class="headerlink" title="查找某种类型的子控件，并返回一个List集合"></a><font color="#FF7F00" face="微软雅黑">查找某种类型的子控件，并返回一个List集合</font></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/// &lt;summary&gt;</span><br><span class="line">/// 查找某种类型的子控件，并返回一个List集合</span><br><span class="line">/// &lt;/summary&gt;</span><br><span class="line">/// &lt;typeparam name=&quot;T&quot;&gt;子控件类型&lt;/typeparam&gt;</span><br><span class="line">/// &lt;param name=&quot;obj&quot;&gt;父控件&lt;/param&gt;</span><br><span class="line">/// &lt;param name=&quot;typename&quot;&gt;类型名称&lt;/param&gt;</span><br><span class="line">/// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">public List&lt;T&gt; GetChildObjects&lt;T&gt;(DependencyObject obj, Type typename) where T : FrameworkElement</span><br><span class="line">&#123;</span><br><span class="line">    DependencyObject child = null;</span><br><span class="line">    List&lt;T&gt; childList = new List&lt;T&gt;();</span><br><span class="line">    for (int i = 0; i &lt;= VisualTreeHelper.GetChildrenCount(obj) - 1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        child = VisualTreeHelper.GetChild(obj, i);</span><br><span class="line">        if (child is T &amp;&amp; (((T)child).GetType() == typename))</span><br><span class="line">        &#123;</span><br><span class="line">            childList.Add((T)child);</span><br><span class="line">        &#125;</span><br><span class="line">        childList.AddRange(GetChildObjects&lt;T&gt;(child, typename));</span><br><span class="line">    &#125;</span><br><span class="line">    return childList;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<pre><code>List&lt;Button&gt; Btn = GetChildObjects&lt;Button&gt;(name, typeof(Button));        
+</code></pre><p>调用：name就是xaml里定义的控件的x:name</p>
+</blockquote>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019-01-03/7c73.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://windcloud.xyz/2018-10-06/f5ee.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rocinante-Poet">
@@ -476,7 +824,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://rocinante.top/2018-09-02/64ac.html">
+    <link itemprop="mainEntityOfPage" href="https://windcloud.xyz/2018-09-02/64ac.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Rocinante-Poet">
@@ -634,351 +982,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://rocinante.top/2018-08-26/be08.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Rocinante-Poet">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/poet.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Poet">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018-08-26/be08.html" itemprop="url">Thread 线程</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-26T14:45:47+08:00">
-                2018-08-26
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/C/" itemprop="url" rel="index">
-                    <span itemprop="name">C#</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-08-26/be08.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018-08-26/be08.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018-08-26/be08.html" class="leancloud_visitors" data-flag-title="Thread 线程">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h1><p><br></p>
-<p><font color="#FA8072"><strong>进程（Process）是Windows系统中的一个基本概念，它包含着一个运行程序所需要的资源。一个正在运行的应用程序在操作系统中被视为一个进程，进程可以包括一个或多个线程。线程是操作系统分配处理器时间的基本单元，在进程中可以有多个线程同时执行代码。进程之间是相对独立的，一个进程无法访问另一个进程的数据（除非利用分布式计算方式），一个进程运行的失败也不会影响其他进程的运行，Windows系统就是利用进程把工作划分为多个独立的区域的。进程可以理解为一个程序的基本边界。是应用程序的一个运行例程，是应用程序的一次动态执行过程。</strong></font>   <br></p>
-<p><font color="#00CED1"><strong>线程（Thread）是进程中的基本执行单元，是操作系统分配CPU时间的基本单位，一个进程可以包含若干个线程，在进程入口执行的第一个线程被视为这个进程的主线程。在.NET应用程序中，都是以Main()方法作为入口的，当调用此方法时系统就会自动创建一个主线程。线程主要是由CPU寄存器、调用栈和线程本地存储器（Thread Local Storage，TLS）组成的。CPU寄存器主要记录当前所执行线程的状态，调用栈主要用于维护线程所调用到的内存与数据，TLS主要用于存放线程的状态信息。</strong></font><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-08-26/be08.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://rocinante.top/2018-07-05/4ba9.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Rocinante-Poet">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/poet.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Poet">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018-07-05/4ba9.html" itemprop="url">VisualStudio2017 扩展插件</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-05T16:49:43+08:00">
-                2018-07-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/VisualStudio/" itemprop="url" rel="index">
-                    <span itemprop="name">VisualStudio</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018-07-05/4ba9.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018-07-05/4ba9.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2018-07-05/4ba9.html" class="leancloud_visitors" data-flag-title="VisualStudio2017 扩展插件">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度&#58;</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Visual-Studio-2017-扩展"><a href="#Visual-Studio-2017-扩展" class="headerlink" title="Visual Studio 2017 扩展"></a>Visual Studio 2017 扩展</h1><ul>
-<li><p><strong><font color="#EDA933">CodeMaid</font></strong> ：可快速整理代码文件，清理不必要的代码和杂乱的格式。并在开发时实时提供代码复杂度的报告，以便帮助开发人员降低代码复杂度、提高代码质量。</p>
-</li>
-<li><p><strong><font color="#EDA933">ReSharper</font></strong> ： 首先的是Resharper,这个基本是目前是我开发过程中必备的工具集，唯一的缺点就是吃内存，所以你的内存要是低于8G，就不要使用它了。它的特点可以快速重构、高亮显示错误、导航和搜索都很方便、智能提示、智能复制这个我特别喜欢等等，用着它你会感受到很多惊喜。</p>
-</li>
-<li><p><strong><font color="#EDA933">Extensibility Tools</font></strong> ：必备工具，他是基于visual studio上的拓展功能，增加了编码显示、智能感知、强化智能提示、代码段处理、自动提示html的标签工具等特点，而且下面提到的部分工具也是基于它的强化。</p>
-</li>
-</ul>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018-07-05/4ba9.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1033,7 +1036,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1044,7 +1047,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -1055,7 +1058,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">25</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1075,7 +1078,7 @@
                   </span>
                 
                   <span class="links-of-author-item">
-                    <a href="https://weibo.com/u/3017932712?is_all=1" target="_blank" title="Weibo">
+                    <a href="http://weibo.com/windcloudxyz" target="_blank" title="Weibo">
                       
                         <i class="fa fa-fw fa-weibo"></i>Weibo</a>
                   </span>
@@ -1120,7 +1123,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -1135,7 +1138,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">45.6k</span>
+    <span title="博客全站字数">46.3k</span>
   
   <span class="post-meta-divider">|</span><span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
 </div>
@@ -1319,7 +1322,7 @@
 
   
   <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
-  <script>AV.initialize("WxdKVWC0mK3Rl3tJFV8ePIka-gzGzoHsz", "UYHbcGmDXnsffU8oWBCvOB4t");</script>
+  <script>AV.initialize("UJb2snlOA51BmystTN8C9RHC-gzGzoHsz", "uwT5UCHdA7UHmYKL6DhYYRg2");</script>
   <script>
     function showTime(Counter) {
       var query = new AV.Query(Counter);
