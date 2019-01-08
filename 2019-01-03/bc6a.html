@@ -111,18 +111,18 @@
 
 
 
-<meta name="description" content="MySQL修改编码配置解决中文乱码MySQL安装目录下将my-default.ini（改为my.ini）然后在my.ini添加节点如下 123456[client]default-character-set=utf8[mysqld]character-set-server=utf8 collation-server=utf8_general_ci 然后重启mysql即可命令行以管理员身份运行cmd">
+<meta name="description" content="MySQL修改编码配置解决中文乱码MySql默认字符集为 latin1，存入中文会乱码！（MySql80默认字符集已更改 latin1为utf8mb4）MySQL安装目录下将my-default.ini（改为my.ini）然后在my.ini添加节点如下 123456[client]default-character-set=utf8[mysqld]character-set-server=utf8">
 <meta name="keywords" content="MySQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL修改编码配置解决中文乱码">
 <meta property="og:url" content="https://windcloud.xyz/2019-01-03/bc6a.html">
 <meta property="og:site_name" content="Poet">
-<meta property="og:description" content="MySQL修改编码配置解决中文乱码MySQL安装目录下将my-default.ini（改为my.ini）然后在my.ini添加节点如下 123456[client]default-character-set=utf8[mysqld]character-set-server=utf8 collation-server=utf8_general_ci 然后重启mysql即可命令行以管理员身份运行cmd">
+<meta property="og:description" content="MySQL修改编码配置解决中文乱码MySql默认字符集为 latin1，存入中文会乱码！（MySql80默认字符集已更改 latin1为utf8mb4）MySQL安装目录下将my-default.ini（改为my.ini）然后在my.ini添加节点如下 123456[client]default-character-set=utf8[mysqld]character-set-server=utf8">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-03T15:13:28.784Z">
+<meta property="og:updated_time" content="2019-01-08T06:54:06.800Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL修改编码配置解决中文乱码">
-<meta name="twitter:description" content="MySQL修改编码配置解决中文乱码MySQL安装目录下将my-default.ini（改为my.ini）然后在my.ini添加节点如下 123456[client]default-character-set=utf8[mysqld]character-set-server=utf8 collation-server=utf8_general_ci 然后重启mysql即可命令行以管理员身份运行cmd">
+<meta name="twitter:description" content="MySQL修改编码配置解决中文乱码MySql默认字符集为 latin1，存入中文会乱码！（MySql80默认字符集已更改 latin1为utf8mb4）MySQL安装目录下将my-default.ini（改为my.ini）然后在my.ini添加节点如下 123456[client]default-character-set=utf8[mysqld]character-set-server=utf8">
 
 
 
@@ -404,7 +404,7 @@
       
 
       
-        <h1 id="MySQL修改编码配置解决中文乱码"><a href="#MySQL修改编码配置解决中文乱码" class="headerlink" title="MySQL修改编码配置解决中文乱码"></a><font color="#FF3030" face="微软雅黑">MySQL修改编码配置解决中文乱码</font></h1><p>MySQL安装目录下将my-default.ini（改为my.ini）然后在my.ini添加节点如下</p>
+        <h1 id="MySQL修改编码配置解决中文乱码"><a href="#MySQL修改编码配置解决中文乱码" class="headerlink" title="MySQL修改编码配置解决中文乱码"></a><font color="#FF3030" face="微软雅黑">MySQL修改编码配置解决中文乱码</font></h1><p>MySql默认字符集为 latin1，存入中文会乱码！（MySql80默认字符集已更改 latin1为utf8mb4）<br>MySQL安装目录下将my-default.ini（改为my.ini）然后在my.ini添加节点如下</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set=utf8</span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">character-set-server=utf8 </span><br><span class="line">collation-server=utf8_general_ci</span><br></pre></td></tr></table></figure>
 <p>然后重启mysql即可<br>命令行以管理员身份运行cmd.exe<br>关闭服务 net stop mysql<br>开启服务 net start mysql</p>
 <p>查看编码格式</p>
@@ -452,6 +452,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019-01-08/d298.html" rel="prev" title="Navicat Premium 12.1">
+                Navicat Premium 12.1 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -535,7 +539,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -546,7 +550,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -557,7 +561,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -653,7 +657,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">46.3k</span>
+    <span title="博客全站字数">49.7k</span>
   
   <span class="post-meta-divider">|</span><span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
 </div>
