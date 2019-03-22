@@ -22,8 +22,8 @@ Disallow: /vendors/
 Disallow: /fancybox/
 
 
-Sitemap: https://windcloud.top/sitemap.xml
+Sitemap: https://windcloud.xyz/sitemap.xml
 
-Sitemap: https://windcloud.top/baidusitemap.xml
+Sitemap: https://windcloud.xyz/baidusitemap.xml
 
 
