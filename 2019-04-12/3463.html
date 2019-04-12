@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "57a36a3c"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="MySQL,Redis,Database,问答," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="MySQL和RedisMySQL1. 主键 超键 候选键 外键 主键： 数据库表中对储存数据对象予以唯一和完整标识的数据列或属性的组合。一个数据列只能有一个主键，且主键的取值不能缺失，即不能为空值（Null）。  超键： 在关系中能唯一标识元组的属性集称为关系模式的超键。一个属性可以为作为一个超键，多个属性组合在一起也可以作为一个超键。超键包含候选键和主键。  候选键： 是最小超键，即没有冗余元素">
+<meta name="keywords" content="MySQL,Redis,Database,问答">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL和Redis">
+<meta property="og:url" content="https://windcloud.xyz/2019-04-12/3463.html">
+<meta property="og:site_name" content="Poet">
+<meta property="og:description" content="MySQL和RedisMySQL1. 主键 超键 候选键 外键 主键： 数据库表中对储存数据对象予以唯一和完整标识的数据列或属性的组合。一个数据列只能有一个主键，且主键的取值不能缺失，即不能为空值（Null）。  超键： 在关系中能唯一标识元组的属性集称为关系模式的超键。一个属性可以为作为一个超键，多个属性组合在一起也可以作为一个超键。超键包含候选键和主键。  候选键： 是最小超键，即没有冗余元素">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://windcloud.xyz/2019-04-12/3463/MySQL和Redis数据库1.png">
+<meta property="og:updated_time" content="2019-04-12T09:56:33.823Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL和Redis">
+<meta name="twitter:description" content="MySQL和RedisMySQL1. 主键 超键 候选键 外键 主键： 数据库表中对储存数据对象予以唯一和完整标识的数据列或属性的组合。一个数据列只能有一个主键，且主键的取值不能缺失，即不能为空值（Null）。  超键： 在关系中能唯一标识元组的属性集称为关系模式的超键。一个属性可以为作为一个超键，多个属性组合在一起也可以作为一个超键。超键包含候选键和主键。  候选键： 是最小超键，即没有冗余元素">
+<meta name="twitter:image" content="https://windcloud.xyz/2019-04-12/3463/MySQL和Redis数据库1.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://windcloud.xyz/2019-04-12/3463.html"/>
+
+
+
+
+
+  <title>MySQL和Redis,Poet-蔚然成凨</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Poet</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">蔚然成凨</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于|留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://windcloud.xyz/2019-04-12/3463.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocinante-Poet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/poet.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Poet">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">MySQL和Redis</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-12T17:45:08+08:00">
+                2019-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL/Redis/" itemprop="url" rel="index">
+                    <span itemprop="name">Redis</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019-04-12/3463.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019-04-12/3463.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="MySQL和Redis"><a href="#MySQL和Redis" class="headerlink" title="MySQL和Redis"></a>MySQL和Redis</h1><h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="1-主键-超键-候选键-外键"><a href="#1-主键-超键-候选键-外键" class="headerlink" title="1. 主键 超键 候选键 外键"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">1. 主键 超键 候选键 外键</p></h3><p><strong> 主键：</strong><br> 数据库表中对储存数据对象予以唯一和完整标识的数据列或属性的组合。一个数据列只能有一个主键，且主键的取值不能缺失，即不能为空值（Null）。</p>
+<p><strong> 超键：</strong><br> 在关系中能唯一标识元组的属性集称为关系模式的超键。一个属性可以为作为一个超键，多个属性组合在一起也可以作为一个超键。超键包含候选键和主键。</p>
+<p><strong> 候选键：</strong><br> 是最小超键，即没有冗余元素的超键。</p>
+<p><strong> 外键：</strong><br> 在一个表中存在的另一个表的主键称此表的外键。</p>
+<h3 id="2-数据库事务的四个特性及含义"><a href="#2-数据库事务的四个特性及含义" class="headerlink" title="2. 数据库事务的四个特性及含义"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">2. 数据库事务的四个特性及含义</p></h3><p>数据库事务transanction正确执行的四个基本要素(<strong>ACID</strong>)</p>
+<ul>
+<li><p>原子性(Atomicity) :<br>整个事务中的所有操作，要么全部完成，要么全部不完成，不可能停滞在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。</p>
+</li>
+<li><p>一致性(Correspondence) :<br>在事务开始之前和事务结束以后，数据库的完整性约束没有被破坏。</p>
+</li>
+<li><p>隔离性(Isolation) :<br>隔离状态执行事务，使它们好像是系统在给定时间内执行的唯一操作。如果有两个事务，运行在相同的时间内，执行 相同的功能，事务的隔离性将确保每一事务在系统中认为只有该事务在使用系统。这种属性有时称为串行化，为了防止事务操作间的混淆，必须串行化或序列化请 求，使得在同一时间仅有一个请求用于同一数据。</p>
+</li>
+<li>持久性(Durability) :<br>在事务完成以后，该事务所对数据库所作的更改便持久的保存在数据库之中，并不会被回滚。</li>
+</ul>
+<h3 id="3-视图的作用，视图可以更改么？"><a href="#3-视图的作用，视图可以更改么？" class="headerlink" title="3. 视图的作用，视图可以更改么？"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">3. 视图的作用，视图可以更改么？</p></h3><p>视图是虚拟的表，与包含数据的表不一样，视图只包含使用时动态检索数据的查询；不包含任何列或数据。使用视图可以简化复杂的sql操作，隐藏具体的细节，保护数据；视图创建后，可以使用与表相同的方式利用它们。<br>视图不能被索引，也不能有关联的触发器或默认值，如果视图本身内有order by 则对视图再次order by将被覆盖。</p>
+<p>创建视图：create view XX as XX;<br>对于某些视图比如未使用联结子查询分组聚集函数Distinct Union等，是可以对其更新的，对视图的更新将对基表进行更新；但是视图主要用于简化检索，保护数据，并不用于更新，而且大部分视图都不可以更新。</p>
+<h3 id="4-drop-delete与truncate的区别"><a href="#4-drop-delete与truncate的区别" class="headerlink" title="4. drop,delete与truncate的区别"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">4. drop,delete与truncate的区别</p></h3><p>drop直接删掉表 truncate删除表中数据，再插入时自增长id又从1开始 delete删除表中数据，可以加where字句。</p>
+<ol>
+<li><p>DELETE语句执行删除的过程是每次从表中删除一行，并且同时将该行的删除操作作为事务记录在日志中保存以便进行进行回滚操作。TRUNCATE TABLE 则一次性地从表中删除所有的数据并不把单独的删除操作记录记入日志保存，删除行是不能恢复的。并且在删除的过程中不会激活与表有关的删除触发器。执行速度快。</p>
+</li>
+<li><p>表和索引所占空间。当表被TRUNCATE 后，这个表和索引所占用的空间会恢复到初始大小，而DELETE操作不会减少表或索引所占用的空间。drop语句将表所占用的空间全释放掉。</p>
+</li>
+<li><p>一般而言，drop &gt; truncate &gt; delete</p>
+</li>
+<li><p>应用范围。TRUNCATE 只能对TABLE；DELETE可以是table和view</p>
+</li>
+<li><p>TRUNCATE 和DELETE只删除数据，而DROP则删除整个表（结构和数据）。</p>
+</li>
+<li><p>truncate与不带where的delete ：只删除数据，而不删除表的结构（定义）drop语句将删除表的结构被依赖的约束（constrain),触发器（trigger)索引（index);依赖于该表的存储过程/函数将被保留，但其状态会变为：invalid。</p>
+</li>
+<li><p>delete语句为DML（data maintain Language),这个操作会被放到 rollback segment中,事务提交后才生效。如果有相应的 tigger, 执行的时候将被触发。</p>
+</li>
+<li><p>truncate、drop是DLL（data define language),操作立即生效，原数据不放到 rollback segment中，不能回滚</p>
+</li>
+<li><p>在没有备份情况下，谨慎使用 drop 与 truncate。要删除部分数据行采用delete且注意结合where来约束影响范围。回滚段要足够大。要删除表用drop;若想保留表而将表中数据删除，如果于事务无关，用truncate即可实现。如果和事务有关，或老师想触发trigger,还是用delete。</p>
+</li>
+<li><p>Truncate table 表名 速度快, 而且效率高, 因为:<br>truncate table 在功能上与不带 WHERE 子句的 DELETE 语句相同：二者均删除表中的全部行。但 TRUNCATE TABLE 比 DELETE 速度快，且使用的系统和事务日志资源少。DELETE 语句每次删除一行，并在事务日志中为所删除的每行记录一项。TRUNCATE TABLE 通过释放存储表数据所用的数据页来删除数据，并且只在事务日志中记录页的释放。</p>
+</li>
+<li><p>TRUNCATE TABLE 删除表中的所有行，但表结构及其列、约束、索引等保持不变。新行标识所用的计数值重置为该列的种子。如果想保留标识计数值，请改用 DELETE。如果要删除表定义及其数据，请使用 DROP TABLE 语句。</p>
+</li>
+<li><p>对于由 FOREIGN KEY 约束引用的表，不能使用 TRUNCATE TABLE，而应使用不带 WHERE 子句的 DELETE 语句。由于 TRUNCATE TABLE 不记录在日志中，所以它不能激活触发器。</p>
+</li>
+</ol>
+<h3 id="5-索引的工作原理及其种类"><a href="#5-索引的工作原理及其种类" class="headerlink" title="5. 索引的工作原理及其种类"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">5. 索引的工作原理及其种类</p></h3><p><strong> 数据库索引</strong>，是数据库管理系统中一个排序的数据结构，以协助快速查询、更新数据库表中数据。<strong> 索引的实现通常使用B树及其变种B+树。</strong></p>
+<p>  在数据之外，数据库系统还维护着满足特定查找算法的数据结构，这些数据结构以某种方式引用（指向）数据，这样就可以在这些数据结构上实现高级查找算法。这种数据结构，就是索引。</p>
+<p>为表设置索引要付出代价的：一是增加了数据库的存储空间，二是在插入和修改数据时要花费较多的时间(因为索引也要随之变动)。</p>
+<img src="/2019-04-12/3463/MySQL和Redis数据库1.png" title="索引">
+<p>图展示了一种可能的索引方式。左边是数据表，一共有两列七条记录，最左边的是数据记录的物理地址（注意逻辑上相邻的记录在磁盘上也并不是一定物理相邻的）。为了加快Col2的查找，可以维护一个右边所示的二叉查找树，每个节点分别包含索引键值和一个指向对应数据记录物理地址的指针，这样就可以运用二叉查找在O(log2n)的复杂度内获取到相应数据。</p>
+<p>创建索引可以大大提高系统的性能。</p>
+<p>第一，通过创建唯一性索引，可以保证数据库表中每一行数据的唯一性。</p>
+<p>第二，可以大大加快数据的检索速度，这也是创建索引的最主要的原因。</p>
+<p>第三，可以加速表和表之间的连接，特别是在实现数据的参考完整性方面特别有意义。</p>
+<p>第四，在使用分组和排序子句进行数据检索时，同样可以显著减少查询中分组和排序的时间。</p>
+<p>第五，通过使用索引，可以在查询的过程中，使用优化隐藏器，提高系统的性能。</p>
+<p>也许会有人要问：增加索引有如此多的优点，为什么不对表中的每一个列创建一个索引呢？因为，增加索引也有许多不利的方面。</p>
+<p>第一，创建索引和维护索引要耗费时间，这种时间随着数据量的增加而增加。</p>
+<p>第二，索引需要占物理空间，除了数据表占数据空间之外，每一个索引还要占一定的物理空间，如果要建立聚簇索引，那么需要的空间就会更大。</p>
+<p>第三，当对表中的数据进行增加、删除和修改的时候，索引也要动态的维护，这样就降低了数据的维护速度。</p>
+<p>索引是建立在数据库表中的某些列的上面。在创建索引的时候，应该考虑在哪些列上可以创建索引，在哪些列上不能创建索引。一般来说，应该在这些列上创建索引：在经常需要搜索的列上，可以加快搜索的速度；在作为主键的列上，强制该列的唯一性和组织表中数据的排列结构；在经常用在连接的列上，这些列主要是一些外键，可以加快连接的速度；在经常需要根据范围进行搜索的列上创建索引，因为索引已经排序，其指定的范围是连续的；在经常需要排序的列上创建索引，因为索引已经排序，这样查询可以利用索引的排序，加快排序查询时间；在经常使用在WHERE子句中的列上面创建索引，加快条件的判断速度。</p>
+<p>同样，对于有些列不应该创建索引。一般来说，不应该创建索引的的这些列具有下列特点：</p>
+<p>第一，对于那些在查询中很少使用或者参考的列不应该创建索引。这是因为，既然这些列很少使用到，因此有索引或者无索引，并不能提高查询速度。相反，由于增加了索引，反而降低了系统的维护速度和增大了空间需求。</p>
+<p>第二，对于那些只有很少数据值的列也不应该增加索引。这是因为，由于这些列的取值很少，例如人事表的性别列，在查询的结果中，结果集的数据行占了表中数据行的很大比例，即需要在表中搜索的数据行的比例很大。增加索引，并不能明显加快检索速度。</p>
+<p>第三，对于那些定义为text, image和bit数据类型的列不应该增加索引。这是因为，这些列的数据量要么相当大，要么取值很少。</p>
+<p>第四，当修改性能远远大于检索性能时，不应该创建索引。这是因为，修改性能和检索性能是互相矛盾的。当增加索引时，会提高检索性能，但是会降低修改性能。当减少索引时，会提高修改性能，降低检索性能。因此，当修改性能远远大于检索性能时，不应该创建索引。</p>
+<p>根据数据库的功能，可以在数据库设计器中创建三种索引：唯一索引、主键索引和聚集索引。</p>
+<p><strong>唯一索引</strong></p>
+<p>唯一索引是不允许其中任何两行具有相同索引值的索引。</p>
+<p>当现有数据中存在重复的键值时，大多数数据库不允许将新创建的唯一索引与表一起保存。数据库还可能防止添加将在表中创建重复键值的新数据。例如，如果在employee表中职员的姓(lname)上创建了唯一索引，则任何两个员工都不能同姓。</p>
+<p><strong>主键索引</strong></p>
+<p>数据库表经常有一列或列组合，其值唯一标识表中的每一行。该列称为表的主键。 在数据库关系图中为表定义主键将自动创建主键索引，主键索引是唯一索引的特定类型。该索引要求主键中的每个值都唯一。当在查询中使用主键索引时，它还允许对数据的快速访问。</p>
+<p> <strong>聚集索引</strong></p>
+<p>在聚集索引中，表中行的物理顺序与键值的逻辑（索引）顺序相同。一个表只能包含一个聚集索引。</p>
+<p>如果某索引不是聚集索引，则表中行的物理顺序与键值的逻辑顺序不匹配。<br><strong>与非聚集索引相比，聚集索引通常提供更快的数据访问速度。</strong></p>
+<p style="background-color:#008B8B;border-radius:8px;color:white;padding-left:20px;">局部性原理与磁盘预读</p>
+
+<p>由于存储介质的特性，磁盘本身存取就比主存慢很多，再加上机械运动耗费，磁盘的存取速度往往是主存的几百分分之一，因此为了提高效率，要尽量减少磁盘I/O。为了达到这个目的，磁盘往往不是严格按需读取，而是每次都会预读，即使只需要一个字节，磁盘也会从这个位置开始，顺序向后读取一定长度的数据放入内存。这样做的理论依据是计算机科学中著名的局部性原理：<strong>当一个数据被用到时，其附近的数据也通常会马上被使用。程序运行期间所需要的数据通常比较集中。</strong></p>
+<p>由于磁盘顺序读取的效率很高（不需要寻道时间，只需很少的旋转时间），因此对于具有局部性的程序来说，预读可以提高I/O效率。</p>
+<p>预读的长度一般为页（page）的整倍数。页是计算机管理存储器的逻辑块，硬件及操作系统往往将主存和磁盘存储区分割为连续的大小相等的块，每个存储块称为一页（在许多操作系统中，页得大小通常为4k），主存和磁盘以页为单位交换数据。当程序要读取的数据不在主存中时，会触发一个缺页异常，此时系统会向磁盘发出读盘信号，磁盘会找到数据的起始位置并向后连续读取一页或几页载入内存中，然后异常返回，程序继续运行。</p>
+<p style="background-color:#008B8B;border-radius:8px;color:white;padding-left:20px;">B-/+Tree索引的性能分析</p>
+
+<p>到这里终于可以分析B-/+Tree索引的性能了。</p>
+<p>上文说过一般使用磁盘I/O次数评价索引结构的优劣。先从B-Tree分析，根据B-Tree的定义，可知检索一次最多需要访问h个节点。数据库系统的设计者巧妙利用了磁盘预读原理，将一个节点的大小设为等于一个页，这样每个节点只需要一次I/O就可以完全载入。为了达到这个目的，在实际实现B-Tree还需要使用如下技巧：</p>
+<p>每次新建节点时，直接申请一个页的空间，这样就保证一个节点物理上也存储在一个页里，加之计算机存储分配都是按页对齐的，就实现了一个node只需一次I/O。</p>
+<p><strong>B-Tree中一次检索最多需要h-1次I/O（根节点常驻内存），渐进复杂度为O(h)=O(logdN)。</strong>一般实际应用中，出度d是非常大的数字，通常超过100，因此h非常小（通常不超过3）。</p>
+<p>而红黑树这种结构，h明显要深的多。由于逻辑上很近的节点（父子）物理上可能很远，无法利用局部性，所以红黑树的I/O渐进复杂度也为O(h)，效率明显比B-Tree差很多。</p>
+<p><strong>综上所述，用B-Tree作为索引结构效率是非常高的。</strong></p>
+<h3 id="6-连接的种类"><a href="#6-连接的种类" class="headerlink" title="6. 连接的种类"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">6. 连接的种类</p></h3><p>查询分析器中执行：<br>–建表table1,table2：<br>create table table1(id int,name varchar(10))<br>create table table2(id int,score int)<br>insert into table1 select 1,’Amy’<br>insert into table1 select 2,’Simon’<br>insert into table1 select 4,’Otis’<br>insert into table2 select 1,90<br>insert into table2 select 2,100<br>insert into table2 select 3,80</p>
+<p>如表:<br>| table1 | table1 | table2 | table2 |<br>| :–: | :–: | :–: | :–: |<br>| id | name | id | score |<br>| 1 | Amy   | 1 | 90   |<br>| 2 | Simon | 2 | 100  |<br>| 4 | Otis  | 3 | 80 |</p>
+<p>以下均在查询分析器中执行<br>一、外连接</p>
+<ol>
+<li><p>概念：包括左向外联接、右向外联接或完整外部联接</p>
+</li>
+<li><p>左连接：left join 或 left outer join<br>(1) 左向外联接的结果集包括 LEFT OUTER 子句中指定的左表的所有行，而不仅仅是联接列所匹配的行。如果左表的某行在右表中没有匹配行，则在相关联的结果集行中右表的所有选择列表列均为空值(null)。</p>
+</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> table1 <span class="keyword">left</span> <span class="keyword">join</span> table2 <span class="keyword">on</span> table1.id=table2.id</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>结果<br>| id      | name |   id|  score|<br>| :–: | :–: | :–: | :–: |<br>| 1 |   amy |  1 | 90 |<br>| 2 |   Simon |  2 | 100 |<br>| 4 |   Otis  |  null  | null |<br>注释：包含table1的所有子句，根据指定条件返回table2相应的字段，不符合的以null显示</p>
+</blockquote>
+<ol start="3">
+<li>右连接：right join 或 right outer join<br>(1) 右向外联接是左向外联接的反向联接。将返回右表的所有行。如果右表的某行在左表中没有匹配行，则将为左表返回空值。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> table1 <span class="keyword">right</span> <span class="keyword">join</span> table2 <span class="keyword">on</span> table1.id=table2.id</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>结果<br>| id      | name |   id|  score|<br>| :–: | :–: | :–: | :–: |<br>| 1 |   amy |  1 | 90 |<br>| 2 |   Simon |  2 | 100 |<br>| null |   null |  3 | 80|<br>注释：包含table2的所有子句，根据指定条件返回table1相应的字段，不符合的以null显示</p>
+</blockquote>
+<ol start="4">
+<li>完整外部联接<br>(1) 完整外部联接把两张表的字段都查出来，没有对应的值就显示null，但是注意：mysql是没有全外连接的(mysql中没有full outer join关键字)，想要达到全外连接的效果，可以使用union关键字连接左外连接和右外连接。</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table1 <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> table2 <span class="keyword">ON</span> table1.id = table2.id <span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> table1 <span class="keyword">RIGHT</span> <span class="keyword">JOIN</span> table2 <span class="keyword">ON</span> table1.id = table2.id</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>结果<br>| id      | name |   id|  score|<br>| :–: | :–: | :–: | :–: |<br>| 1 |   amy |  1 | 90 |<br>| 2 |   Simon |  2 | 100 |<br>| 4 |   Otis | null | null |<br>| null | null | 3 | 80 |<br>注释：返回左右连接的和（见上左、右连接）</p>
+</blockquote>
+<p>二、内连接</p>
+<ol>
+<li>概念：内联接是用比较运算符比较要联接列的值的联接</li>
+<li>内连接：join 或 inner join</li>
+</ol>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> table1 <span class="keyword">join</span> table2 <span class="keyword">on</span> table1.id=table2.id</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>结果<br>| id      | name |   id|  score|<br>| :–: | :–: | :–: | :–: |<br>| 1 |   amy |  1 | 90 |<br>| 2 |   Simon |  2 | 100 |<br>注释：只返回符合条件的table1和table2的列</p>
+</blockquote>
+<p>4.等价（与下列执行效果相同）<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A:	<span class="keyword">select</span> a.*,b.* <span class="keyword">from</span> table1 a,table2 b <span class="keyword">where</span> a.id=b.id;</span><br><span class="line">B:	<span class="keyword">select</span> * <span class="keyword">from</span> table1 <span class="keyword">cross</span> <span class="keyword">join</span> table2 <span class="keyword">where</span> table1.id=table2.id;</span><br></pre></td></tr></table></figure></p>
+<p>(注：cross join后加条件只能用where,不能用on)</p>
+<p>三、交叉连接(完全)</p>
+<ol>
+<li><p>概念：没有 WHERE 子句的交叉联接将产生联接所涉及的表的笛卡尔积。第一个表的行数乘以第二个表的行数等于笛卡尔积结果集的大小。（table1和table2交叉连接产生3*3=9条记录）</p>
+</li>
+<li><p>交叉连接：cross join (不带条件where…)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> table1 <span class="keyword">cross</span> <span class="keyword">join</span> table2</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>结果<br>| id      | name |   id|  score|<br>| :–: | :–: | :–: | :–: |<br>|1 | Amy |    1 | 90 |<br>|2    | Simon |    1 | 90 |<br>|4| Otis    |1    |90 |<br>|1| Amy| 2 | 100|<br>|2    |Simon| 2 |100|<br>|4|Otis|    2    |100|<br>|1    |Amy| 3 |80|<br>|2| Simon |3     |80|<br>|4    |Otis    |3    |80|<br>注释：返回3*3=9条记录，即笛卡尔积</p>
+</blockquote>
+<ol start="4">
+<li>等价（与下列执行效果相同）<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A:	<span class="keyword">select</span> * <span class="keyword">from</span> table1,table2</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="7-数据库范式"><a href="#7-数据库范式" class="headerlink" title="7. 数据库范式"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">7. 数据库范式</p></h3><ol>
+<li>第一范式（1NF）</li>
+</ol>
+<p>在任何一个关系数据库中，第一范式（1NF）是对关系模式的基本要求，不满足第一范式（1NF）的数据库就不是关系数据库。<br>所谓第一范式（1NF）是指数据库表的每一列都是不可分割的基本数据项，同一列中不能有多个值，即实体中的某个属性不能有多个值或者不能有重复的属性。如果出现重复的属性，就可能需要定义一个新的实体，新的实体由重复的属性构成，新实体与原实体之间为一对多关系。在第一范式（1NF）中表的每一行只包含一个实例的信息。简而言之，第一范式就是无重复的列。</p>
+<ol start="2">
+<li>第二范式（2NF）</li>
+</ol>
+<p>第二范式（2NF）是在第一范式（1NF）的基础上建立起来的，即满足第二范式（2NF）必须先满足第一范式（1NF）。第二范式（2NF）要求数据库表中的每个实例或行必须可以被惟一地区分。为实现区分通常需要为表加上一个列，以存储各个实例的惟一标识。这个惟一属性列被称为主关键字或主键、主码。<br>第二范式（2NF）要求实体的属性完全依赖于主关键字。所谓完全依赖是指不能存在仅依赖主关键字一部分的属性，如果存在，那么这个属性和主关键字的这一部分应该分离出来形成一个新的实体，新实体与原实体之间是一对多的关系。为实现区分通常需要为表加上一个列，以存储各个实例的惟一标识。简而言之，第二范式就是非主属性非部分依赖于主关键字。</p>
+<ol start="3">
+<li>第三范式（3NF）</li>
+</ol>
+<p>满足第三范式（3NF）必须先满足第二范式（2NF）。简而言之，第三范式（3NF）要求一个数据库表中不包含已在其它表中已包含的非主关键字信息。例如，存在一个部门信息表，其中每个部门有部门编号（dept_id）、部门名称、部门简介等信息。那么在员工信息表中列出部门编号后就不能再将部门名称、部门简介等与部门有关的信息再加入员工信息表中。如果不存在部门信息表，则根据第三范式（3NF）也应该构建它，否则就会有大量的数据冗余。简而言之，第三范式就是属性不依赖于其它非主属性。（我的理解是消除冗余）</p>
+<h3 id="8-数据库优化的思路"><a href="#8-数据库优化的思路" class="headerlink" title="8. 数据库优化的思路"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">8. 数据库优化的思路</p></h3><p style="background-color:#008B8B;border-radius:8px;color:white;padding-left:20px;">1. SQL语句优化</p>
+
+<ol>
+<li>应尽量避免在 where 子句中使用!=或&lt;&gt;操作符，否则将引擎放弃使用索引而进行全表扫描。</li>
+<li>应尽量避免在 where 子句中对字段进行 null 值判断，否则将导致引擎放弃使用索引而进行全表扫描，如：<br>select id from t where num is null<br>可以在num上设置默认值0，确保表中num列没有null值，然后这样查询：<br>select id from t where num=0</li>
+<li>很多时候用 exists 代替 in 是一个好的选择</li>
+<li>用Where子句替换HAVING 子句 因为HAVING 只会在检索出所有记录之后才对结果集进行过滤</li>
+</ol>
+<p style="background-color:#008B8B;border-radius:8px;color:white;padding-left:20px;">2. 数据库结构优化</p>
+
+<ol>
+<li>范式优化： 比如消除冗余（节省空间）</li>
+<li>反范式优化：比如适当加冗余等（减少join）</li>
+<li>拆分表： 分区将数据在物理上分隔开，不同分区的数据可以制定保存在处于不同磁盘上的数据文件里。这样，当对这个表进行查询时，只需要在表分区中进行扫描，而不必进行全表扫描，明显缩短了查询时间，另外处于不同磁盘的分区也将对这个表的数据传输分散在不同的磁盘I/O，一个精心设置的分区可以将数据传输对磁盘I/O竞争均匀地分散开。对数据量大的时时表可采取此方法。可按月自动建表分区。</li>
+<li><p>拆分其实又分垂直拆分和水平拆分： 案例： 简单购物系统暂设涉及如下表：<br> 产品表（数据量10w，稳定）<br> 订单表（数据量200w，且有增长趋势）<br>  用户表 （数据量100w，且有增长趋势）</p>
+<p>  以mysql为例讲述下水平拆分和垂直拆分，mysql能容忍的数量级在百万静态数据可以到千万</p>
+</li>
+</ol>
+<ul>
+<li>垂直拆分： 解决问题：表与表之间的io竞争 不解决问题：单表中数据量增长出现的压力 方案： 把产品表和用户表放到一个server上 订单表单独放到一个server上</li>
+<li><p>水平拆分： 解决问题：单表中数据量增长出现的压力 不解决问题：表与表之间的io争夺</p>
+<p>  方案： 用户表通过性别拆分为男用户表和女用户表 订单表通过已完成和完成中拆分为已完成订单和未完成订单 产品表 未完成订单放一个server上 已完成订单表和男用户表放一个server上 女用户表放一个server上</p>
+</li>
+</ul>
+<h3 id="9-存储过程与触发器的区别"><a href="#9-存储过程与触发器的区别" class="headerlink" title="9. 存储过程与触发器的区别"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">9. 存储过程与触发器的区别</p></h3><p>触发器与存储过程非常相似，触发器也是SQL语句集，<strong>两者唯一的区别是触发器不能用EXECUTE语句调用，而是在用户执行Transact-SQL语句时自动触发（激活）执行。触发器是在一个修改了指定表中的数据时执行的存储过程。通常通过创建触发器来强制实现不同表中的逻辑相关数据的引用完整性和一致性。</strong>由于用户不能绕过触发器，所以可以用它来强制实施复杂的业务规则，以确保数据的完整性。触发器不同于存储过程，<strong>触发器主要是通过事件执行触发而被执行的，而存储过程可以通过存储过程名称名字而直接调用。</strong>当对某一表进行诸如UPDATE、INSERT、DELETE这些操作时，SQLSERVER就会自动执行触发器所定义的SQL语句，从而确保对数据的处理必须符合这些SQL语句所定义的规则。</p>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><h3 id="1-什么是Redis？"><a href="#1-什么是Redis？" class="headerlink" title="1. 什么是Redis？"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">1. 什么是Redis？</p></h3><p>Redis全称为：Remote Dictionary Server（远程数据服务），该软件使用C语言编写，Redis是一个key-value存储系统，它支持丰富的数据类型：</p>
+<ul>
+<li>String</li>
+<li>List</li>
+<li>Set</li>
+<li>Zset</li>
+<li>Hash</li>
+</ul>
+<h3 id="2-Redis相比memcached有哪些优势？"><a href="#2-Redis相比memcached有哪些优势？" class="headerlink" title="2. Redis相比memcached有哪些优势？"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">2. Redis相比memcached有哪些优势？</p></h3><ol>
+<li>memcached所有的值均是简单的字符串，redis作为其替代者，支持更为丰富的数据类型</li>
+<li>redis的速度比memcached快很多</li>
+<li>redis可以持久化其数据</li>
+</ol>
+<h3 id="3-为什么Redis需要把所有数据放到内存中"><a href="#3-为什么Redis需要把所有数据放到内存中" class="headerlink" title="3. 为什么Redis需要把所有数据放到内存中"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">3. 为什么Redis需要把所有数据放到内存中</p></h3><p>Redis为了达到最快的读写速度将数据都读到内存中，并通过异步的方式将数据写入磁盘。所以redis具有快速和数据持久化的特征。如果不将数据放在内存中，磁盘I/O速度为严重影响redis的性能。在内存越来越便宜的今天，redis将会越来越受欢迎。 如果设置了最大使用的内存，则数据已有记录数达到内存限值后不能继续插入新值。</p>
+<h3 id="4-Redis的数据淘汰策略"><a href="#4-Redis的数据淘汰策略" class="headerlink" title="4. Redis的数据淘汰策略"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">4. Redis的数据淘汰策略</p></h3><ul>
+<li>volatile-lru：从已设置过期时间的数据集（server.db[i].expires）中挑选最近最少使用的数据淘汰</li>
+<li>volatile-ttl：从已设置过期时间的数据集（server.db[i].expires）中挑选将要过期的数据淘汰</li>
+<li>volatile-random：从已设置过期时间的数据集（server.db[i].expires）中任意选择数据淘汰</li>
+<li>allkeys-lru：从数据集（server.db[i].dict）中挑选最近最少使用的数据淘汰</li>
+<li>allkeys-random：从数据集（server.db[i].dict）中任意选择数据淘汰</li>
+<li>no-enviction（驱逐）：禁止驱逐数据；返回错误当内存限制达到并且客户端尝试执行会让更多内存被使用的命令</li>
+</ul>
+<h3 id="5-Redis集群有哪些方案？"><a href="#5-Redis集群有哪些方案？" class="headerlink" title="5. Redis集群有哪些方案？"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">5. Redis集群有哪些方案？</p></h3><ul>
+<li><a href="https://blog.csdn.net/u014490157/article/details/52244378" target="_blank" rel="noopener">Hash槽</a></li>
+<li><a href="https://blog.csdn.net/tianpeng341204/article/details/78963850" target="_blank" rel="noopener">一致性hash算法</a></li>
+</ul>
+<hr>
+<ol>
+<li>twemproxy，大概概念是，它类似于一个代理方式，使用方法和普通redis无任何区别，设置好它下属的多个redis实例后，使用时在本需要连接redis的地方改为连接twemproxy，它会以一个代理的身份接收请求并使用一致性hash算法，将请求转接到具体redis，将结果再返回twemproxy。使用方式简便(相对redis只需修改连接端口)，对旧项目扩展的首选。 问题：twemproxy自身单端口实例的压力，使用一致性hash后，对redis节点数量改变时候的计算值的改变，数据无法自动移动到新的节点。</li>
+<li>codis，目前用的最多的集群方案，基本和twemproxy一致的效果，但它支持在 节点数量改变情况下，旧节点数据可恢复到新hash节点。</li>
+<li>redis cluster3.0自带的集群，特点在于他的分布式算法不是一致性hash，而是hash槽的概念，以及自身支持节点设置从节点。具体看官方文档介绍。</li>
+<li>在业务代码层实现，起几个毫无关联的redis实例，在代码层，对key 进行hash计算，然后去对应的redis实例操作数据。 这种方式对hash层代码要求比较高，考虑部分包括，节点失效后的替代算法方案，数据震荡后的自动脚本恢复，实例的监控，等等。</li>
+</ol>
+<h3 id="6-Redis集群方案什么情况下会导致整个集群不可用"><a href="#6-Redis集群方案什么情况下会导致整个集群不可用" class="headerlink" title="6. Redis集群方案什么情况下会导致整个集群不可用"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">6. Redis集群方案什么情况下会导致整个集群不可用</p></h3><p>Redis 集群的主从复制模型</p>
+<p>为了使在部分节点失败或者大部分节点无法通信的情况下集群仍然可用，所以集群使用了主从复制模型,每个节点都会有N-1个复制品.</p>
+<p>在我们例子中具有A，B，C三个节点的集群,在没有复制模型的情况下,如果节点B失败了，那么整个集群就会以为缺少5501-11000这个范围的槽而不可用.</p>
+<p>然而如果在集群创建的时候（或者过一段时间）我们为每个节点添加一个从节点A1，B1，C1,那么整个集群便有三个master节点和三个slave节点组成，这样在节点B失败后，集群便会选举B1为新的主节点继续服务，整个集群便不会因为槽找不到而不可用了</p>
+<p>不过当B和B1 都失败后，集群是不可用的.</p>
+<h3 id="7-Redis有哪些适合的场景"><a href="#7-Redis有哪些适合的场景" class="headerlink" title="7. Redis有哪些适合的场景"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">7. Redis有哪些适合的场景</p></h3><ol>
+<li><p>会话缓存（Session Cache）<br>最常用的一种使用Redis的情景是会话缓存（session cache）。用Redis缓存会话比其他存储（如Memcached）的优势在于：Redis提供持久化。当维护一个不是严格要求一致性的缓存时，如果用户的购物车信息全部丢失，大部分人都会不高兴的，现在，他们还会这样吗？幸运的是，随着 Redis 这些年的改进，很容易找到怎么恰当的使用Redis来缓存会话的文档。甚至广为人知的商业平台Magento也提供Redis的插件。</p>
+</li>
+<li><p>全页缓存（FPC）<br>除基本的会话token之外，Redis还提供很简便的FPC平台。回到一致性问题，即使重启了Redis实例，因为有磁盘的持久化，用户也不会看到页面加载速度的下降，这是一个极大改进，类似PHP本地FPC。 再次以Magento为例，Magento提供一个插件来使用Redis作为全页缓存后端。 此外，对WordPress的用户来说，Pantheon有一个非常好的插件 wp-redis，这个插件能帮助你以最快速度加载你曾浏览过的页面。</p>
+</li>
+<li><p>队列 Reids在内存存储引擎领域的一大优点是提供 list 和 set 操作，这使得Redis能作为一个很好的消息队列平台来使用。Redis作为队列使用的操作，就类似于本地程序语言（如Python）对 list 的 push/pop 操作。<br>如果你快速的在Google中搜索“Redis queues”，你马上就能找到大量的开源项目，这些项目的目的就是利用Redis创建非常好的后端工具，以满足各种队列需求。例如，Celery有一个后台就是使用Redis作为broker，你可以从这里去查看。</p>
+</li>
+<li><p>排行榜/计数器 Redis在内存中对数字进行递增或递减的操作实现的非常好。集合（Set）和有序集合（Sorted Set）也使得我们在执行这些操作的时候变的非常简单，Redis只是正好提供了这两种数据结构。所以，我们要从排序集合中获取到排名最靠前的10个用户–我们称之为“user_scores”，我们只需要像下面一样执行即可： 当然，这是假定你是根据你用户的分数做递增的排序。如果你想返回用户及用户的分数，你需要这样执行 ZRANGE user_scores 0 10 WITHSCORES Agora Games就是一个很好的例子，用Ruby实现的，它的排行榜就是使用Redis来存储数据的，你可以在这里看到。</p>
+</li>
+<li><p>发布/订阅<br>最后（但肯定不是最不重要的）是Redis的发布/订阅功能。发布/订阅的使用场景确实非常多。我已看见人们在社交网络连接中使用，还可作为基于发布/订阅的脚本触发器，甚至用Redis的发布/订阅功能来建立聊天系统</p>
+</li>
+</ol>
+<h3 id="8-Redis和Redisson有什么关系"><a href="#8-Redis和Redisson有什么关系" class="headerlink" title="8. Redis和Redisson有什么关系"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">8. Redis和Redisson有什么关系</p></h3><p>Redisson是一个高级的分布式协调Redis客服端，能帮助用户在分布式环境中轻松实现一些Java的对象 (Bloom filter, BitSet, Set, SetMultimap, ScoredSortedSet, SortedSet, Map, ConcurrentMap, List, ListMultimap, Queue, BlockingQueue, Deque, BlockingDeque, Semaphore, Lock, ReadWriteLock, AtomicLong, CountDownLatch, Publish / Subscribe, HyperLogLog)。</p>
+<h3 id="9-Jedis与Redisson对比有什么优缺点"><a href="#9-Jedis与Redisson对比有什么优缺点" class="headerlink" title="9. Jedis与Redisson对比有什么优缺点"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">9. Jedis与Redisson对比有什么优缺点</p></h3><p>Jedis是Redis的Java实现的客户端，其API提供了比较全面的Redis命令的支持；Redisson实现了分布式和可扩展的Java数据结构，和Jedis相比，功能较为简单，不支持字符串操作，不支持排序、事务、管道、分区等Redis特性。Redisson的宗旨是促进使用者对Redis的关注分离，从而让使用者能够将精力更集中地放在处理业务逻辑上。</p>
+<h3 id="10-Redis哈希槽的概念"><a href="#10-Redis哈希槽的概念" class="headerlink" title="10. Redis哈希槽的概念"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">10. Redis哈希槽的概念</p></h3><p>Redis集群没有使用一致性hash,而是引入了哈希槽的概念，Redis集群有16384个哈希槽，每个key通过CRC16校验后对16384取模来决定放置哪个槽，集群的每个节点负责一部分hash槽。</p>
+<h3 id="11-Redis集群的主从复制模型是怎样的？"><a href="#11-Redis集群的主从复制模型是怎样的？" class="headerlink" title="11. Redis集群的主从复制模型是怎样的？"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">11. Redis集群的主从复制模型是怎样的？</p></h3><p>为了使在部分节点失败或者大部分节点无法通信的情况下集群仍然可用，所以集群使用了主从复制模型,每个节点都会有N-1个复制品.</p>
+<h3 id="12-Redis集群会有写操作丢失吗？为什么？"><a href="#12-Redis集群会有写操作丢失吗？为什么？" class="headerlink" title="12. Redis集群会有写操作丢失吗？为什么？"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">12. Redis集群会有写操作丢失吗？为什么？</p></h3><p>Redis并不能保证数据的强一致性，这意味这在实际中集群在特定的条件下可能会丢失写操作。 例如cluster接受了一个写请求，给client返回ok，这个写请求的内容也可能丢失。因为其写流程如下：</p>
+<blockquote>
+<p>master B接受了一个写请求；<br>B写成功，返回ok给client；<br>B把数据广播给slaves（B1、B2、B3）</p>
+</blockquote>
+<p>如果第二步执行完毕后，B crash了，则会发生数据不一致现象。</p>
+<h3 id="13-Redis集群之间是如何复制"><a href="#13-Redis集群之间是如何复制" class="headerlink" title="13. Redis集群之间是如何复制"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">13. Redis集群之间是如何复制</p></h3><p>异步复制</p>
+<h3 id="14-Redis集群最大节点个数"><a href="#14-Redis集群最大节点个数" class="headerlink" title="14. Redis集群最大节点个数"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">14. Redis集群最大节点个数</p></h3><p>16384个。</p>
+<h3 id="15-Redis集群如何选择数据库"><a href="#15-Redis集群如何选择数据库" class="headerlink" title="15. Redis集群如何选择数据库"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">15. Redis集群如何选择数据库</p></h3><p>Redis集群目前无法做数据库选择，默认在0数据库。</p>
+<h3 id="16-怎么测试Redis的连通性"><a href="#16-怎么测试Redis的连通性" class="headerlink" title="16. 怎么测试Redis的连通性"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">16. 怎么测试Redis的连通性</p></h3><p>ping</p>
+<h3 id="17-Redis中的管道有什么用"><a href="#17-Redis中的管道有什么用" class="headerlink" title="17. Redis中的管道有什么用"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">17. Redis中的管道有什么用</p></h3><p>一次请求/响应服务器能实现处理新的请求即使旧的请求还未被响应。这样就可以将多个命令发送到服务器，而不用等待回复，最后在一个步骤中读取该答复。 这就是管道（pipelining），是一种几十年来广泛使用的技术。例如许多POP3协议已经实现支持这个功能，大大加快了从服务器下载新邮件的过程。</p>
+<h3 id="18-怎么理解Redis事务"><a href="#18-怎么理解Redis事务" class="headerlink" title="18. 怎么理解Redis事务"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">18. 怎么理解Redis事务</p></h3><p>务是一个单独的隔离操作：事务中的所有命令都会序列化、按顺序地执行。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。 事务是一个原子操作：事务中的命令要么全部被执行，要么全部都不执行。</p>
+<h3 id="19-Redis事务相关的命令有哪些"><a href="#19-Redis事务相关的命令有哪些" class="headerlink" title="19. Redis事务相关的命令有哪些"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">19. Redis事务相关的命令有哪些</p></h3><p>开始事务：MULTI<br>命令的执行标记着事务的开始：这个命令唯一做的就是， 将客户端的 REDIS_MULTI 选项打开， 让客户端从非事务状态切换到事务状态。<br>执行事务： EXEC<br>监视事务： WATCH<br>WATCH 命令用于在事务开始之前监视任意数量的键。 当调用 EXEC 命令执行事务时， 如果任意一个被监视的键已经被其他客户端修改了， 那么整个事务不再执行， 直接返回失败。<br>取消事务 DISCARD<br>DISCARD 命令用于取消一个事务， 它清空客户端的整个事务队列， 然后将客户端从事务状态调整回非事务状态， 最后返回字符串 OK 给客户端， 说明事务已被取消。</p>
+<h3 id="20-Redis-key的过期时间和永久有效分别怎样设置"><a href="#20-Redis-key的过期时间和永久有效分别怎样设置" class="headerlink" title="20. Redis key的过期时间和永久有效分别怎样设置"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">20. Redis key的过期时间和永久有效分别怎样设置</p></h3><p>EXPIRE和PERSIST命令。</p>
+<h3 id="21-Redis如何优化内存"><a href="#21-Redis如何优化内存" class="headerlink" title="21. Redis如何优化内存"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">21. Redis如何优化内存</p></h3><p>尽可能使用散列表（hashes），散列表（是说散列表里面存储的数少）使用的内存非常小，所以你应该尽可能的将你的数据模型抽象到一个散列表里面。比如你的web系统中有一个用户对象，不要为这个用户的名称，姓氏，邮箱，密码设置单独的key,而是应该把这个用户的所有信息存储到一张散列表里面.</p>
+<h3 id="22-Redis回收进程怎样工作"><a href="#22-Redis回收进程怎样工作" class="headerlink" title="22. Redis回收进程怎样工作"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">22. Redis回收进程怎样工作</p></h3><p>一个客户端运行了新的命令，添加了新的数据。<br>Redi检查内存使用情况，如果大于maxmemory的限制, 则根据设定好的策略进行回收。<br>一个新的命令被执行，等等。<br>所以我们不断地穿越内存限制的边界，通过不断达到边界然后不断地回收回到边界以下。<br>如果一个命令的结果导致大量内存被使用（例如很大的集合的交集保存到一个新的键），不用多久内存限制就会被这个内存使用量超越。</p>
+<h3 id="23-Redis回收使用的是什么算法"><a href="#23-Redis回收使用的是什么算法" class="headerlink" title="23. Redis回收使用的是什么算法"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">23. Redis回收使用的是什么算法</p></h3><p>LRU算法</p>
+<h3 id="24-Redis如何插入大量数据"><a href="#24-Redis如何插入大量数据" class="headerlink" title="24. Redis如何插入大量数据"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">24. Redis如何插入大量数据</p></h3><p>官方在2.6版本推出了一个新的功能-pipe mode，即将支持Redis协议的文本文件直接通过pipe导入到服务端。 具体示例：</p>
+<blockquote>
+<ol>
+<li>新建一个文本文件，包含redis命令<br>SET Key0 Value0<br>SET Key1 Value1<br>…<br>SET KeyN ValueN<br>如果有了原始数据，其实构造这个文件并不难，譬如shell，python都可以</li>
+<li>将这些命令转化成Redis Protocol。<br>因为Redis管道功能支持的是Redis Protocol，而不是直接的Redis命令。<br>如何转化，可参考后面的脚本。</li>
+<li>利用管道插入<br>cat data.txt | redis-cli –pipe</li>
+</ol>
+</blockquote>
+<h3 id="25-为什么要做Redis分区"><a href="#25-为什么要做Redis分区" class="headerlink" title="25. 为什么要做Redis分区"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">25. 为什么要做Redis分区</p></h3><p>性能的提升，单机Redis的网络I/O能力和计算资源是有限的，将请求分散到多台机器，充分利用多台机器的计算能力可网络带宽，有助于提高Redis总体的服务能力。<br>存储的横向扩展，即使Redis的服务能力能够满足应用需求，但是随着存储数据的增加，单台机器受限于机器本身的存储容量，将数据分散到多台机器上存储使得Redis服务可以横向扩展。</p>
+<h3 id="26-有哪些Redis分区实现方案"><a href="#26-有哪些Redis分区实现方案" class="headerlink" title="26. 有哪些Redis分区实现方案"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">26. 有哪些Redis分区实现方案</p></h3><ul>
+<li>范围分区<br>就是将一个范围内的key都映射到同一个Redis实例中，加入数据集还是上面提到的用户数据，<br>我们需要一张表，这张表用来存储用户ID范围到Redis实例的映射关系，比如用户ID0-10000的是映射到R0实例<br>们不仅需要对这张表进行维护，而且对于每种对象类型我们都需要一个这样的表，比如我们当前存储的是用户信息，如果存储的是订单信息，我们就需要再建一张映射关系表<br>如果我们想要存储的数据的key并不能按照范围划分怎么办，比如我们的key是一组uuid，这个时候就不好用范围分区了</li>
+<li>哈希分区<br>id=hash(key)%N<br>客户端实现：客户端分区就是在客户端就已经决定数据会被存储到哪个redis节点或者从哪个redis节点读取。大多数客户端已经实现了客户端分区。<br>代理实现：客户端将请求发送给代理，然后代理决定去哪个节点写数据或者读数据。代理根据分区规则决定请求哪些Redis实例，然后根据Redis的响应结果返回给客户端。redis和memcached的一种代理实现就是Twemproxy<br>查询路由：客户端随机地请求任意一个redis实例，然后由Redis将请求转发给正确的Redis节点。Redis Cluster实现了一种混合形式的查询路由，但并不是直接将请求从一个redis节点转发到另一个redis节点，而是在客户端的帮助下直接redirected到正确的redis节点。</li>
+</ul>
+<h3 id="27-Redis分区有什么缺点"><a href="#27-Redis分区有什么缺点" class="headerlink" title="27. Redis分区有什么缺点"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">27. Redis分区有什么缺点</p></h3><p>涉及多个key的操作通常不支持，例如求交集，因为被分配到不同实例<br>同时操作多个key，则不能使用redis事务<br>分区粒度是key，不能使用很长的排序key存储一个数据集<br>备份复杂，因为需要从不同实例手机RDB/AOF文件</p>
+<h3 id="28-Redis持久化数据和缓存怎样扩容"><a href="#28-Redis持久化数据和缓存怎样扩容" class="headerlink" title="28. Redis持久化数据和缓存怎样扩容"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">28. Redis持久化数据和缓存怎样扩容</p></h3><p>Redis被当做缓存使用，使用一致性哈希实现动态扩容缩容。<br>Redis被当做一个持久化存储使用，必须使用固定的keys-to-nodes映射关系，节点的数量一旦确定不能变化。否则的话(即Redis节点需要动态变化的情况），必须使用可以在运行时进行数据再平衡的一套系统，而当前只有Redis集群可以做到这样</p>
+<h3 id="29-分布式Redis是前期做还是后期规模上来了再做好"><a href="#29-分布式Redis是前期做还是后期规模上来了再做好" class="headerlink" title="29. 分布式Redis是前期做还是后期规模上来了再做好"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">29. 分布式Redis是前期做还是后期规模上来了再做好</p></h3><p>既然Redis是如此的轻量（单实例只使用1M内存）,为防止以后的扩容，最好的办法就是一开始就启动较多实例。即便只有一台服务器，也可以一开始就让Redis以分布式的方式运行，使用分区，在同一台服务器上启动多个实例。一开始就多设置几个Redis实例，例如32或者64个实例，对大多数用户来说这操作起来可能比较麻烦，但是从长久来看做这点牺牲是值得的。这样的话，当你的数据不断增长，需要更多的Redis服务器时，需要做的就是仅仅将Redis实例从一台服务迁移到另外一台服务器而已（而不用考虑重新分区的问题）。一旦你添加了另一台服务器，你需要将你一半的Redis实例从第一台机器迁移到第二台机器</p>
+<h3 id="30-Twemproxy是什么"><a href="#30-Twemproxy是什么" class="headerlink" title="30. Twemproxy是什么"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">30. Twemproxy是什么</p></h3><p>Twemproxy是Twitter维护的（缓存）代理系统，代理Memcached的ASCII协议和Redis协议。它是单线程程序，使用C语言编写，运行起来非常快。Twemproxy支持自动分区，如果其代理的其中一个Redis节点不可用时，会自动将该节点排除（这将改变原来的keys-instances的映射关系，所以应该仅在把Redis当缓存时使用Twemproxy)。 Twemproxy本身不存在单点问题，因为可以启动多个Twemproxy实例，然后让客户端去连接任意一个Twemproxy实例。Twemproxy是Redis客户端和服务器端的一个中间层，由它来处理分区功能应该不算复杂，并且应该算比较可靠的。</p>
+<h3 id="31-支持一致性哈希的客户端有哪些"><a href="#31-支持一致性哈希的客户端有哪些" class="headerlink" title="31. 支持一致性哈希的客户端有哪些"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">31. 支持一致性哈希的客户端有哪些</p></h3><p>Redis-rb、Predis等。</p>
+<h3 id="32-Redis与其他key-value存储有什么不同"><a href="#32-Redis与其他key-value存储有什么不同" class="headerlink" title="32. Redis与其他key-value存储有什么不同"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">32. Redis与其他key-value存储有什么不同</p></h3><p>Redis有着更为复杂的数据结构并且提供对它们的原子性操作，这是一个不同于其它数据库的进化路径。<br>Redis的数据类型都是基于基本数据结构的同时对程序员透明，无需进行额外的抽象<br>Redis运行在内存中但是可以持久化到磁盘，所以在对不同数据集进行高速读写时需要权衡内存，应为数据量不能大于硬件内存。在内存数据库方面的另一个优点是，相比在磁盘上相同的复杂的数据结构，在内存中操作起来非常简单，这样Redis可以做很多内部复杂性很强的事情。同时，在磁盘格式方面它们是紧凑的以追加的方式产生的，因为它们并不需要进行随机访问。</p>
+<h3 id="33-Redis的内存占用情况怎么样"><a href="#33-Redis的内存占用情况怎么样" class="headerlink" title="33. Redis的内存占用情况怎么样"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">33. Redis的内存占用情况怎么样</p></h3><p>Redis会记录类型信息引用计数等等。64位的系统比32位的需要更多的内存开销，尤其是键值对都较小时，这是因为64位的系统里指针占用了8个字节。 但是当然，64位系统支持更大的内存，所以为了运行大型的Redis服务器或多或少的需要使用64位的系统</p>
+<h3 id="34-都有哪些办法可以降低Redis的内存使用情况呢"><a href="#34-都有哪些办法可以降低Redis的内存使用情况呢" class="headerlink" title="34. 都有哪些办法可以降低Redis的内存使用情况呢"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">34. 都有哪些办法可以降低Redis的内存使用情况呢</p></h3><p>如果使用的是32位的Redis实例，可以好好利用Hash,list,sorted set,set等集合类型数据，因为通常情况下很多小的Key-Value可以用更紧凑的方式存放到一起。</p>
+<h3 id="35-查看Redis使用情况及状态信息用什么命令"><a href="#35-查看Redis使用情况及状态信息用什么命令" class="headerlink" title="35. 查看Redis使用情况及状态信息用什么命令"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">35. 查看Redis使用情况及状态信息用什么命令</p></h3><p>info</p>
+<h3 id="36-Redis的内存用完了会发生什么"><a href="#36-Redis的内存用完了会发生什么" class="headerlink" title="36. Redis的内存用完了会发生什么"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">36. Redis的内存用完了会发生什么</p></h3><p>如果达到设置的上限，Redis的写命令会返回错误信息（但是读命令还可以正常返回。）或者可以将Redis当缓存来使用配置淘汰机制，当Redis达到内存上限时会冲刷掉旧的内容。</p>
+<h3 id="37-Redis是单线程的，如何提高多核CPU的利用率"><a href="#37-Redis是单线程的，如何提高多核CPU的利用率" class="headerlink" title="37. Redis是单线程的，如何提高多核CPU的利用率"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">37. Redis是单线程的，如何提高多核CPU的利用率</p></h3><p>可以在同一个服务器部署多个Redis的实例，并当作不同的服务器来使用，在某些时候，无论如何一个服务器是不够的， 所以，如果想使用多个CPU，可以考虑一下分片（shard）。</p>
+<h3 id="38-一个Redis实例最多能存放多少的keys-List、Set、Sorted-Set他们最多能存放多少元素"><a href="#38-一个Redis实例最多能存放多少的keys-List、Set、Sorted-Set他们最多能存放多少元素" class="headerlink" title="38. 一个Redis实例最多能存放多少的keys; List、Set、Sorted Set他们最多能存放多少元素"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">38. 一个Redis实例最多能存放多少的keys; List、Set、Sorted Set他们最多能存放多少元素</p></h3><p>理论上Redis可以处理多达2的32次方的keys，并且在实际中进行了测试，每个实例至少存放了2亿5千万的keys。任何list、set、和sorted set都可以放2的32次方个元素。换句话说，Redis的存储极限是系统中的可用内存值。</p>
+<h3 id="39、Redis常见性能问题和解决方案"><a href="#39、Redis常见性能问题和解决方案" class="headerlink" title="39、Redis常见性能问题和解决方案"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">39、Redis常见性能问题和解决方案</p></h3><p>Master最好不要做任何持久化工作，如RDB内存快照和AOF日志文件<br>如果数据比较重要，某个Slave开启AOF备份数据，策略设置为每秒同步一次<br>为了主从复制的速度和连接的稳定性，Master和Slave最好在同一个局域网内<br>尽量避免在压力很大的主库上增加从库<br>主从复制不要用图状结构，用单向链表结构更为稳定，即：Master &lt;- Slave1 &lt;- Slave2 &lt;- Slave3… 这样的结构方便解决单点故障问题，实现Slave对Master的替换。如果Master挂了，可以立刻启用Slave1做Master，其他不变</p>
+<h3 id="40-Redis提供了哪几种持久化方式"><a href="#40-Redis提供了哪几种持久化方式" class="headerlink" title="40. Redis提供了哪几种持久化方式"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">40. Redis提供了哪几种持久化方式</p></h3><p>RDB持久化方式能够在指定的时间间隔能对数据进行快照存储。AOF持久化方式记录每次对服务器写的操作,当服务器重启的时候会重新执行这些命令来恢复原始的数据,AOF命令以redis协议追加保存每次写的操作到文件末尾.Redis还能对AOF文件进行后台重写,使得AOF文件的体积不至于过大. 如果只希望数据在服务器运行的时候存在,也可以不使用任何持久化方式.也可以同时开启两种持久化方式, 在这种情况下, 当redis重启的时候会优先载入AOF文件来恢复原始的数据,因为在通常情况下AOF文件保存的数据集要比RDB文件保存的数据集要完整. 最重要的事情是了解RDB和AOF持久化方式的不同,让我们以RDB持久化方式开始。</p>
+<h3 id="41-如何选择合适的持久化方式"><a href="#41-如何选择合适的持久化方式" class="headerlink" title="41. 如何选择合适的持久化方式"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">41. 如何选择合适的持久化方式</p></h3><p>一般来说， 如果想达到足以媲美PostgreSQL的数据安全性，应该同时使用两种持久化功能。如果非常关心数据，但仍然可以承受数分钟以内的数据丢失，那么可以只使用RDB持久化。 有很多用户都只使用AOF持久化，但并不推荐这种方式：因为定时生成RDB快照（snapshot）非常便于进行数据库备份， 并且 RDB 恢复数据集的速度也要比AOF恢复的速度要快，除此之外， 使用RDB还可以避免之前提到的AOF程序的bug。</p>
+<h3 id="42-修改配置不重启Redis会实时生效吗"><a href="#42-修改配置不重启Redis会实时生效吗" class="headerlink" title="42. 修改配置不重启Redis会实时生效吗"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">42. 修改配置不重启Redis会实时生效吗</p></h3><p>针对运行实例，有许多配置选项可以通过 CONFIG SET 命令进行修改，而无需执行任何形式的重启。从Redis 2.2开始，可以从AOF切换到RDB的快照持久性或其它方式而不需要重启 Redis。检索 ‘CONFIG GET *’ 命令获取更多信息。但偶尔重新启动是必须的，如为升级 Redis 程序到新的版本，或者当需要修改某些目前 CONFIG 命令还不支持的配置参数的时候。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/MySQL/" rel="tag"><i class="fa fa-tag"></i> MySQL</a>
+          
+            <a href="/tags/Redis/" rel="tag"><i class="fa fa-tag"></i> Redis</a>
+          
+            <a href="/tags/Database/" rel="tag"><i class="fa fa-tag"></i> Database</a>
+          
+            <a href="/tags/问答/" rel="tag"><i class="fa fa-tag"></i> 问答</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019-01-08/1a3.html" rel="next" title="Navicat keygen 怎么工作">
+                <i class="fa fa-chevron-left"></i> Navicat keygen 怎么工作
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/poet.png"
+                alt="Rocinante-Poet" />
+            
+              <p class="site-author-name" itemprop="name">Rocinante-Poet</p>
+              <p class="site-description motion-element" itemprop="description">诗人和祂的驽骍难得</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/windcloudxyz" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://telegram.me/Poet_IIII" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:Poet515@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MySQL和Redis"><span class="nav-number">1.</span> <span class="nav-text">MySQL和Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL"><span class="nav-number">1.1.</span> <span class="nav-text">MySQL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-主键-超键-候选键-外键"><span class="nav-number">1.1.1.</span> <span class="nav-text">1. 主键 超键 候选键 外键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-数据库事务的四个特性及含义"><span class="nav-number">1.1.2.</span> <span class="nav-text">2. 数据库事务的四个特性及含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-视图的作用，视图可以更改么？"><span class="nav-number">1.1.3.</span> <span class="nav-text">3. 视图的作用，视图可以更改么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-drop-delete与truncate的区别"><span class="nav-number">1.1.4.</span> <span class="nav-text">4. drop,delete与truncate的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-索引的工作原理及其种类"><span class="nav-number">1.1.5.</span> <span class="nav-text">5. 索引的工作原理及其种类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-连接的种类"><span class="nav-number">1.1.6.</span> <span class="nav-text">6. 连接的种类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-数据库范式"><span class="nav-number">1.1.7.</span> <span class="nav-text">7. 数据库范式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-数据库优化的思路"><span class="nav-number">1.1.8.</span> <span class="nav-text">8. 数据库优化的思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-存储过程与触发器的区别"><span class="nav-number">1.1.9.</span> <span class="nav-text">9. 存储过程与触发器的区别</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis"><span class="nav-number">1.2.</span> <span class="nav-text">Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是Redis？"><span class="nav-number">1.2.1.</span> <span class="nav-text">1. 什么是Redis？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Redis相比memcached有哪些优势？"><span class="nav-number">1.2.2.</span> <span class="nav-text">2. Redis相比memcached有哪些优势？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-为什么Redis需要把所有数据放到内存中"><span class="nav-number">1.2.3.</span> <span class="nav-text">3. 为什么Redis需要把所有数据放到内存中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Redis的数据淘汰策略"><span class="nav-number">1.2.4.</span> <span class="nav-text">4. Redis的数据淘汰策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Redis集群有哪些方案？"><span class="nav-number">1.2.5.</span> <span class="nav-text">5. Redis集群有哪些方案？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Redis集群方案什么情况下会导致整个集群不可用"><span class="nav-number">1.2.6.</span> <span class="nav-text">6. Redis集群方案什么情况下会导致整个集群不可用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-Redis有哪些适合的场景"><span class="nav-number">1.2.7.</span> <span class="nav-text">7. Redis有哪些适合的场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-Redis和Redisson有什么关系"><span class="nav-number">1.2.8.</span> <span class="nav-text">8. Redis和Redisson有什么关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-Jedis与Redisson对比有什么优缺点"><span class="nav-number">1.2.9.</span> <span class="nav-text">9. Jedis与Redisson对比有什么优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#10-Redis哈希槽的概念"><span class="nav-number">1.2.10.</span> <span class="nav-text">10. Redis哈希槽的概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#11-Redis集群的主从复制模型是怎样的？"><span class="nav-number">1.2.11.</span> <span class="nav-text">11. Redis集群的主从复制模型是怎样的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#12-Redis集群会有写操作丢失吗？为什么？"><span class="nav-number">1.2.12.</span> <span class="nav-text">12. Redis集群会有写操作丢失吗？为什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#13-Redis集群之间是如何复制"><span class="nav-number">1.2.13.</span> <span class="nav-text">13. Redis集群之间是如何复制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#14-Redis集群最大节点个数"><span class="nav-number">1.2.14.</span> <span class="nav-text">14. Redis集群最大节点个数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#15-Redis集群如何选择数据库"><span class="nav-number">1.2.15.</span> <span class="nav-text">15. Redis集群如何选择数据库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#16-怎么测试Redis的连通性"><span class="nav-number">1.2.16.</span> <span class="nav-text">16. 怎么测试Redis的连通性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#17-Redis中的管道有什么用"><span class="nav-number">1.2.17.</span> <span class="nav-text">17. Redis中的管道有什么用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#18-怎么理解Redis事务"><span class="nav-number">1.2.18.</span> <span class="nav-text">18. 怎么理解Redis事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#19-Redis事务相关的命令有哪些"><span class="nav-number">1.2.19.</span> <span class="nav-text">19. Redis事务相关的命令有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#20-Redis-key的过期时间和永久有效分别怎样设置"><span class="nav-number">1.2.20.</span> <span class="nav-text">20. Redis key的过期时间和永久有效分别怎样设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#21-Redis如何优化内存"><span class="nav-number">1.2.21.</span> <span class="nav-text">21. Redis如何优化内存</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#22-Redis回收进程怎样工作"><span class="nav-number">1.2.22.</span> <span class="nav-text">22. Redis回收进程怎样工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#23-Redis回收使用的是什么算法"><span class="nav-number">1.2.23.</span> <span class="nav-text">23. Redis回收使用的是什么算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#24-Redis如何插入大量数据"><span class="nav-number">1.2.24.</span> <span class="nav-text">24. Redis如何插入大量数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#25-为什么要做Redis分区"><span class="nav-number">1.2.25.</span> <span class="nav-text">25. 为什么要做Redis分区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#26-有哪些Redis分区实现方案"><span class="nav-number">1.2.26.</span> <span class="nav-text">26. 有哪些Redis分区实现方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#27-Redis分区有什么缺点"><span class="nav-number">1.2.27.</span> <span class="nav-text">27. Redis分区有什么缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#28-Redis持久化数据和缓存怎样扩容"><span class="nav-number">1.2.28.</span> <span class="nav-text">28. Redis持久化数据和缓存怎样扩容</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#29-分布式Redis是前期做还是后期规模上来了再做好"><span class="nav-number">1.2.29.</span> <span class="nav-text">29. 分布式Redis是前期做还是后期规模上来了再做好</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#30-Twemproxy是什么"><span class="nav-number">1.2.30.</span> <span class="nav-text">30. Twemproxy是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#31-支持一致性哈希的客户端有哪些"><span class="nav-number">1.2.31.</span> <span class="nav-text">31. 支持一致性哈希的客户端有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#32-Redis与其他key-value存储有什么不同"><span class="nav-number">1.2.32.</span> <span class="nav-text">32. Redis与其他key-value存储有什么不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#33-Redis的内存占用情况怎么样"><span class="nav-number">1.2.33.</span> <span class="nav-text">33. Redis的内存占用情况怎么样</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#34-都有哪些办法可以降低Redis的内存使用情况呢"><span class="nav-number">1.2.34.</span> <span class="nav-text">34. 都有哪些办法可以降低Redis的内存使用情况呢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#35-查看Redis使用情况及状态信息用什么命令"><span class="nav-number">1.2.35.</span> <span class="nav-text">35. 查看Redis使用情况及状态信息用什么命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#36-Redis的内存用完了会发生什么"><span class="nav-number">1.2.36.</span> <span class="nav-text">36. Redis的内存用完了会发生什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#37-Redis是单线程的，如何提高多核CPU的利用率"><span class="nav-number">1.2.37.</span> <span class="nav-text">37. Redis是单线程的，如何提高多核CPU的利用率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#38-一个Redis实例最多能存放多少的keys-List、Set、Sorted-Set他们最多能存放多少元素"><span class="nav-number">1.2.38.</span> <span class="nav-text">38. 一个Redis实例最多能存放多少的keys; List、Set、Sorted Set他们最多能存放多少元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#39、Redis常见性能问题和解决方案"><span class="nav-number">1.2.39.</span> <span class="nav-text">39、Redis常见性能问题和解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#40-Redis提供了哪几种持久化方式"><span class="nav-number">1.2.40.</span> <span class="nav-text">40. Redis提供了哪几种持久化方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#41-如何选择合适的持久化方式"><span class="nav-number">1.2.41.</span> <span class="nav-text">41. 如何选择合适的持久化方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#42-修改配置不重启Redis会实时生效吗"><span class="nav-number">1.2.42.</span> <span class="nav-text">42. 修改配置不重启Redis会实时生效吗</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rocinante-Poet</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+
+    
+      <span class="post-meta-item-text">博客全站字数&#58;</span>
+    
+    <span title="博客全站字数">62.3k</span>
+  
+  <span class="post-meta-divider">|</span><span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WxdKVWC0mK3Rl3tJFV8ePIka-gzGzoHsz',
+        appKey: 'UYHbcGmDXnsffU8oWBCvOB4t',
+        placeholder: '挥一挥衣袖，留下评论再走 ~',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>

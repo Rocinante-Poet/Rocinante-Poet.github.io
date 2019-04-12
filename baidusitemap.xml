@@ -4,6 +4,35 @@
 
     
   <url>
+    <loc>https://windcloud.xyz/2019-04-12/3463.html</loc>
+    <lastmod>2019-04-12T09:56:33.823Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL和Redis</title>
+        <pubTime>2019-04-12T09:45:08.000Z</pubTime>
+        
+        <tag>MySQL</tag>
+         
+        <tag>Redis</tag>
+         
+        <tag>Database</tag>
+         
+        <tag>问答</tag>
+         
+         
+           
+             
+              <breadCrumb title="MySQL" url="https://windcloud.xyz/categories/MySQL/"/>
+          
+             
+              <breadCrumb title="Redis" url="https://windcloud.xyz/categories/MySQL/Redis/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://windcloud.xyz/2019-01-08/1a3.html</loc>
     <lastmod>2019-03-21T09:10:44.998Z</lastmod>
     <data>
