@@ -116,10 +116,10 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL修改编码配置解决中文乱码">
 <meta property="og:url" content="https://windcloud.xyz/2019-01-03/bc6a.html">
-<meta property="og:site_name" content="Poet">
+<meta property="og:site_name" content="蔚然成凨">
 <meta property="og:description" content="MySQL修改编码配置解决中文乱码MySql5.6默认字符集为 latin1，存入中文会乱码！（MySql80默认字符集已更改latin1为utf8mb4）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-06-17T01:40:39.601Z">
+<meta property="og:updated_time" content="2019-06-25T08:12:04.573Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL修改编码配置解决中文乱码">
 <meta name="twitter:description" content="MySQL修改编码配置解决中文乱码MySql5.6默认字符集为 latin1，存入中文会乱码！（MySql80默认字符集已更改latin1为utf8mb4）">
@@ -158,7 +158,7 @@
 
 
 
-  <title>MySQL修改编码配置解决中文乱码,Poet-蔚然成凨</title>
+  <title>MySQL修改编码配置解决中文乱码,蔚然成凨-Poet</title>
   
 
 
@@ -188,12 +188,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Poet</span>
+        <span class="site-title">蔚然成凨</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">蔚然成凨</p>
+        <p class="site-subtitle">Poet</p>
       
   </div>
 
@@ -314,7 +314,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Poet">
+      <meta itemprop="name" content="蔚然成凨">
     </span>
 
     
@@ -410,7 +410,7 @@
 <li>C:\ProgramData\MySQL安装目录下my.ini</li>
 </ol>
 <p>my.ini添加节点如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set = utf8</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line"># 设置mysql客户端默认字符集</span><br><span class="line">default-character-set=utf8 </span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">#设置3306端口</span><br><span class="line">port = 3306 </span><br><span class="line"></span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir=D:\Program Files\MySQL\mysql56</span><br><span class="line"></span><br><span class="line"># 设置mysql数据库的数据的存放目录</span><br><span class="line">datadir=D:\Program Files\MySQL\mysql56\data</span><br><span class="line"></span><br><span class="line"># 服务端使用的字符集默认为8比特编码的latin1字符集</span><br><span class="line">character-set-server=utf8 </span><br><span class="line">collation-server=utf8_general_ci</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[client]</span><br><span class="line">default-character-set = utf8</span><br><span class="line"></span><br><span class="line">[mysql]</span><br><span class="line"># 设置mysql客户端默认字符集</span><br><span class="line">default-character-set=utf8 </span><br><span class="line"></span><br><span class="line">[mysqld]</span><br><span class="line">#设置3306端口</span><br><span class="line">port = 3306 </span><br><span class="line"></span><br><span class="line"># 设置mysql的安装目录</span><br><span class="line">basedir=C:\Program Files\MySQL\mysql56</span><br><span class="line"></span><br><span class="line"># 设置mysql数据库的数据的存放目录</span><br><span class="line">datadir=C:\Program Files\MySQL\mysql56\data</span><br><span class="line"></span><br><span class="line"># 服务端使用的字符集默认为8比特编码的latin1字符集</span><br><span class="line">character-set-server=utf8 </span><br><span class="line">collation-server=utf8_general_ci</span><br></pre></td></tr></table></figure>
 <p>然后重启mysql即可<br>命令行以管理员身份运行cmd.exe<br>关闭服务 net stop mysql<br>开启服务 net start mysql</p>
 <p>查看编码格式</p>
 <ol>
@@ -544,7 +544,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -566,7 +566,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -662,7 +662,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">62.2k</span>
+    <span title="博客全站字数">62.3k</span>
   
   <span class="post-meta-divider">|</span><span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
 </div>

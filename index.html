@@ -114,13 +114,13 @@
 <meta name="description" content="诗人和祂的驽骍难得">
 <meta name="keywords" content="蔚然成凨">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Poet">
+<meta property="og:title" content="蔚然成凨">
 <meta property="og:url" content="https://windcloud.xyz/index.html">
-<meta property="og:site_name" content="Poet">
+<meta property="og:site_name" content="蔚然成凨">
 <meta property="og:description" content="诗人和祂的驽骍难得">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Poet">
+<meta name="twitter:title" content="蔚然成凨">
 <meta name="twitter:description" content="诗人和祂的驽骍难得">
 
 
@@ -157,7 +157,7 @@
 
 
 
-  <title>Poet-蔚然成凨</title>
+  <title>蔚然成凨-Poet</title>
   
 
 
@@ -188,12 +188,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Poet</span>
+        <span class="site-title">蔚然成凨</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle">蔚然成凨</p>
+        <p class="site-subtitle">Poet</p>
       
   </div>
 
@@ -314,7 +314,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Poet">
+      <meta itemprop="name" content="蔚然成凨">
     </span>
 
     
@@ -464,6 +464,162 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://windcloud.xyz/2019-06-25/c201.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocinante-Poet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/poet.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔚然成凨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019-06-25/c201.html" itemprop="url">Microsoft Speech API</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-25T18:45:20+08:00">
+                2019-06-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C#</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019-06-25/c201.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019-06-25/c201.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="SAPI-TTS-Text-To-Speech-文语转换功能实现"><a href="#SAPI-TTS-Text-To-Speech-文语转换功能实现" class="headerlink" title="SAPI TTS(Text To Speech)文语转换功能实现"></a><font color="#00868B" face="Consolas"><center>SAPI TTS(Text To Speech)文语转换功能实现</center></font></h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">private SpVoice spVoice = new SpVoice();</span><br><span class="line"></span><br><span class="line">//private dynamic spVoice = Activator.CreateInstance(Type.GetTypeFromProgID(&quot;SAPI.SpVoice&quot;));</span><br><span class="line"></span><br><span class="line">//朗读</span><br><span class="line">spVoice.Speak(string,SpeechVoiceSpeakFlags.SVSFlagsAsync); </span><br><span class="line"></span><br><span class="line">//暂停</span><br><span class="line">spVoice.Pause(); </span><br><span class="line"></span><br><span class="line">//继续</span><br><span class="line">spVoice.Resume(); </span><br><span class="line"></span><br><span class="line">//停止（通过终止当前语音并朗读空字符串达到停止效果）</span><br><span class="line">spVoice.Speak(string.Empty, SpeechVoiceSpeakFlags.SVSFPurgeBeforeSpeak);</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019-06-25/c201.html#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://windcloud.xyz/2019-04-12/3463.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -473,7 +629,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Poet">
+      <meta itemprop="name" content="蔚然成凨">
     </span>
 
     
@@ -577,7 +733,7 @@
 
       
         
-          <h1 id="MySQL和Redis"><a href="#MySQL和Redis" class="headerlink" title="MySQL和Redis"></a>MySQL和Redis</h1><h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="主键-超键-候选键-外键"><a href="#主键-超键-候选键-外键" class="headerlink" title="主键 超键 候选键 外键"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">主键 超键 候选键 外键</p></h3><p><strong> 主键：</strong><br>数据库表中对储存数据对象予以唯一和完整标识的数据列或属性的组合。一个数据列只能有一个主键，且主键的取值不能缺失，即不能为空值（Null）。<br><strong> 超键：</strong><br>在关系中能唯一标识元组的属性集称为关系模式的超键。一个属性可以为作为一个超键，多个属性组合在一起也可以作为一个超键。超键包含候选键和主键。<br><strong> 候选键：</strong><br> 是最小超键，即没有冗余元素的超键。<br><strong> 外键：</strong><br> 在一个表中存在的另一个表的主键称此表的外键。<br>
+          <h1 id="MySQL和Redis"><a href="#MySQL和Redis" class="headerlink" title="MySQL和Redis"></a><center>MySQL和Redis</center></h1><h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="主键-超键-候选键-外键"><a href="#主键-超键-候选键-外键" class="headerlink" title="主键 超键 候选键 外键"></a><p style="background-color:#006699;border-radius:8px;color:white;padding-left:20px;">主键 超键 候选键 外键</p></h3><p><strong> 主键：</strong><br>数据库表中对储存数据对象予以唯一和完整标识的数据列或属性的组合。一个数据列只能有一个主键，且主键的取值不能缺失，即不能为空值（Null）。<br><strong> 超键：</strong><br>在关系中能唯一标识元组的属性集称为关系模式的超键。一个属性可以为作为一个超键，多个属性组合在一起也可以作为一个超键。超键包含候选键和主键。<br><strong> 候选键：</strong><br> 是最小超键，即没有冗余元素的超键。<br><strong> 外键：</strong><br> 在一个表中存在的另一个表的主键称此表的外键。<br>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2019-04-12/3463.html#more" rel="contents">
@@ -640,7 +796,7 @@
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Poet">
+      <meta itemprop="name" content="蔚然成凨">
     </span>
 
     
@@ -780,162 +936,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://windcloud.xyz/2019-01-08/d298.html">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Rocinante-Poet">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/poet.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Poet">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019-01-08/d298.html" itemprop="url">Navicat Premium 12.1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-08T15:06:06+08:00">
-                2019-01-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Navicat/" itemprop="url" rel="index">
-                    <span itemprop="name">Navicat</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2019-01-08/d298.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019-01-08/d298.html" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="Navicat-Keygen"><a href="#Navicat-Keygen" class="headerlink" title="Navicat Keygen"></a>Navicat Keygen</h1><p>这份repo将会告诉你Navicat是怎么完成离线激活的。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019-01-08/d298.html#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -990,7 +990,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1012,7 +1012,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1092,7 +1092,7 @@
     
       <span class="post-meta-item-text">博客全站字数&#58;</span>
     
-    <span title="博客全站字数">62.2k</span>
+    <span title="博客全站字数">62.3k</span>
   
   <span class="post-meta-divider">|</span><span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
 </div>
