@@ -4,12 +4,12 @@
 
     
   <url>
-    <loc>https://windcloud.xyz/2019-07-12/fb2f.html</loc>
-    <lastmod>2019-07-12T08:58:20.703Z</lastmod>
+    <loc>https://windcloud.xyz/2019-07-12/e3b1.html</loc>
+    <lastmod>2019-07-19T03:12:48.008Z</lastmod>
     <data>
         <display>
-        <title>程序员应该阅读的非编程类书籍有哪些</title>
-        <pubTime>2019-07-12T08:48:50.000Z</pubTime>
+        <title>免费的编程中文书籍索引</title>
+        <pubTime>2019-07-12T08:49:12.000Z</pubTime>
         
         <tag>阅读</tag>
          
@@ -24,19 +24,41 @@
 
     
   <url>
-    <loc>https://windcloud.xyz/2019-07-12/e3b1.html</loc>
-    <lastmod>2019-07-12T08:57:38.384Z</lastmod>
+    <loc>https://windcloud.xyz/2019-07-19/871e.html</loc>
+    <lastmod>2019-07-19T03:11:38.667Z</lastmod>
     <data>
         <display>
-        <title>免费的编程中文书籍索引</title>
-        <pubTime>2019-07-12T08:49:12.000Z</pubTime>
+        <title>消息机器人实现自动推送</title>
+        <pubTime>2019-07-19T02:30:58.000Z</pubTime>
+        
+        <tag>dingtalk</tag>
+         
+        <tag>Message</tag>
+         
+         
+           
+             
+              <breadCrumb title="C#" url="https://windcloud.xyz/categories/C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://windcloud.xyz/2019-07-12/fb2f.html</loc>
+    <lastmod>2019-07-12T08:58:20.703Z</lastmod>
+    <data>
+        <display>
+        <title>程序员应该阅读的非编程类书籍有哪些</title>
+        <pubTime>2019-07-12T08:48:50.000Z</pubTime>
         
         <tag>阅读</tag>
          
          
            
              
-              <breadCrumb title="-整理" url="https://windcloud.xyz/categories/%E6%95%B4%E7%90%86/"/>
+              <breadCrumb title="整理" url="https://windcloud.xyz/categories/%E6%95%B4%E7%90%86/"/>
           
         </display>
     </data>

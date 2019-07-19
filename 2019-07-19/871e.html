@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "57a36a3c"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="dingtalk,Message," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="支持五种消息类型：  Text MarkDown （推荐） Link ActionCard FeeCard   连续20次推送时间间隔不得小于1min否则将限流10min">
+<meta name="keywords" content="dingtalk,Message">
+<meta property="og:type" content="article">
+<meta property="og:title" content="消息机器人实现自动推送">
+<meta property="og:url" content="https://windcloud.xyz/2019-07-19/871e.html">
+<meta property="og:site_name" content="蔚然成凨">
+<meta property="og:description" content="支持五种消息类型：  Text MarkDown （推荐） Link ActionCard FeeCard   连续20次推送时间间隔不得小于1min否则将限流10min">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-07-19T03:11:38.667Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="消息机器人实现自动推送">
+<meta name="twitter:description" content="支持五种消息类型：  Text MarkDown （推荐） Link ActionCard FeeCard   连续20次推送时间间隔不得小于1min否则将限流10min">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://windcloud.xyz/2019-07-19/871e.html"/>
+
+
+
+
+
+  <title>消息机器人实现自动推送,蔚然成凨-Poet</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蔚然成凨</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Poet</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于|留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://windcloud.xyz/2019-07-19/871e.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocinante-Poet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/poet.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔚然成凨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">消息机器人实现自动推送</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-19T10:30:58+08:00">
+                2019-07-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C#</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019-07-19/871e.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019-07-19/871e.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>支持五种消息类型：</p>
+<ul>
+<li>Text</li>
+<li>MarkDown （推荐）</li>
+<li>Link</li>
+<li>ActionCard</li>
+<li>FeeCard</li>
+</ul>
+<blockquote>
+<p>连续20次推送时间间隔不得小于1min否则将限流10min</p>
+</blockquote>
+<a id="more"></a>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">appSettings</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"DDHost"</span> <span class="attr">value</span>=<span class="string">"https://oapi.dingtalk.com/"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"RobotErrorMessage"</span> <span class="attr">value</span>=<span class="string">"robot/send?access_token=xxxx"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">add</span> <span class="attr">key</span>=<span class="string">"RobotErrorMessages"</span> <span class="attr">value</span>=<span class="string">"robot/send?access_token=xxxx"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">appSettings</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br></pre></td><td class="code"><pre><span class="line">public class DDapiRobot</span><br><span class="line">    &#123;</span><br><span class="line">        public static string dd_host = ConfigurationManager.AppSettings[&quot;DDHost&quot;];</span><br><span class="line">        public static string RobotErrorMessage = ConfigurationManager.AppSettings[&quot;RobotErrorMessage&quot;];</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 发起请求</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;url&quot;&gt;地址&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;data&quot;&gt;数据&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;reqtype&quot;&gt;请求类型&lt;/param&gt;</span><br><span class="line">        /// &lt;returns&gt;&lt;/returns&gt;</span><br><span class="line">        public static String Request(string url, string data, string reqtype)</span><br><span class="line">        &#123;</span><br><span class="line">            HttpWebRequest web = (HttpWebRequest)HttpWebRequest.Create(dd_host + url);</span><br><span class="line">            web.ContentType = &quot;application/json;charset=utf-8&quot;;</span><br><span class="line">            web.Method = reqtype;</span><br><span class="line">            if (data.Length &gt; 0 &amp;&amp; reqtype.Trim().ToUpper() == &quot;POST&quot;)</span><br><span class="line">            &#123;</span><br><span class="line">                byte[] postBytes = Encoding.UTF8.GetBytes(data);</span><br><span class="line">                web.ContentLength = postBytes.Length;</span><br><span class="line">                using (Stream reqStream = web.GetRequestStream())</span><br><span class="line">                &#123;</span><br><span class="line">                    reqStream.Write(postBytes, 0, postBytes.Length);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            string html = string.Empty;</span><br><span class="line">            using (HttpWebResponse response = (HttpWebResponse)web.GetResponse())</span><br><span class="line">            &#123;</span><br><span class="line">                Stream responseStream = response.GetResponseStream();</span><br><span class="line">                StreamReader streamReader = new StreamReader(responseStream, Encoding.UTF8);</span><br><span class="line">                html = streamReader.ReadToEnd();</span><br><span class="line">            &#125;</span><br><span class="line">            return html;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 发送文本消息</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;content&quot;&gt;文本内容&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;atMobiles&quot;&gt;@人员电话&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;isAtAll&quot;&gt;是否@群所有成员&lt;/param&gt;</span><br><span class="line">        public static void OapiRobotText(string content, List&lt;string&gt; atMobiles, bool isAtAll)</span><br><span class="line">        &#123;</span><br><span class="line">            TextModel tModel = new TextModel();</span><br><span class="line">            tModel.at = new atText();</span><br><span class="line">            tModel.text = new text();</span><br><span class="line">            tModel.at.atMobiles = new List&lt;string&gt;();</span><br><span class="line"></span><br><span class="line">            tModel.text.content = content;</span><br><span class="line">            tModel.at.atMobiles.AddRange(atMobiles);</span><br><span class="line">            tModel.at.isAtAll = isAtAll;</span><br><span class="line">            tModel.msgtype = &quot;text&quot;;</span><br><span class="line"></span><br><span class="line">            string data = JsonConvert.SerializeObject(tModel);</span><br><span class="line">            string json = Request(RobotErrorMessage, data, &quot;POST&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 发送markdown类消息</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;title&quot;&gt;标题&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;text&quot;&gt;消息主体&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;atMobiles&quot;&gt;@人员电话&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;isAtAll&quot;&gt;是否@群所有成员&lt;/param&gt;</span><br><span class="line">        public static string OapiRobotMarkDown(string title, string text, List&lt;string&gt; atMobiles, bool isAtAll)</span><br><span class="line">        &#123;</span><br><span class="line">            MarkDownModel mdModel = new MarkDownModel();</span><br><span class="line">            mdModel.at = new atMarkdown();</span><br><span class="line">            mdModel.markdown = new markdown();</span><br><span class="line">            mdModel.at.atMobiles = new List&lt;string&gt;();</span><br><span class="line"></span><br><span class="line">            mdModel.markdown.title = title;</span><br><span class="line">            mdModel.markdown.text = text;</span><br><span class="line">            mdModel.at.atMobiles.AddRange(atMobiles);</span><br><span class="line">            mdModel.at.isAtAll = isAtAll;</span><br><span class="line">            mdModel.msgtype = &quot;markdown&quot;;</span><br><span class="line"></span><br><span class="line">            string data = JsonConvert.SerializeObject(mdModel);</span><br><span class="line">            return Request(RobotErrorMessage, data, &quot;POST&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 发送Link消息</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;title&quot;&gt;消息标题&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;text&quot;&gt;消息内容。如果太长只会部分展示&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;messageUrl&quot;&gt;点击消息跳转的URL&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;picUrl&quot;&gt;图片URL&lt;/param&gt;</span><br><span class="line">        public static void OapiRobotLink(string title, string text, string messageUrl, string picUrl)</span><br><span class="line">        &#123;</span><br><span class="line">            LinkModel lModel = new LinkModel();</span><br><span class="line">            lModel.link = new link();</span><br><span class="line">            lModel.msgtype = &quot;link&quot;;</span><br><span class="line">            lModel.link.title = title;</span><br><span class="line">            lModel.link.text = text;</span><br><span class="line">            lModel.link.messageUrl = messageUrl;</span><br><span class="line">            lModel.link.picUrl = picUrl;</span><br><span class="line"></span><br><span class="line">            string data = JsonConvert.SerializeObject(lModel);</span><br><span class="line">            string json = Request(RobotErrorMessage, data, &quot;POST&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 发送整体跳转ActionCard类型</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;title&quot;&gt;首屏会话透出的展示内容&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;text&quot;&gt;markdown格式的消息&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;singleTitle&quot;&gt;单个按钮的方案。(设置此项和singleURL后btns无效。)&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;singleURL&quot;&gt;点击singleTitle按钮触发的URL&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;btnOrientation&quot;&gt;0-按钮竖直排列，1-按钮横向排列&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;hideAvatar&quot;&gt;0-正常发消息者头像,1-隐藏发消息者头像&lt;/param&gt;</span><br><span class="line">        public static void OapiRobotActionCardOverall(string title, string text, string singleTitle, string singleURL, string btnOrientation, string hideAvatar)</span><br><span class="line">        &#123;</span><br><span class="line">            ActionCardOverallModel acModel = new ActionCardOverallModel();</span><br><span class="line">            acModel.actionCard = new actionCard();</span><br><span class="line"></span><br><span class="line">            acModel.msgtype = &quot;actionCard&quot;;</span><br><span class="line">            acModel.actionCard.title = title;</span><br><span class="line">            acModel.actionCard.text = text;</span><br><span class="line">            acModel.actionCard.singleTitle = singleTitle;</span><br><span class="line">            acModel.actionCard.singleURL = singleURL;</span><br><span class="line">            if (!string.IsNullOrEmpty(btnOrientation))</span><br><span class="line">                acModel.actionCard.btnOrientation = btnOrientation;</span><br><span class="line">            else</span><br><span class="line">                acModel.actionCard.btnOrientation = &quot;0&quot;;</span><br><span class="line">            if (!string.IsNullOrEmpty(hideAvatar))</span><br><span class="line">                acModel.actionCard.hideAvatar = hideAvatar;</span><br><span class="line">            else</span><br><span class="line">                acModel.actionCard.hideAvatar = &quot;0&quot;;</span><br><span class="line"></span><br><span class="line">            string data = JsonConvert.SerializeObject(acModel);</span><br><span class="line">            string json = Request(RobotErrorMessage, data, &quot;POST&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 发送独立跳转ActionCard类型</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        /// &lt;param name=&quot;title&quot;&gt;&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;text&quot;&gt;&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;btns&quot;&gt;&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;btnOrientation&quot;&gt;&lt;/param&gt;</span><br><span class="line">        /// &lt;param name=&quot;hideAvatar&quot;&gt;&lt;/param&gt;</span><br><span class="line">        public static void OapiRobotActionCardSingle(string title, string text, string btns, string btnOrientation, string hideAvatar)</span><br><span class="line">        &#123;</span><br><span class="line">            ActionCardSingleModel acModel = new ActionCardSingleModel();</span><br><span class="line">            acModel.actionCard = new actionCardSingle();</span><br><span class="line">            acModel.actionCard.btns = JsonConvert.DeserializeObject&lt;List&lt;btns&gt;&gt;(btns);//这里使用字符串拼接的json格式转化为List&lt;model&gt;,下面一个方法使用List&lt;model&gt;中直接添加值</span><br><span class="line">            acModel.msgtype = &quot;actionCard&quot;;</span><br><span class="line">            acModel.actionCard.title = title;</span><br><span class="line">            acModel.actionCard.text = text;</span><br><span class="line">            if (!string.IsNullOrEmpty(btnOrientation))</span><br><span class="line">                acModel.actionCard.btnOrientation = btnOrientation;</span><br><span class="line">            else</span><br><span class="line">                acModel.actionCard.btnOrientation = &quot;0&quot;;</span><br><span class="line">            if (!string.IsNullOrEmpty(hideAvatar))</span><br><span class="line">                acModel.actionCard.hideAvatar = hideAvatar;</span><br><span class="line">            else</span><br><span class="line">                acModel.actionCard.hideAvatar = &quot;0&quot;;</span><br><span class="line">            string data = JsonConvert.SerializeObject(acModel);</span><br><span class="line">            string json = Request(RobotErrorMessage, data, &quot;POST&quot;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        /// &lt;summary&gt;</span><br><span class="line">        /// 发送FeedCard类型</span><br><span class="line">        /// &lt;/summary&gt;</span><br><span class="line">        public static void OapiRobotFeedCard()</span><br><span class="line">        &#123;</span><br><span class="line">            FeedCardModel fcModel = new FeedCardModel();</span><br><span class="line">            fcModel.msgtype = &quot;feedCard&quot;;</span><br><span class="line">            fcModel.feedCard = new feedCard();</span><br><span class="line">            fcModel.feedCard.links = new List&lt;links&gt;();//使用List&lt;model&gt;中直接添加值</span><br><span class="line"></span><br><span class="line">            links model1 = new links();</span><br><span class="line">            model1.title = &quot;title0&quot;;</span><br><span class="line">            model1.messageURL = &quot;&quot;;</span><br><span class="line">            model1.picURL = &quot;&quot;;</span><br><span class="line">            fcModel.feedCard.links.Add(model1);</span><br><span class="line"></span><br><span class="line">            links model2 = new links();</span><br><span class="line">            model2.title = &quot;title1&quot;;</span><br><span class="line">            model2.messageURL = &quot;&quot;;</span><br><span class="line">            model2.picURL = &quot;&quot;;</span><br><span class="line">            fcModel.feedCard.links.Add(model2);</span><br><span class="line"></span><br><span class="line">            string data = JsonConvert.SerializeObject(fcModel);</span><br><span class="line">            string json = Request(RobotErrorMessage, data, &quot;POST&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/dingtalk/" rel="tag"><i class="fa fa-tag"></i> dingtalk</a>
+          
+            <a href="/tags/Message/" rel="tag"><i class="fa fa-tag"></i> Message</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019-07-12/e3b1.html" rel="next" title="免费的编程中文书籍索引">
+                <i class="fa fa-chevron-left"></i> 免费的编程中文书籍索引
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/poet.png"
+                alt="Rocinante-Poet" />
+            
+              <p class="site-author-name" itemprop="name">Rocinante-Poet</p>
+              <p class="site-description motion-element" itemprop="description">诗人和祂的驽骍难得</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/windcloudxyz" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://telegram.me/Poet_IIII" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:Poet515@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rocinante-Poet</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+
+    
+      <span class="post-meta-item-text">博客全站字数&#58;</span>
+    
+    <span title="博客全站字数">69.4k</span>
+  
+  <span class="post-meta-divider">|</span><span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WxdKVWC0mK3Rl3tJFV8ePIka-gzGzoHsz',
+        appKey: 'UYHbcGmDXnsffU8oWBCvOB4t',
+        placeholder: '挥一挥衣袖，留下评论再走 ~',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>
