@@ -3,6 +3,28 @@
 
 
     
+  <url>
+    <loc>https://windcloud.xyz/2019-08-30/ccf1.html</loc>
+    <lastmod>2019-09-24T02:44:34.032Z</lastmod>
+    <data>
+        <display>
+        <title>局域网同步时间</title>
+        <pubTime>2019-08-30T12:13:05.000Z</pubTime>
+        
+        <tag>系统</tag>
+         
+        <tag>NTPServer</tag>
+         
+         
+           
+             
+              <breadCrumb title="系统" url="https://windcloud.xyz/categories/%E7%B3%BB%E7%BB%9F/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
     
   <url>
     <loc>https://windcloud.xyz/2016-09-01/4234.html</loc>
@@ -135,9 +157,9 @@
         <title>MBR和GPT硬盘分区表和UEFI BIOS</title>
         <pubTime>2017-12-09T05:33:38.000Z</pubTime>
         
-        <tag>硬盘分区表</tag>
-         
         <tag>系统</tag>
+         
+        <tag>硬盘分区表</tag>
          
          
            
