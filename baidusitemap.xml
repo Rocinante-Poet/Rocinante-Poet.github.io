@@ -5,20 +5,104 @@
     
   <url>
     <loc>https://windcloud.xyz/2019-08-30/ccf1.html</loc>
-    <lastmod>2019-09-24T02:44:34.032Z</lastmod>
+    <lastmod>2019-09-26T09:40:50.977Z</lastmod>
     <data>
         <display>
         <title>局域网同步时间</title>
         <pubTime>2019-08-30T12:13:05.000Z</pubTime>
         
-        <tag>系统</tag>
+        <tag>计算机</tag>
          
         <tag>NTPServer</tag>
          
          
            
              
-              <breadCrumb title="系统" url="https://windcloud.xyz/categories/%E7%B3%BB%E7%BB%9F/"/>
+              <breadCrumb title="计算机" url="https://windcloud.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://windcloud.xyz/2017-12-09/4958.html</loc>
+    <lastmod>2019-09-26T09:40:44.610Z</lastmod>
+    <data>
+        <display>
+        <title>MBR和GPT硬盘分区表和UEFI BIOS</title>
+        <pubTime>2017-12-09T05:33:38.000Z</pubTime>
+        
+        <tag>计算机</tag>
+         
+        <tag>硬盘分区表</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机" url="https://windcloud.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://windcloud.xyz/2016-11-24/10f0.html</loc>
+    <lastmod>2019-09-26T09:38:01.985Z</lastmod>
+    <data>
+        <display>
+        <title>传统论</title>
+        <pubTime>2016-11-24T03:39:00.000Z</pubTime>
+        
+        <tag>龙哥</tag>
+         
+         
+           
+             
+              <breadCrumb title="整理" url="https://windcloud.xyz/categories/%E6%95%B4%E7%90%86/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://windcloud.xyz/2019-01-03/bc6a.html</loc>
+    <lastmod>2019-09-26T09:30:40.462Z</lastmod>
+    <data>
+        <display>
+        <title>MySQL修改编码配置解决中文乱码</title>
+        <pubTime>2019-01-03T14:33:20.000Z</pubTime>
+        
+        <tag>MySQL</tag>
+         
+         
+           
+             
+              <breadCrumb title="MySQL" url="https://windcloud.xyz/categories/MySQL/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://windcloud.xyz/2019-09-26/2343.html</loc>
+    <lastmod>2019-09-26T09:25:16.840Z</lastmod>
+    <data>
+        <display>
+        <title>子网掩码</title>
+        <pubTime>2019-09-26T08:43:29.000Z</pubTime>
+        
+        <tag>计算机</tag>
+         
+        <tag>子网掩码</tag>
+         
+         
+           
+             
+              <breadCrumb title="计算机" url="https://windcloud.xyz/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
           
         </display>
     </data>
@@ -150,28 +234,6 @@
 
     
   <url>
-    <loc>https://windcloud.xyz/2017-12-09/4958.html</loc>
-    <lastmod>2019-09-23T01:13:58.163Z</lastmod>
-    <data>
-        <display>
-        <title>MBR和GPT硬盘分区表和UEFI BIOS</title>
-        <pubTime>2017-12-09T05:33:38.000Z</pubTime>
-        
-        <tag>系统</tag>
-         
-        <tag>硬盘分区表</tag>
-         
-         
-           
-             
-              <breadCrumb title="系统" url="https://windcloud.xyz/categories/%E7%B3%BB%E7%BB%9F/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://windcloud.xyz/2017-05-03/c891.html</loc>
     <lastmod>2019-09-23T01:13:30.418Z</lastmod>
     <data>
@@ -226,28 +288,6 @@
         <tag>杂记</tag>
          
         <tag>抒情</tag>
-         
-         
-           
-             
-              <breadCrumb title="整理" url="https://windcloud.xyz/categories/%E6%95%B4%E7%90%86/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://windcloud.xyz/2016-11-24/10f0.html</loc>
-    <lastmod>2019-09-23T01:12:43.755Z</lastmod>
-    <data>
-        <display>
-        <title>传统论</title>
-        <pubTime>2016-11-24T03:39:00.000Z</pubTime>
-        
-        <tag>龙哥</tag>
-         
-        <tag>罗永浩</tag>
          
          
            
@@ -360,26 +400,6 @@
            
              
               <breadCrumb title="Navicat" url="https://windcloud.xyz/categories/Navicat/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://windcloud.xyz/2019-01-03/bc6a.html</loc>
-    <lastmod>2019-06-25T08:12:04.573Z</lastmod>
-    <data>
-        <display>
-        <title>MySQL修改编码配置解决中文乱码</title>
-        <pubTime>2019-01-03T14:33:20.000Z</pubTime>
-        
-        <tag>MySQL</tag>
-         
-         
-           
-             
-              <breadCrumb title="MySQL" url="https://windcloud.xyz/categories/MySQL/"/>
           
         </display>
     </data>
