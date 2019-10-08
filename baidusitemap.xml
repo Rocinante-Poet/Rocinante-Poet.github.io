@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>https://windcloud.xyz/2019-10-08/4717.html</loc>
+    <lastmod>2019-10-08T08:00:29.554Z</lastmod>
+    <data>
+        <display>
+        <title>Log4Net日志框架</title>
+        <pubTime>2019-10-08T07:52:48.000Z</pubTime>
+        
+        <tag>C#</tag>
+         
+        <tag>Log4Net</tag>
+         
+         
+           
+             
+              <breadCrumb title="C#" url="https://windcloud.xyz/categories/C/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://windcloud.xyz/2019-10-08/38a3.html</loc>
+    <lastmod>2019-10-08T06:31:14.832Z</lastmod>
+    <data>
+        <display>
+        <title>为什么说ORM是一种反模式</title>
+        <pubTime>2019-10-08T06:26:49.000Z</pubTime>
+        
+        <tag>ORM</tag>
+         
+        <tag>程序设计</tag>
+         
+         
+           
+             
+              <breadCrumb title="程序设计" url="https://windcloud.xyz/categories/%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://windcloud.xyz/2019-08-30/ccf1.html</loc>
     <lastmod>2019-09-26T09:40:50.977Z</lastmod>
     <data>
@@ -95,9 +139,9 @@
         <title>子网掩码</title>
         <pubTime>2019-09-26T08:43:29.000Z</pubTime>
         
-        <tag>计算机</tag>
-         
         <tag>子网掩码</tag>
+         
+        <tag>计算机</tag>
          
          
            

@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "57a36a3c"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="C#,Log4Net," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Log4Netlog4net库是Apache log4j框架在Microsoft .NET平台的实现，是一个帮助程序员将日志信息输出到各种目标（控制台、文件、数据库等）的工具。 log4net是Apache软件基金会Apache Logging Services工程的一部分。Apache日志服务工程致力于为程序调试和审计提供跨语言的日志服务。">
+<meta name="keywords" content="C#,Log4Net">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Log4Net日志框架">
+<meta property="og:url" content="https://windcloud.xyz/2019-10-08/4717.html">
+<meta property="og:site_name" content="蔚然成凨">
+<meta property="og:description" content="Log4Netlog4net库是Apache log4j框架在Microsoft .NET平台的实现，是一个帮助程序员将日志信息输出到各种目标（控制台、文件、数据库等）的工具。 log4net是Apache软件基金会Apache Logging Services工程的一部分。Apache日志服务工程致力于为程序调试和审计提供跨语言的日志服务。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-08T08:00:29.554Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Log4Net日志框架">
+<meta name="twitter:description" content="Log4Netlog4net库是Apache log4j框架在Microsoft .NET平台的实现，是一个帮助程序员将日志信息输出到各种目标（控制台、文件、数据库等）的工具。 log4net是Apache软件基金会Apache Logging Services工程的一部分。Apache日志服务工程致力于为程序调试和审计提供跨语言的日志服务。">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://windcloud.xyz/2019-10-08/4717.html"/>
+
+
+
+
+
+  <title>Log4Net日志框架,蔚然成凨</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蔚然成凨</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于|留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://windcloud.xyz/2019-10-08/4717.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocinante-Poet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/poet.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔚然成凨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Log4Net日志框架</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-08T15:52:48+08:00">
+                2019-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index">
+                    <span itemprop="name">C#</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019-10-08/4717.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019-10-08/4717.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Log4Net"><a href="#Log4Net" class="headerlink" title="Log4Net"></a>Log4Net</h1><p>log4net库是Apache log4j框架在Microsoft .NET平台的实现，是一个帮助程序员将日志信息输出到各种目标（控制台、文件、数据库等）的工具。</p>
+<p>log4net是Apache软件基金会Apache Logging Services工程的一部分。Apache日志服务工程致力于为程序调试和审计提供跨语言的日志服务。</p>
+<a id="more"></a>
+<h2 id="添加config节点"><a href="#添加config节点" class="headerlink" title="添加config节点"></a>添加config节点</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configSections</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span> <span class="attr">name</span>=<span class="string">"log4net"</span> <span class="attr">type</span>=<span class="string">"log4net.Config.Log4NetConfigurationSectionHandler, log4net"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">configSections</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">log4net</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"info_logo"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">level</span> <span class="attr">value</span>=<span class="string">"ALL"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"InfoAppender"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">logger</span> <span class="attr">name</span>=<span class="string">"error_logo"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">level</span> <span class="attr">value</span>=<span class="string">"ALL"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">appender-ref</span> <span class="attr">ref</span>=<span class="string">"ErrorAppender"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">logger</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--新增节点说明： --&gt;</span></span><br><span class="line"><span class="comment">&lt;!--1、复制一个appender节点，修改name，修改file，其他内容看情况修改--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--2、复制一个logger节点，修改appender-ref为步骤2中appender的name，修改name（调用WriteByLogType函数，传入的type），--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"InfoAppender"</span> <span class="attr">type</span>=<span class="string">"log4net.Appender.RollingFileAppender"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--保存路径：下面路径项目启动的时候自动在C盘中创建log、logError文件--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">file</span> <span class="attr">value</span>=<span class="string">"log\\Info\\"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 如果想在本项目中添加路径，那就直接去掉C:\\  只设置log\\LogError   项目启动中默认创建文件 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">appendToFile</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--按照何种方式产生多个日志文件(日期[Date],文件大小[Size],混合[Composite])--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rollingStyle</span> <span class="attr">value</span>=<span class="string">"Composite"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--这是按日期产生文件夹--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">datePattern</span> <span class="attr">value</span>=<span class="string">"yyyy-MM\\yyyy-MM-dd'.txt'"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--是否只写到一个文件中--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">staticLogFileName</span> <span class="attr">value</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--保留的log文件数量 超过此数量后 自动删除之前的   好像只有在 按Size分割时有效 设定值value="－1"为不限文件数--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"MaxSizeRollBackups"</span> <span class="attr">value</span>=<span class="string">"100"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--每个文件的大小。只在混合方式与文件大小方式下使用。超出大小后在所有文件名后自动增加正整数重新命名，数字最大的最早写入。可用的单位:KB|MB|GB。不要使用小数,否则会一直写入当前日志--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">maximumFileSize</span> <span class="attr">value</span>=<span class="string">"10240KB"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- layout 控制Appender的输出格式，也可以是xml  一个Appender只能是一个layout--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">layout</span> <span class="attr">type</span>=<span class="string">"log4net.Layout.PatternLayout"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--每条日志末尾的文字说明--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--输出格式 模板--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;param name="ConversionPattern"  value="记录时间：%date 线程ID:[%thread] 日志级别：%-5level 记录类：%logger</span></span><br><span class="line"><span class="comment">      操作者ID：%property&#123;Operator&#125; 操作类型：%property&#123;Action&#125;%n  当前机器名:%property%n当前机器名及登录用户：%username %n</span></span><br><span class="line"><span class="comment">      记录位置：%location%n 消息描述：%property&#123;Message&#125;%n   异常：%exception%n 消息：%message%newline%n%n" /&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--样例：2008-03-26 13:42:32,111 [10] INFO  Log4NetDemo.MainClass [(null)] - info--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;conversionPattern value="%newline %n记录时间：%date %n线程ID:[%thread] %n日志级别： %-5level %n错误描述：%message%newline %n" /&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">conversionPattern</span> <span class="attr">value</span>=<span class="string">"%n＝＝＝＝＝＝＝＝＝＝</span></span></span><br><span class="line"><span class="tag"><span class="string">                                %n【记录时间】%date</span></span></span><br><span class="line"><span class="tag"><span class="string">                                %n【记录的类】%logger 属性[%property&#123;NDC&#125;]</span></span></span><br><span class="line"><span class="tag"><span class="string">                                %n【内容描述】%message"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">appender</span> <span class="attr">name</span>=<span class="string">"ErrorAppender"</span> <span class="attr">type</span>=<span class="string">"log4net.Appender.RollingFileAppender"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--保存路径：下面路径项目启动的时候自动在C盘中创建log、logError文件--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">file</span> <span class="attr">value</span>=<span class="string">"log\\Error\\"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- 如果想在本项目中添加路径，那就直接去掉C:\\  只设置log\\LogError   项目启动中默认创建文件 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">appendToFile</span> <span class="attr">value</span>=<span class="string">"true"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--按照何种方式产生多个日志文件(日期[Date],文件大小[Size],混合[Composite])--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">rollingStyle</span> <span class="attr">value</span>=<span class="string">"Composite"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--这是按日期产生文件夹--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">datePattern</span> <span class="attr">value</span>=<span class="string">"yyyy-MM\\yyyy-MM-dd'.txt'"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--是否只写到一个文件中--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">staticLogFileName</span> <span class="attr">value</span>=<span class="string">"false"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--保留的log文件数量 超过此数量后 自动删除之前的   好像只有在 按Size分割时有效 设定值value="－1"为不限文件数--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">param</span> <span class="attr">name</span>=<span class="string">"MaxSizeRollBackups"</span> <span class="attr">value</span>=<span class="string">"100"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--每个文件的大小。只在混合方式与文件大小方式下使用。超出大小后在所有文件名后自动增加正整数重新命名，数字最大的最早写入。可用的单位:KB|MB|GB。不要使用小数,否则会一直写入当前日志--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">maximumFileSize</span> <span class="attr">value</span>=<span class="string">"10240KB"</span> /&gt;</span></span><br><span class="line">  <span class="comment">&lt;!-- layout 控制Appender的输出格式，也可以是xml  一个Appender只能是一个layout--&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">layout</span> <span class="attr">type</span>=<span class="string">"log4net.Layout.PatternLayout"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--每条日志末尾的文字说明--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--输出格式 模板--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- &lt;param name="ConversionPattern"  value="记录时间：%date 线程ID:[%thread] 日志级别：%-5level 记录类：%logger</span></span><br><span class="line"><span class="comment">      操作者ID：%property&#123;Operator&#125; 操作类型：%property&#123;Action&#125;%n  当前机器名:%property%n当前机器名及登录用户：%username %n</span></span><br><span class="line"><span class="comment">      记录位置：%location%n 消息描述：%property&#123;Message&#125;%n   异常：%exception%n 消息：%message%newline%n%n" /&gt;--&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--样例：2008-03-26 13:42:32,111 [10] INFO  Log4NetDemo.MainClass [(null)] - info--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--&lt;conversionPattern value="%newline %n记录时间：%date %n线程ID:[%thread] %n日志级别： %-5level %n错误描述：%message%newline %n" /&gt;--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">conversionPattern</span> <span class="attr">value</span>=<span class="string">"%n＝＝＝＝＝＝＝＝＝＝</span></span></span><br><span class="line"><span class="tag"><span class="string">                                %n【日志级别】%-5level</span></span></span><br><span class="line"><span class="tag"><span class="string">                                %n【记录时间】%date</span></span></span><br><span class="line"><span class="tag"><span class="string">                                %n【线程编号】[%thread]</span></span></span><br><span class="line"><span class="tag"><span class="string">                                %n【执行时间】[%r]毫秒</span></span></span><br><span class="line"><span class="tag"><span class="string">                                %n【出错文件】%F</span></span></span><br><span class="line"><span class="tag"><span class="string">                                %n【出错行号】%L</span></span></span><br><span class="line"><span class="tag"><span class="string">                                %n【出错的类】%logger 属性[%property&#123;NDC&#125;]</span></span></span><br><span class="line"><span class="tag"><span class="string">                                %n【错误描述】%message</span></span></span><br><span class="line"><span class="tag"><span class="string">                                %n【错误详情】%newline"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">layout</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">appender</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">log4net</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="帮助类"><a href="#帮助类" class="headerlink" title="帮助类"></a>帮助类</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Log4NetHelper</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="built_in">string</span> m_logFile;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> Dictionary&lt;<span class="built_in">string</span>, log4net.ILog&gt; m_lstLog = <span class="keyword">new</span> Dictionary&lt;<span class="built_in">string</span>, log4net.ILog&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="title">Log4NetHelper</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> strLog4NetConfigFile = AppDomain.CurrentDomain.BaseDirectory + <span class="string">"TC-Service.exe.config"</span>;</span><br><span class="line">        <span class="comment">// string strLog4NetConfigFile = Application.StartupPath + "log4net.config";</span></span><br><span class="line">        log4net.Config.XmlConfigurator.Configure(<span class="keyword">new</span> System.IO.FileInfo(strLog4NetConfigFile));</span><br><span class="line">        m_logFile = strLog4NetConfigFile;</span><br><span class="line">        m_lstLog[<span class="string">"info_logo"</span>] = log4net.LogManager.GetLogger(<span class="string">"info_logo"</span>);</span><br><span class="line">        m_lstLog[<span class="string">"error_logo"</span>] = log4net.LogManager.GetLogger(<span class="string">"error_logo"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// &lt;summary&gt;</span></span><br><span class="line">    <span class="comment">/// 功能描述:写入常规日志</span></span><br><span class="line">    <span class="comment">/// &lt;/summary&gt;</span></span><br><span class="line">    <span class="comment">/// &lt;param name="strInfoLog"&gt;strInfoLog&lt;/param&gt;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">WriteInfoLog</span><span class="params">(<span class="built_in">string</span> strInfoLog)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (m_lstLog[<span class="string">"info_logo"</span>].IsInfoEnabled)</span><br><span class="line">        &#123;</span><br><span class="line">            m_lstLog[<span class="string">"info_logo"</span>].Info(strInfoLog);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// &lt;summary&gt;</span></span><br><span class="line">    <span class="comment">/// 功能描述:写入错误日志</span></span><br><span class="line">    <span class="comment">/// &lt;/summary&gt;</span></span><br><span class="line">    <span class="comment">/// &lt;param name="strErrLog"&gt;strErrLog&lt;/param&gt;</span></span><br><span class="line">    <span class="comment">/// &lt;param name="ex"&gt;ex&lt;/param&gt;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">WriteErrorLog</span><span class="params">(<span class="built_in">string</span> strErrLog, Exception ex = null)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (m_lstLog[<span class="string">"error_logo"</span>].IsErrorEnabled)</span><br><span class="line">        &#123;</span><br><span class="line">            m_lstLog[<span class="string">"error_logo"</span>].Error(strErrLog, ex);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// &lt;summary&gt;</span></span><br><span class="line">    <span class="comment">/// 功能描述:写入日志</span></span><br><span class="line">    <span class="comment">/// &lt;/summary&gt;</span></span><br><span class="line">    <span class="comment">/// &lt;param name="strType"&gt;日志类型（对应log4net配置文件中logger.nama）&lt;/param&gt;</span></span><br><span class="line">    <span class="comment">/// &lt;param name="strLog"&gt;strLog&lt;/param&gt;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">WriteByLogType</span><span class="params">(<span class="built_in">string</span> strType, <span class="built_in">string</span> strLog)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (!m_lstLog.ContainsKey(strType))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//判断是否存在节点</span></span><br><span class="line">            <span class="keyword">if</span> (!HasLogNode(strType))</span><br><span class="line">            &#123;</span><br><span class="line">                WriteErrorLog(<span class="string">"log4net配置文件不存在【"</span> + strType + <span class="string">"】配置"</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            m_lstLog[strType] = log4net.LogManager.GetLogger(strType);</span><br><span class="line">        &#125;</span><br><span class="line">        m_lstLog[strType].Error(strLog);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/// &lt;summary&gt;</span></span><br><span class="line">    <span class="comment">/// 功能描述:是否存在指定的配置</span></span><br><span class="line">    <span class="comment">/// &lt;/summary&gt;</span></span><br><span class="line">    <span class="comment">/// &lt;param name="strNodeName"&gt;strNodeName&lt;/param&gt;</span></span><br><span class="line">    <span class="comment">/// &lt;returns&gt;返回值&lt;/returns&gt;</span></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">bool</span> <span class="title">HasLogNode</span><span class="params">(<span class="built_in">string</span> strNodeName)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        XmlDocument doc = <span class="keyword">new</span> XmlDocument();</span><br><span class="line">        doc.Load(m_logFile);</span><br><span class="line">        var lstNodes = doc.SelectNodes(<span class="string">"//configuration/log4net/logger"</span>);</span><br><span class="line">        foreach (XmlNode item in lstNodes)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (item.Attributes[<span class="string">"name"</span>].Value.ToLower() == strNodeName)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C#</a>
+          
+            <a href="/tags/Log4Net/" rel="tag"><i class="fa fa-tag"></i> Log4Net</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019-10-08/38a3.html" rel="next" title="为什么说ORM是一种反模式">
+                <i class="fa fa-chevron-left"></i> 为什么说ORM是一种反模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/poet.png"
+                alt="Rocinante-Poet" />
+            
+              <p class="site-author-name" itemprop="name">Rocinante-Poet</p>
+              <p class="site-description motion-element" itemprop="description">人生有三样东西无法隐瞒： 咳嗽、贫穷和爱；你想隐瞒，却欲盖祢彰</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/windcloudxyz" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://telegram.me/Poet_IIII" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:Poet515@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Log4Net"><span class="nav-number">1.</span> <span class="nav-text">Log4Net</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#添加config节点"><span class="nav-number">1.1.</span> <span class="nav-text">添加config节点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#帮助类"><span class="nav-number">1.2.</span> <span class="nav-text">帮助类</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rocinante-Poet</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+
+    
+      <span class="post-meta-item-text">博客全站字数&#58;</span>
+    
+    <span title="博客全站字数">79.0k</span>
+  
+  <span class="post-meta-divider">|</span><span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WxdKVWC0mK3Rl3tJFV8ePIka-gzGzoHsz',
+        appKey: 'UYHbcGmDXnsffU8oWBCvOB4t',
+        placeholder: '挥一挥衣袖，留下评论再走 ~',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>

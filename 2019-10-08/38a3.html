@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-flash.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/0f81ff2f.js","daovoice")
+  daovoice('init', {
+      app_id: "57a36a3c"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/safari-pinned-tab.svg?v=5.1.4" color="#222">
+
+
+  <link rel="manifest" href="/images/manifest.json">
+
+
+  <meta name="msapplication-config" content="/images/browserconfig.xml" />
+
+
+
+  <meta name="keywords" content="ORM,程序设计," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="什么是反模式？我很高兴地发现Wikipedia有一个相当全面的关于反模式的列表，包括来自编程界及其之外的内容。我之所以称ORM为反模式的原因是因为，反模式的作者定义了用来区分反模式和普通的坏习惯的两个条件，而ORM完全符合这些条件:  它开始的时候看起来很有用，但是从长期来看，坏处要大过好处存在已验证并且可重复的替代方案  由于第一个因素导致了ORM令人抓狂（对我来说）的流行性：它第一眼看上去像是">
+<meta name="keywords" content="ORM,程序设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="为什么说ORM是一种反模式">
+<meta property="og:url" content="https://windcloud.xyz/2019-10-08/38a3.html">
+<meta property="og:site_name" content="蔚然成凨">
+<meta property="og:description" content="什么是反模式？我很高兴地发现Wikipedia有一个相当全面的关于反模式的列表，包括来自编程界及其之外的内容。我之所以称ORM为反模式的原因是因为，反模式的作者定义了用来区分反模式和普通的坏习惯的两个条件，而ORM完全符合这些条件:  它开始的时候看起来很有用，但是从长期来看，坏处要大过好处存在已验证并且可重复的替代方案  由于第一个因素导致了ORM令人抓狂（对我来说）的流行性：它第一眼看上去像是">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-10-08T06:31:14.832Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="为什么说ORM是一种反模式">
+<meta name="twitter:description" content="什么是反模式？我很高兴地发现Wikipedia有一个相当全面的关于反模式的列表，包括来自编程界及其之外的内容。我之所以称ORM为反模式的原因是因为，反模式的作者定义了用来区分反模式和普通的坏习惯的两个条件，而ORM完全符合这些条件:  它开始的时候看起来很有用，但是从长期来看，坏处要大过好处存在已验证并且可重复的替代方案  由于第一个因素导致了ORM令人抓狂（对我来说）的流行性：它第一眼看上去像是">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://windcloud.xyz/2019-10-08/38a3.html"/>
+
+
+
+
+
+  <title>为什么说ORM是一种反模式,蔚然成凨</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">蔚然成凨</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Blog</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于|留言
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-link"></i> <br />
+            
+            链接
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://windcloud.xyz/2019-10-08/38a3.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Rocinante-Poet">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/poet.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="蔚然成凨">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">为什么说ORM是一种反模式</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-08T14:26:49+08:00">
+                2019-10-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/程序设计/" itemprop="url" rel="index">
+                    <span itemprop="name">程序设计</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019-10-08/38a3.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019-10-08/38a3.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="什么是反模式？"><a href="#什么是反模式？" class="headerlink" title="什么是反模式？"></a>什么是反模式？</h2><p>我很高兴地发现Wikipedia有一个相当全面的关于反模式的列表，包括来自编程界及其之外的内容。我之所以称ORM为反模式的原因是因为，反模式的作者定义了用来区分反模式和普通的坏习惯的两个条件，而ORM完全符合这些条件:</p>
+<blockquote>
+<p>它开始的时候看起来很有用，但是从长期来看，坏处要大过好处<br>存在已验证并且可重复的替代方案</p>
+</blockquote>
+<p>由于第一个因素导致了ORM令人抓狂（对我来说）的流行性：它第一眼看上去像是个好主意，但是当问题更加明显的时候，已经很难离开了。</p>
+<h2 id="这对ORM来说是什么意思？"><a href="#这对ORM来说是什么意思？" class="headerlink" title="这对ORM来说是什么意思？"></a>这对ORM来说是什么意思？</h2><p>我想说的主要问题在于 ActiveRecord，它由于 Ruby on Rails 而著名， 从那以后已经移植到了许多其他语言。然而，这些问题同样存在于其他的ORM层，比如Java的Hibernate和PHP的Doctrine。</p>
+<p>ORM的优点</p>
+<ul>
+<li>简单：一些ORM层告诉你它们“消除了对SQL的要求”。我至今仍然看到这种承诺在传播。其他一些会更加现实地声称它们可以减少手写SQL的需要，但是仍然允许你在需要的时候使用它。对于简单的模型以及项目的早期，这确实是一个优点：使用ORM，无疑你能够更快地开始启动。然而，你将会走向错误的方向。</li>
+<li>代码生成：使用ORM从模型中消除用户层面的代码，这一做法开启了通向代码生成的大门。通过对schema的简单描述，“脚手架”模式可以为你的所有表生成一个可工作的界面。更加具有魔力的是，你可以修改你的schema描述，然后重新生成代码，从而消除了CRUD。同样，这在开始的时候确实是可行的。</li>
+<li>性能“足够好”：我没有看到任何ORM层声称在性能上更加优越。很明显，为了代码的敏捷性需要付出性能的代码。如果哪里变慢了，你总是可以用更加有效的手写SQL覆盖你的ORM方法。不是吗？<a id="more"></a>
+</li>
+</ul>
+<h2 id="ORM的问题"><a href="#ORM的问题" class="headerlink" title="ORM的问题"></a>ORM的问题</h2><ol>
+<li>不充分的抽象</li>
+</ol>
+<p>ORM最明显的问题是它并不能完全从实现细节中抽象出来。所有主流ORM的文档中到处都引用了SQL的概念。其中一些介绍的时候并不会表明其在SQL中的等价物，而其他一些则将库看作用来生成SQL的过程函数。</p>
+<p>抽象的要点在于它应该使问题得以简化。对SQL进行抽象，同时又要求你懂得SQL，这使得你需要学习的东西成倍增加了：首先，你必须理解你正在试图执行的SQL是什么，然后你还要学习ORM的API，来让它为你编写这些SQL。在Hibernate中，为了完成复杂的SQL你甚至需要学第三种语言：HQL，它几乎就是SQL（但又不完全是），其在幕后被翻译成SQL。</p>
+<p>ORM的支持者会辩解说并非每个项目都是如此，并非每个人都需要复杂的join，并且ORM是一个”80/20”解决方案，其中80%的用户只需要SQL中20%的功能，ORM可以处理这些问题。我能说的是，我15年来编写web应用的数据库后端的经历表明，事实并非如此。只有在项目刚开始的时候你不需要join和本地join。在那之后，你就要优化和巩固你的查询。即使80%的用户只用到SQL中30%的功能，可是100%的用户都需要打破ORM的抽象才能够完成工作。</p>
+<ol start="2">
+<li>不正确的抽象</li>
+</ol>
+<p>如果你的项目确实不需要任何关系数据功能，那么ORM可以非常完美地为你工作。但是接下来你又遇到另外一个问题：你用错了了数据存储。关系存储的额外付出是非常高的；这就是为什么NoSQL数据要快得多的重要原因之一。然而，如果你的数据是关系型的，那么额外的付出就是值得的：你的数据库不仅存储数据，它还表达了你的数据，并且可以基于关系概念回答关于它的问题，这比你用过程代码能够做到的要快速得多。</p>
+<p>但是，如果你的数据不是关系型的，那么你就是在不适当的场合使用SQL，这为你增加了巨大且不必要的负担；为了让问题更加严重，你在其上又增加了一重额外的抽象。</p>
+<p>另一方面，如果你的数据是关系型的，那么你的对象映射最终会失败。SQL是关于关系代数的：SQL的输出不是对象，而是对于某个问题的解答。如果你的对象“是一个”X的实例，并且“拥有一些”Y，且每个Y“属于”Z，那么对象在内存中正确的表达形式是什么？ 它应该是X的属性，或者全部包含在Y中，或者/并且全部包含在Z中？如果你只得到X的属性，那么何时你运行查询来获得Y呢？而且，你是想要其中一个还是全部？现实中，答案是依赖于条件的：这就是为什么我说SQL是对于问题的回答。对象在内存中的表达形式取决于你的意图，然而面向对象设计没有依赖于上下文的表达这样的功能。关系不是对象；对象也不是关系。</p>
+<ol start="3">
+<li>多个查询导致失败</li>
+</ol>
+<p>这自然的引出了ORM的另一个问题：效率低下。当你获取一个时，你需要哪些属性？ORM并不知道，所以它总是取得全部（或者它要求你告诉它，但是这又打破了抽象）。开始的时候这不成问题，但是当你一次取出上千条纪录的时候，如果你只需要3个属性却不得不取出全部30列，这时就产生了严重的性能问题。许多ORM层非常不善于推断join，从而不得不使用分离的查询来获取关联数据。如前所述，许多ORM层明确声明效率将会有所牺牲，其中一些提供了某些机制来调整引起问题的查询。我从过去的经历中发现的问题表明，很少有只需要调整单个“银弹”查询的情况：应用的数据库后端之所以死掉不是因为其中某一条查询，而是众多的查询引起的。ORM缺少上下文敏感的性质意味着它无法巩固查询，相反必须借助cache或其他机制来进行一定程度的补偿。</p>
+<h2 id="那么替代方案是什么"><a href="#那么替代方案是什么" class="headerlink" title="那么替代方案是什么?"></a>那么替代方案是什么?</h2><p>希望到这里我已经澄清ORM在设计上的一些缺陷。但是要作为一个反模式，还需要存在替代的解决办法。事实上有两个取代方法：</p>
+<ol>
+<li>使用对象</li>
+</ol>
+<p>如果你的数据是对象，那么停止使用关系数据库。编程界当前正在出现键-值对存储的浪潮，它允许你以闪电般的速度访问优雅的、自我包含的海量数据。没有法律规定编写Web应用的第一步必须安装MySQL。对于对象的每一种表达方式都使用关系数据库是一种过度使用，这也是近几年SQL的名称不太好的原因之一。事实上，问题在于偷懒的设计。</p>
+<ol start="2">
+<li>在模型中使用SQL</li>
+</ol>
+<p>编程中作任何事情都只有一种正确的方式，这是一种危险的说法。然而根据我的实践，在面向对象的代码中表达关系模型的最佳方法仍然是模型层：将你的所有数据表示封装在一个单独的区域是一个好注意。然而，记住模型层的工作簿在于表达对象，而在于回答问题。提供一个可以回答你的应用程序所包含的问题的API，尽量保持简洁高效。有时候，这些回答显得格格不入，以致于看上去是“错误的”，甚至对于资深的OO开发者也是如此。但是，你可以根据经验来更好地找到其中的普遍性，从而允许你将多个查询方法重构为单个。</p>
+<p>类似的，有时候输出会是单个对象X，它很容易表达。 但是也有时候输出是聚合的对象表格，或者单个整数值。你要忍住将这些内容用过多抽象来包装的诱惑，用对象自身的术语来描述。首要的是，不要相信OO能够表达任何对象和所有对象。OO本身是一种优美和灵活的抽象，但关系数据在其范围之外，把它不能表达的东西伪装成对象是ORM的核心与真正的问题。</p>
+<p>总结</p>
+<ul>
+<li>ORM最初比编写基于SQL的模型代码更快，也更容易理解</li>
+<li>它在任何项目早期都是足够有效的</li>
+<li>不幸的是，这些优点在项目复杂性提升的时候就消失了：抽象被打破，开发者被迫使用并理解SQL</li>
+<li>完全是非正式的声明，我认为ORM对抽象的破坏不是仅仅涉及20%的项目，而是几乎100%。</li>
+<li>对象并不足以充分表达关系查询的结果。</li>
+<li>关系查询映射到对象的不充分性导致了ORM后端应用的效率低下，这些问题普遍分布在应用的各处，并且除了完全放弃ORM之外，没有简单的解决办法。</li>
+<li>不要对任何问题都使用关系存储与ORM，而是更加仔细地思考你的设计</li>
+<li>如果你的数据天生就是对象，那么请使用对象存储（”NoSQL”）。它们要比关系数据库快得多。</li>
+<li>如果你的数据天生就是关系型的，那么关系数据库带来的开销是值得的。</li>
+<li>把你的关系查询封装在模型层中，设计你的API从而为应用提供数据访问支持；拒绝过分泛化的诱惑。</li>
+<li>面向对象无法以有效的形式表达关系数据；这是面向对象设计的一个基本限制，ORM无法修复它。</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ORM/" rel="tag"><i class="fa fa-tag"></i> ORM</a>
+          
+            <a href="/tags/程序设计/" rel="tag"><i class="fa fa-tag"></i> 程序设计</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019-09-26/2343.html" rel="next" title="子网掩码">
+                <i class="fa fa-chevron-left"></i> 子网掩码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019-10-08/4717.html" rel="prev" title="Log4Net日志框架">
+                Log4Net日志框架 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/poet.png"
+                alt="Rocinante-Poet" />
+            
+              <p class="site-author-name" itemprop="name">Rocinante-Poet</p>
+              <p class="site-description motion-element" itemprop="description">人生有三样东西无法隐瞒： 咳嗽、贫穷和爱；你想隐瞒，却欲盖祢彰</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">39</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/windcloudxyz" target="_blank" title="Weibo">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://telegram.me/Poet_IIII" target="_blank" title="Telegram">
+                      
+                        <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:Poet515@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是反模式？"><span class="nav-number">1.</span> <span class="nav-text">什么是反模式？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#这对ORM来说是什么意思？"><span class="nav-number">2.</span> <span class="nav-text">这对ORM来说是什么意思？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORM的问题"><span class="nav-number">3.</span> <span class="nav-text">ORM的问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那么替代方案是什么"><span class="nav-number">4.</span> <span class="nav-text">那么替代方案是什么?</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Rocinante-Poet</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+
+    
+      <span class="post-meta-item-text">博客全站字数&#58;</span>
+    
+    <span title="博客全站字数">79.0k</span>
+  
+  <span class="post-meta-divider">|</span><span>Hosted by <a href="https://pages.coding.me" style="font-weight: bold">Coding Pages</a></span>
+</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'WxdKVWC0mK3Rl3tJFV8ePIka-gzGzoHsz',
+        appKey: 'UYHbcGmDXnsffU8oWBCvOB4t',
+        placeholder: '挥一挥衣袖，留下评论再走 ~',
+        avatar:'wavatar',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<script type="text/javascript" src="/js/src/love.js"></script>
